@@ -20,8 +20,8 @@ echo "RELEASE_KEY_ALIAS=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_STORE_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 #改名
-sed -i 's/TVBox/Lion MOVIES/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
-sed -i 's/TVBox/Lion MOVIES/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/TVBox/Lion Movies/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+sed -i 's/TVBox/Lion Movies/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #背景修改
 mv $CURRENT_DIR/DIY/app_bg.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
