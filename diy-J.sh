@@ -22,6 +22,8 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 #改名
 sed -i 's/TVBox/Lion Movies/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 sed -i 's/TVBox/Lion Movies/g' $CURRENT_DIR/$DIR/app/build.gradle
+#改自定义功能
+sed -i 's/自定义jar加载成功/配置加载完成\n欢迎使用狮王追剧神器/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
 #背景修改
 mv $CURRENT_DIR/DIY/app_bg.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
