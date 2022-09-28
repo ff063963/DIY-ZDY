@@ -8,7 +8,7 @@
     android:padding="@dimen/vs_30">
 
     <TextView
-        android:layout_width="@dimen/vs_560"
+        android:layout_width="@dimen/vs_600"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="@dimen/ts_50"
         android:lineSpacingMultiplier="0"
@@ -19,7 +19,7 @@
     
     
      <TextView
-        android:layout_width="@dimen/vs_560"
+        android:layout_width="@dimen/vs_600"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="@dimen/ts_28"
         android:lineSpacingMultiplier="0"
