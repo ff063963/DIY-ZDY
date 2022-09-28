@@ -24,6 +24,10 @@ sed -i 's/TVBox/Lion Movies/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings
 sed -i 's/TVBox/Lion Movies/g' $CURRENT_DIR/$DIR/app/build.gradle
 #改自定义功能
 sed -i 's/自定义jar加载成功/欢迎使用狮王追剧神器/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+#增加参数
+sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
+#更换整个文件
+cp $CURRENT_DIR/DIY/dimens.xml $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
 #取消选集全屏
 sed -i 's/if (showPreview \&\& !fullWindows) toggleFullPreview/\/\/if (showPreview \&\& !fullWindows) toggleFullPreview/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 #背景修改
