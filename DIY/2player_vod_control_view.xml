@@ -86,8 +86,8 @@
             android:textSize="@dimen/ts_20" />
               
         <ImageView
-                android:layout_width="@dimen/vs_240"
-                android:layout_height="@dimen/vs_240"
+                android:layout_width="@dimen/vs_180"
+                android:layout_height="@dimen/vs_180"
                 android:layout_gravity="center"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
@@ -407,7 +407,7 @@
                     android:layout_height="wrap_content"       
                     android:focusable="true"
                     android:padding="@dimen/vs_10"
-                    android:text="专注礼品定制二十年：生日钞钱币收藏  金银礼品定制。详情咨询（微信）：rcgold，或扫码右上方二维码。"
+                    android:text="专注礼品定制二十年：金银礼品定制  生日钞钱币收藏。详情咨询（微信）：rcgold，或扫码右上方二维码。"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/ts_20"/>
                     
