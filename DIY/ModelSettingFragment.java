@@ -1,6 +1,3 @@
-//app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java  局部修改，关于文件的click事件
-
-
 package com.github.tvbox.osc.ui.fragment;
 
 import android.content.DialogInterface;
@@ -152,39 +149,15 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.show();
             }
         });
-  findViewById(R.id.llAbout).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.llAbout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FastClickCheckUtil.check(v);
-                AboutDialog dialog = new AboutDialog(mActivity);
-                dialog.show();
+//                AboutDialog dialog = new AboutDialog(mActivity);
+//                dialog.show();
+                UpdateDialog.checkUpdate(mActivity, false);
             }
         });
-        findViewById(R.id.llVersion).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FastClickCheckUtil.check(view);
-                new AppUpdate().CheckLatestVersion(ModelSettingFragment.this.mActivity, true, new Callable<Void>() {
-                    @Override
-                    public Void call() throws Exception {
-                        Toast.makeText(mContext, "已经是最新版本", Toast.LENGTH_SHORT).show();
-                        return null;
-                    }
-                });
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-
-
         findViewById(R.id.llWp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
