@@ -34,7 +34,7 @@ cp $CURRENT_DIR/DIY/dialog_about.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/d
 cp $CURRENT_DIR/DIY/shape_player_control_vod_seek.xml $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_player_control_vod_seek.xml
 cp $CURRENT_DIR/DIY/index.html  $CURRENT_DIR/$DIR/app/src/main/res/raw/index.html
 cp $CURRENT_DIR/DIY/colors.xml  $CURRENT_DIR/$DIR/app/src/main/res/values/colors.xml
-cp $CURRENT_DIR/DIY/2player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 
