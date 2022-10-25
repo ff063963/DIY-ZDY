@@ -59,7 +59,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
     private TextView tvRender;
     private TextView tvScale;
     private TextView tvApi;
-    //private TextView tvEpgApi;
+    private TextView tvEpgApi;
     private TextView tvHomeApi;
     private TextView tvDns;
     private TextView tvHomeRec;
@@ -97,7 +97,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
         tvRender = findViewById(R.id.tvRenderType);
         tvScale = findViewById(R.id.tvScaleType);
         tvApi = findViewById(R.id.tvApi);
-        //tvEpgApi = findViewById(R.id.tvEpgApi);
+        tvEpgApi = findViewById(R.id.tvEpgApi);
         tvHomeApi = findViewById(R.id.tvHomeApi);
         tvDns = findViewById(R.id.tvDns);
         tvHomeRec = findViewById(R.id.tvHomeRec);
