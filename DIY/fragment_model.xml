@@ -152,7 +152,7 @@
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
                 
-    <!--
+
             <LinearLayout
                     android:id="@+id/epgApi"
                     android:layout_width="match_parent"
@@ -196,7 +196,7 @@
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
 
-      -->
+
 
             <LinearLayout
                     android:layout_width="match_parent"
