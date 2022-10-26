@@ -37,7 +37,7 @@
   }, {
     "tvid": "6",
     "epgid": "CCTV5+",
-    "name": "CCTV5+,CCTV5-⁺体育赛事,CCTV5⁺,CCTV-5⁺,CCTV-5⁺体育赛事,CCTV-体育赛事,CCTV5+⁺赛事",
+    "name": "CCTV5+,CCTV5体育赛事,CCTV-5,CCTV-5体育赛事,CCTV-体育赛事,CCTV5+赛事",
     "status": "1",
     "note": "CCTV-5⁺体育赛事",
     "logo": "http://epg.51zmt.top:8000/tb1/CCTV/CCTV5+.png"
