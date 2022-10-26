@@ -95,7 +95,7 @@ android:compileSdkVersion="29" android:compileSdkVersionCodename="10" android:ve
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
+        
         <meta-data
             android:name="design_width_in_dp"
             android:value="1280" />
