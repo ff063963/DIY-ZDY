@@ -114,7 +114,7 @@
   }, {
     "tvid": "17",
     "epgid": "CCTV17",
-    "name": "CCTV-17农业,CCTV-17,CCTV17,CCTV17-农业,CCTV-17农业农村,CCTV-17农村农业,CCTV17-农业农村,CCTV17农村农业",
+    "name": "CCTV-17农业,CCTV-17,CCTV17,CCTV17-农业,CCTV-17农业农村,CCTV-17农村农业,CCTV17-农业农村,CCTV17-农村农业",
     "status": "1",
     "note": "CCTV-17农村农业",
     "logo": "http://epg.51zmt.top:8000/tb1/CCTV/CCTV17.png"
@@ -3737,6 +3737,14 @@
     "status": "1",
     "note": "Animax",
     "logo": "http://epg.51zmt.top:8000/tb1/gt/ANIMAX.png"
-  }
+  },
+            {
+    "tvid": "534",
+    "epgid": "CCTV16",
+    "name": "CCTV-16奥林匹克,CCTV-16,CCTV16,CCTV16-奥林匹克,CCTV-16奥运",
+    "status": "1",
+    "note": "CCTV16-奥林匹克",
+    "logo": "http://epg.51zmt.top:8000/tb1/CCTV/CCTV16.png"
+  },
   ]
 }
