@@ -8,8 +8,8 @@
     platformBuildVersionCode="30"
     platformBuildVersionName="11">
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="26" />
+       android:minSdkVersion="16"
+       android:targetSdkVersion="26" />
     
     <uses-feature
         android:name="android.software.leanback"
