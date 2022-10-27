@@ -19,16 +19,22 @@ echo "RELEASE_STORE_FILE=./TVBoxOSC.jks" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_KEY_ALIAS=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_STORE_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
+#共存
+sed -i 's/com.github.tvbox.osc/com.github.tvbox.q2.py/g' $CURRENT_DIR/$DIR/app/build.gradle
+#自定义epg
+cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data.json
+#名称修改
+sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+#版本号
+sed -i 's/1.0.0/1.1.0/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/关于/关于                1.1.0/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #改自定义功能
 #sed -i 's/自定义jar加载成功/欢迎使用狮王追剧神器/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 #sed -i 's/开源测试软件,请勿商用以及播放违法内容!!!!/专业礼品定制，贵金属、纪念钱币、生日钞礼品定制!!!!/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/LivePlayActivity.java
 #sed -i 's/暂无节目信息/生日钞——亿万分之一的心意/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/LivePlayActivity.java
 #sed -i 's/6000/15000/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
-#自定义epg
-cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data.json
-#名称修改
-sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
@@ -41,12 +47,8 @@ sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main
 #cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 #cp $CURRENT_DIR/DIY/ModelSettingFragment.java  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java 
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i 's/关于/关于 1.1.0/g'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
-#版本号
-#sed -i ‘/android:allowBackup="true"/i android:versionName="1.1.0"/file' $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
-sed -i '/ android:compileSdkVersion="30"\android:compileSdkVersionCodename="11"\ android:versionCode="1"\ android:versionName="6.6.0""/a' $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
-#cp $CURRENT_DIR/DIY/AndroidManifest.xml $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
+
 
 
 #取消选集全屏
