@@ -28,8 +28,8 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 #自定义epg
 cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data.json
 #版本号
-sed -i ‘/android:allowBackup="true"/i android:versionName="1.1.0"/file' $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
-#sed -i '/android:versionName="1.1.0"/a' $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
+#sed -i ‘/android:allowBackup="true"/i android:versionName="1.1.0"/file' $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
+sed -i '/ android:compileSdkVersion="30"\android:compileSdkVersionCodename="11"\ android:versionCode="1"\ android:versionName="6.6.0""/a' $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
 sed -i 's/关于/关于              1.1.0/g'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #cp $CURRENT_DIR/DIY/AndroidManifest.xml $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
 #名称修改
