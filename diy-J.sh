@@ -29,7 +29,7 @@ sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 sed -i 's/1.0.0/1.1.0/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #背景修改
-mv $CURRENT_DIR/DIY/app_bg3.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
+#mv $CURRENT_DIR/DIY/app_bg3.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 #图标修改
 #cp $CURRENT_DIR/DIY/tel_weixin.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/tel_weixin.png
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hdpi/app_icon.png
