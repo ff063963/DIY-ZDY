@@ -54,7 +54,7 @@ cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout
 #取消选集全屏
 sed -i 's/if (showPreview \&\& !fullWindows) toggleFullPreview/\/\/if (showPreview \&\& !fullWindows) toggleFullPreview/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 #背景修改
-#mv $CURRENT_DIR/DIY/app_bg.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
+mv $CURRENT_DIR/DIY/app_bg2.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 #图标修改
 #cp $CURRENT_DIR/DIY/tel_weixin.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/tel_weixin.png
 cp $CURRENT_DIR/DIY/app_icon3.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hdpi/app_icon.png
