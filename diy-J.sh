@@ -27,7 +27,7 @@ cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data
 sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 #版本号
 sed -i 's/1.0.0/1.1.1/g' $CURRENT_DIR/$DIR/app/build.gradle
-sed -i 's/ 1/ 1.1.1/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/versionCode 1/versionCode 1.1.1/g' $CURRENT_DIR/$DIR/app/build.gradle
 #背景修改
 #cp $CURRENT_DIR/DIY/app_bg3.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 #图标修改
