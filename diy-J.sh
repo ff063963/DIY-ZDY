@@ -36,6 +36,9 @@ cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hd
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xhdpi/app_icon.png
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
 mv $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
+#播放界面修改
+cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/drawable/player_vod_control_view.xml
+
 
 #改自定义功能
 #sed -i 's/自定义jar加载成功/欢迎使用狮王追剧神器/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
@@ -56,7 +59,6 @@ sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main
 #cp $CURRENT_DIR/DIY/ModelSettingFragment.java  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java 
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/关于/关于                                                                   1.1.2/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-
 
 
 #取消选集全屏
