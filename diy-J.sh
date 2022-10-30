@@ -37,7 +37,7 @@ cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xh
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
 mv $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
 #播放界面修改
-cp $CURRENT_DIR/DIY/player_vod_control_viewtaka.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 
 
 #改自定义功能
