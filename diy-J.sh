@@ -43,7 +43,7 @@ sed -i '/android:id="@+id/play_time_start_end_text"/android:visibility="gone"/'f
 #默认设置修改
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java
 #主界面修改
-sed -i 's/@dimen/ts_40/@dimen/ts_30/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+sed -i 's/@dimen/ts_40/@dimen/ts_10/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/@color/color_CCFFFFFF/@color/color_ FFFFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #改自定义功能
 #sed -i 's/自定义jar加载成功/欢迎使用狮王追剧神器/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
