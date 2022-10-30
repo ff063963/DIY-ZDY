@@ -46,6 +46,8 @@ mv $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xx
 #播放界面修改
 
 sed -i 's/"片头片尾"/ ""/g' file $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/"01:00"/ "片头01:00"/g' file $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/"01:00"/ "片尾01:00"/2g' file $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 #cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 
 #默认设置修改
