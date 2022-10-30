@@ -2,21 +2,18 @@ package com.github.tvbox.osc.base;
 
 import androidx.multidex.MultiDexApplication;
 
-import com.github.tvbox.osc.bean.VodInfo;
 import com.github.tvbox.osc.callback.EmptyCallback;
 import com.github.tvbox.osc.callback.LoadingCallback;
 import com.github.tvbox.osc.data.AppDataManager;
 import com.github.tvbox.osc.server.ControlManager;
-import com.github.tvbox.osc.util.EpgNameFuzzyMatch;
-import com.github.tvbox.osc.util.EpgUtil;
 import com.github.tvbox.osc.util.HawkConfig;
+import com.github.tvbox.osc.util.LocaleHelper;
 import com.github.tvbox.osc.util.OkGoHelper;
 import com.github.tvbox.osc.util.PlayerHelper;
-import com.github.tvbox.osc.util.js.JSEngine;
 import com.kingja.loadsir.core.LoadSir;
 import com.orhanobut.hawk.Hawk;
+import com.undcover.freedom.pyramid.PythonLoader;
 
-import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.unit.Subunits;
 
@@ -33,9 +30,10 @@ public class App extends MultiDexApplication {
         super.onCreate();
         instance = this;
         initParams();
+        // takagen99 : Initialize Locale
+        initLocale();
         // OKGo
-        OkGoHelper.init(); //台标获取
-        EpgUtil.init();
+        OkGoHelper.init();
         // 初始化Web服务器
         ControlManager.init(this);
         //初始化数据库
@@ -49,7 +47,9 @@ public class App extends MultiDexApplication {
                 .setSupportSP(false)
                 .setSupportSubunits(Subunits.MM);
         PlayerHelper.init();
-        JSEngine.getInstance().create();
+
+        // Add Pyramid support
+        PythonLoader.getInstance().setApplication(this);
     }
 
     private void initParams() {
@@ -65,22 +65,23 @@ public class App extends MultiDexApplication {
 //        putDefault(HawkConfig.SEARCH_VIEW, 1);    // Text or Picture
 
     }
+
+    private void initLocale() {
+        if (Hawk.get(HawkConfig.HOME_LOCALE, 0) == 0) {
+            LocaleHelper.setLocale(App.this, "zh");
+        } else {
+            LocaleHelper.setLocale(App.this, "");
+        }
+    }
+
     public static App getInstance() {
         return instance;
     }
 
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-        JSEngine.getInstance().destroy();
+    private void putDefault(String key, Object value) {
+        if (!Hawk.contains(key)) {
+            Hawk.put(key, value);
+        }
     }
 
-
-    private VodInfo vodInfo;
-    public void setVodInfo(VodInfo vodinfo){
-        this.vodInfo = vodinfo;
-    }
-    public VodInfo getVodInfo(){
-        return this.vodInfo;
-    }
 }
