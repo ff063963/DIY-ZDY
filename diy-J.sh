@@ -53,7 +53,7 @@ cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbo
 
 #主界面修改
 sed -i 's/ts_40/ts_40/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-sed -i 's/CCFFFFFF/ CCFFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+#sed -i 's/CCFFFFFF/ CCFFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 
 #改自定义功能
 #sed -i 's/自定义jar加载成功/欢迎使用狮王追剧神器/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
