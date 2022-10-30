@@ -42,7 +42,7 @@ cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/r
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java
 #主界面修改
 sed -i 's/@dimen/ts_40/@dimen/ts_30/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-
+sed -i 's/@color/color_CCFFFFFF/@color/color_ FFFFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #改自定义功能
 #sed -i 's/自定义jar加载成功/欢迎使用狮王追剧神器/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 #sed -i 's/开源测试软件,请勿商用以及播放违法内容!!!!/专业礼品定制，贵金属、纪念钱币、生日钞礼品定制!!!!/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/LivePlayActivity.java
