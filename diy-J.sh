@@ -38,7 +38,7 @@ cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xx
 mv $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
 #播放界面修改
 
-sed -i '/ android:text="片头片尾"/android:visibility="gone"/'file$CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i '/ android:text="片头片尾"/android:visibility="gone"/'file $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 #cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 #默认设置修改
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java
