@@ -52,7 +52,7 @@ sed -i '/android:id="@+id/play_time_start_end_text"/a android:visibility="gone"/
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java
 
 #主界面修改
-sed -i 's/ts_40/ts_10/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+#sed -i 's/ts_40/ts_10/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/color_CCFFFFFF/color_ FFFFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 
 #改自定义功能
