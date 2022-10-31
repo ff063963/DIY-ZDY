@@ -34,7 +34,7 @@ sed -i 's/1.0.0/1.1.3/g' $CURRENT_DIR/$DIR/app/build.gradle
 #sed -i 's/ 1/ 1.1.2/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #背景修改
-cp $CURRENT_DIR/DIY/04.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
+#cp $CURRENT_DIR/DIY/04.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 
 #图标修改
 #cp $CURRENT_DIR/DIY/tel_weixin.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/tel_weixin.png
