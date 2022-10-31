@@ -47,9 +47,9 @@ sed -i '/"EPG地址"/a\android:visibility="gone"' $CURRENT_DIR/$DIR/app/src/main
 sed -i 's/"刷新"/ ""/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/"上一集"/ "上集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/"下一集"/ "下集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-#sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-#sed -i 's/00:00/ 片头00:00/'  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-#sed -i 's/00:00/ 片尾00:00/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/"00:00"/ "片头00:00"/'  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/"00:00"/ "片尾00:00"/2g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 #cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xm
 
 
