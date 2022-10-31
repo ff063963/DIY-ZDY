@@ -45,9 +45,10 @@ sed -i 's/关于/关于                                                         
 # 注意其中的/fish/a，这意思是匹配到/fish/后就追加一行
 #sed -i"/epgApi/a\ android:visibility="gone" $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i"/\epgApi/a android:visibility="gone"/"  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i's/ "@+id/\epgApi"/""/g'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#sed -i's/ "@+id/\epgApi"/""/g'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -'/android:focusable="true"/4a android:visibility="gone"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-
+sed '/"@+id/epgApi"/a android:visibility="gone"'$CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#向内容11后面添加china，如果文件中有多行包括22，则每一行后面都会添加
 
 
 #增加参数
