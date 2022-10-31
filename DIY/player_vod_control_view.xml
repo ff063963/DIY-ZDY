@@ -257,7 +257,18 @@
                 android:text="片头片尾"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="@dimen/ts_20" />
-
+       <TextView
+                android:id="@+id/play_time_start_end_text"
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/vs_5"
+                android:layout_marginRight="@dimen/vs_5"
+                android:padding="@dimen/vs_10"
+                android:text="片头"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20" />
+            
             <TextView
                 android:id="@+id/play_time_start"
                 android:singleLine="true"
@@ -271,7 +282,18 @@
                 android:text="01:00"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_20" />
-
+       <TextView
+                android:id="@+id/play_time_start_end_text"
+                android:singleLine="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/vs_5"
+                android:layout_marginRight="@dimen/vs_5"
+                android:padding="@dimen/vs_10"
+                android:text="片尾"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20" />
+            
             <TextView
                 android:id="@+id/play_time_end"
                 android:singleLine="true"
@@ -390,7 +412,7 @@
                 android:layout_height="wrap_content"
                 android:paddingEnd="@dimen/vs_10"
                 android:paddingRight="@dimen/vs_10"
-                android:text="片头00:00"
+                android:text="00:00"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="@dimen/ts_20" />
 
