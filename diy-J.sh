@@ -41,8 +41,17 @@ cp $CURRENT_DIR/DIY/背景1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_
 sed -i 's/1.0.0/1.1.5/g' $CURRENT_DIR/$DIR/app/build.gradle
 sed -i 's/关于/关于                                                                   1.1.5/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i '/"EPG地址"/a\android:visibility="gone"' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
-sed -i '/android:visibility="gone"/a'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#播放界面修改
+sed -i 's/刷新/ ""/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/上一集/ 上集/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/下一集/ 下集/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/片头片尾/ /' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/00:00/ 片头00:00/'  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+#sed -i 's/00:00/ 片尾00:00/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+#cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xm
+
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
