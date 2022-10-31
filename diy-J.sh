@@ -36,10 +36,12 @@ mv $CURRENT_DIR/DIY/图标1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxh
 #背景修改
 cp $CURRENT_DIR/DIY/背景1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 
-
 #版本号
 sed -i 's/1.0.0/1.1.5/g' $CURRENT_DIR/$DIR/app/build.gradle
-sed -i 's/关于/关于                                   1.1.5/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+
+#设置界面
+cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml 
+sed -i 's/关于/关于                         1.1.5/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
@@ -52,8 +54,7 @@ cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/r
 # 默认设置
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java  
 
-#设置界面
-cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml 
+ 
 
 #主界面
 #sed -i 's/ts_40/ts_34/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
@@ -66,7 +67,7 @@ sed -i 's/"上一集"/ "上集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/pla
 sed -i 's/"下一集"/ "下集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 #taka版本替换q2
-#cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 
 #添加PY支持
 wget --no-check-certificate -qO- "https://raw.githubusercontent.com/UndCover/PyramidStore/main/aar/pyramid-0922.aar" -O $CURRENT_DIR/$DIR/app/libs/pyramid.aar
