@@ -55,7 +55,7 @@ cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbo
 
 #主界面修改
 #sed -i 's/ts_40/ts_30/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-#sed -i 's/color_CCFFFFFF"/ @color/color_00FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+#sed -i 's/CCFFFFFF"/FFFFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 
 
 #改自定义功能
@@ -77,9 +77,10 @@ sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main
 #cp $CURRENT_DIR/DIY/ModelSettingFragment.java  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java 
 #cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/关于/关于                                                                   1.1.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #取消选集全屏
-sed -i 's/if (showPreview \&\& !fullWindows) toggleFullPreview/\/\/if (showPreview \&\& !fullWindows) toggleFullPreview/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
+#sed -i 's/if (showPreview \&\& !fullWindows) toggleFullPreview/\/\/if (showPreview \&\& !fullWindows) toggleFullPreview/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 
 #添加PY支持
 wget --no-check-certificate -qO- "https://raw.githubusercontent.com/UndCover/PyramidStore/main/aar/pyramid-0922.aar" -O $CURRENT_DIR/$DIR/app/libs/pyramid.aar
