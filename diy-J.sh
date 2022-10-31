@@ -32,10 +32,10 @@ sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 #版本号
 sed -i 's/1.0.0/1.1.3/g' $CURRENT_DIR/$DIR/app/build.gradle
 sed -i 's/关于/关于                                                                   1.1.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 # 注意其中的/fish/a，这意思是匹配到/fish/后就追加一行
-sed -i"/epgApi/i android:visibility="gone" $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#sed -i"/epgApi/i android:visibility="gone" $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -'/android:focusable="true"/4a android:visibility="gone"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #图标修改
