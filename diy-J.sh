@@ -32,7 +32,7 @@ sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 #版本号
 sed -i 's/1.0.0/1.1.3/g' $CURRENT_DIR/$DIR/app/build.gradle
 sed -i 's/关于/关于                                                                   1.1.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-#sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #图标修改
 #cp $CURRENT_DIR/DIY/tel_weixin.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/tel_weixin.png
@@ -41,6 +41,8 @@ cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xh
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
 mv $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
 
+#背景修改
+cp $CURRENT_DIR/DIY/04.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
