@@ -22,31 +22,32 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 
 #共存
 sed -i 's/com.github.tvbox.osc/com.github.tvbox.q2.py/g' $CURRENT_DIR/$DIR/app/build.gradle
-
 #自定义epg
 cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data.json
-
 #名称修改
 sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+#图标修改
+
+cp $CURRENT_DIR/DIY/图标1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hdpi/app_icon.png
+cp $CURRENT_DIR/DIY/图标1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xhdpi/app_icon.png
+cp $CURRENT_DIR/DIY/图标1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
+mv $CURRENT_DIR/DIY/图标1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
+
+#背景修改
+cp $CURRENT_DIR/DIY/背景1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
+
 
 #版本号
-sed -i 's/1.0.0/1.1.3/g' $CURRENT_DIR/$DIR/app/build.gradle
-sed -i 's/关于/关于                                                                   1.1.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/1.0.0/1.1.5/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/关于/关于                                                                   1.1.5/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 # 注意其中的/fish/a，这意思是匹配到/fish/后就追加一行
-sed -i"/epgApi/a android:visibility="gone" $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#sed -i"/epgApi/a android:visibility="gone" $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed"/epgApi/a android:visibility="gone""$CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -'/android:focusable="true"/4a android:visibility="gone"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
-#图标修改
 
-cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hdpi/app_icon.png
-cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xhdpi/app_icon.png
-cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
-mv $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
-
-#背景修改
-cp $CURRENT_DIR/DIY/04.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
