@@ -49,7 +49,7 @@ sed -i 's/"上一集"/ "上集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/pla
 sed -i 's/"下一集"/ "下集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/"00:00"/ "10:00"/'  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-sed -i 's/"00:00"/ "20:00"/2g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+#sed -i 's/"00:00"/ "20:00"/2g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 #cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xm
 
 
