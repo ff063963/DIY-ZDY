@@ -178,6 +178,7 @@
             <TextView
                 android:id="@+id/play_refresh"
                 android:singleLine="true"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/vs_5"
