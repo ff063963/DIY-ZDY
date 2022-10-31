@@ -35,11 +35,11 @@ sed -i 's/关于/关于                                                         
 #sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 # 注意其中的/fish/a，这意思是匹配到/fish/后就追加一行
-#sed -i"/epgApi/i android:visibility="gone" $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i"/epgApi/a android:visibility="gone" $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -'/android:focusable="true"/4a android:visibility="gone"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #图标修改
-#cp $CURRENT_DIR/DIY/tel_weixin.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/tel_weixin.png
+
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hdpi/app_icon.png
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xhdpi/app_icon.png
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
