@@ -44,11 +44,11 @@ sed -i 's/关于/关于                                                         
 #sed -i '/android:id="@+id/epgApi"/a\android:visibility="gone"' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #播放界面修改
-sed -i 's/"刷新"//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/"刷新"//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/"上一集"/ "上集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/"下一集"/ "下集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-$sed -i 's/"00:00"/ "10:00"/'  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+sed -i 's/"00:00"/ "10:00"/'  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 #sed -i 's/"00:00"/ "20:00"/2g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 #cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xm
 
