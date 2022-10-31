@@ -58,6 +58,8 @@ public class App extends MultiDexApplication {
         Hawk.put(HawkConfig.DEBUG_OPEN, false);
         if (!Hawk.contains(HawkConfig.PLAY_TYPE)) {
             Hawk.put(HawkConfig.PLAY_TYPE, 1);
+           Hawk.put(HawkConfig.HOME_REC, 1);       // Home Rec 0=豆瓣, 1=推荐, 2=历史
+           Hawk.put(HawkConfig.IJK_CODEC, "硬解码");// IJK Render 软解码, 硬解码
         }
     }
 
