@@ -42,14 +42,7 @@ sed -i 's/1.0.0/1.1.5/g' $CURRENT_DIR/$DIR/app/build.gradle
 sed -i 's/关于/关于                                                                   1.1.5/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
-# 注意其中的/fish/a，这意思是匹配到/fish/后就追加一行
-#sed -i"/epgApi/a\ android:visibility="gone" $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-#sed -i"/\epgApi/a android:visibility="gone"/"  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-#sed -i's/ "@+id/\epgApi"/""/g'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-#sed -'/android:focusable="true"/4a android:visibility="gone"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed '/"@+id/epgApi"/aandroid:visibility="gone"/'$CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-#向内容11后面添加china，如果文件中有多行包括22，则每一行后面都会添加
-
+sed -i '/android:visibility="gone"/a'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
