@@ -39,6 +39,9 @@ cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/r
 # 默认设置
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java  
 
+#taka版本替换q2
+cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+
 #主界面
 #sed -i 's/ts_40/ts_34/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #sed -i 's/"@color/color_CCFFFFFF"/ "#FFFFFFFF"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
@@ -49,18 +52,20 @@ cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbo
 sed -i 's/"上一集"/ "上集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/"下一集"/ "下集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-#taka版本替换q2
-cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+
 
 
 #共存
 sed -i 's/com.github.tvbox.osc/com.github.tvbox.q2.py/g' $CURRENT_DIR/$DIR/app/build.gradle
+
+
 #自定义epg
 cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data.json
+
 #名称修改
 sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
-#图标修改
 
+#图标修改
 cp $CURRENT_DIR/DIY/图标1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-hdpi/app_icon.png
 cp $CURRENT_DIR/DIY/图标1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xhdpi/app_icon.png
 cp $CURRENT_DIR/DIY/图标1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
