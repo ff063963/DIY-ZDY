@@ -31,10 +31,8 @@ sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 
 #版本号
 sed -i 's/1.0.0/1.1.3/g' $CURRENT_DIR/$DIR/app/build.gradle
-#sed -i 's/ 1/ 1.1.2/g' $CURRENT_DIR/$DIR/app/build.gradle
-
-#背景修改
-#cp $CURRENT_DIR/DIY/04.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
+sed -i 's/关于/关于                                                                   1.1.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #图标修改
 #cp $CURRENT_DIR/DIY/tel_weixin.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/tel_weixin.png
@@ -43,44 +41,9 @@ cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xh
 cp $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxhdpi/app_icon.png
 mv $CURRENT_DIR/DIY/app_icon4.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxhdpi/app_icon.png
 
-#播放界面修改
-#sed -i 's/刷新/ ""/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-sed -i 's/片头片尾/ ""/' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-sed -i 's/00:00/ 片头00:00/'  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-#sed -i 's/00:00/ 片尾00:00/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-#cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-
-#默认设置修改
-cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java
-
-#主界面修改
-#sed -i 's/ts_40/ts_30/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-#sed -i 's/CCFFFFFF"/FFFFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-
-
-#改自定义功能
-#sed -i 's/自定义jar加载成功/欢迎使用狮王追剧神器/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
-#sed -i 's/开源测试软件,请勿商用以及播放违法内容!!!!/专业礼品定制，贵金属、纪念钱币、生日钞礼品定制!!!!/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/LivePlayActivity.java
-#sed -i 's/暂无节目信息/生日钞——亿万分之一的心意/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/LivePlayActivity.java
-#sed -i 's/6000/15000/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
-
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
-#更换整个文件
-#cp $CURRENT_DIR/DIY/dialog_about.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_about.xml  
-#cp $CURRENT_DIR/DIY/shape_player_control_vod_seek.xml $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_player_control_vod_seek.xml
-#cp $CURRENT_DIR/DIY/index.html  $CURRENT_DIR/$DIR/app/src/main/res/raw/index.html
-#cp $CURRENT_DIR/DIY/colors.xml  $CURRENT_DIR/$DIR/app/src/main/res/values/colors.xml
-#cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-#cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
-#cp $CURRENT_DIR/DIY/ModelSettingFragment.java  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java 
-#cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i 's/关于/关于                                                                   1.1.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-#sed -i 's/EPG地址//g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-
-#取消选集全屏
-#sed -i 's/if (showPreview \&\& !fullWindows) toggleFullPreview/\/\/if (showPreview \&\& !fullWindows) toggleFullPreview/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 
 #添加PY支持
 wget --no-check-certificate -qO- "https://raw.githubusercontent.com/UndCover/PyramidStore/main/aar/pyramid-0922.aar" -O $CURRENT_DIR/$DIR/app/libs/pyramid.aar
