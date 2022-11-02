@@ -40,7 +40,7 @@ cp $CURRENT_DIR/DIY/player_vod_control_view.xml $CURRENT_DIR/$DIR/app/src/main/r
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java  
 
 #taka版本替换q2
-cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/fragment_model.xml
 
 #主界面
 #sed -i 's/ts_40/ts_34/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
@@ -56,7 +56,7 @@ sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_c
 
 
 #共存
-sed -i 's/com.github.tvbox.osc/com.github.tvbox.q2.py/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/com.github.tvbox.osc/com.tvbox.q2.py/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 
 #自定义epg
