@@ -36,5 +36,5 @@ jobs:
       - name: Upload App To Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: com.github.tvbox.q2.py
+          name: com.tvbox.q2.py
           path: ${{ github.workspace }}/apk/*
