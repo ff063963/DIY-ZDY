@@ -22,11 +22,11 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 
 
 #版本号
-sed -i 's/1.0.0/1.1.5/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/1.0.0/1.1.6/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #设置界面
-cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml 
-sed -i 's/关于/关于                                                                   1.1.5/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml 
+sed -i 's/关于/关于                                                                   1.1.6/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
