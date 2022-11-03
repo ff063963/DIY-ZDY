@@ -16,10 +16,10 @@ jobs:
           fetch-depth: 0
       - name: Clone Project
         run: git clone -b dev --depth=1 https://github.com/FongMi/TV
-      - name: DIY
-        run: |
-          chmod +x diy-TV.sh
-          bash ${{ github.workspace }}/diy-TV.sh
+     // - name: DIY
+       // run: |
+         //chmod +x diy-TV.sh
+         // bash ${{ github.workspace }}/diy-TV.sh
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew | grep -v exo | awk -F"/" '{print NF-1}')
