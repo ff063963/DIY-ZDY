@@ -1,4 +1,4 @@
-name: APK-TV Build
+name: APK-蜂蜜 Build
 
 on:
 #  push:
@@ -18,8 +18,8 @@ jobs:
         run: git clone -b main --depth=1 https://github.com/FongMi/TV
       - name: DIY
         run: |
-          chmod +x diy-J.sh
-          bash ${{ github.workspace }}/diy-TV.sh
+          chmod +x diy-蜂蜜.sh
+          bash ${{ github.workspace }}/diy-蜂蜜.sh
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
