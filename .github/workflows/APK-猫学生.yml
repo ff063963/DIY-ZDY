@@ -1,4 +1,4 @@
-name: APK-K Build
+name: APK-猫学生 Build
 
 on:
 #  push:
@@ -18,8 +18,8 @@ jobs:
         run: git clone -b main --depth=1 https://github.com/kensonmiao/CatVodTVOSC.git
       - name: DIY
         run: |
-          chmod +x diy-K.sh
-          bash ${{ github.workspace }}/diy-K.sh
+          chmod +x diy-猫学生.sh
+          bash ${{ github.workspace }}/diy-猫学生.sh
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
