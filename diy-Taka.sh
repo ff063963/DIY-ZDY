@@ -41,15 +41,16 @@ cp $CURRENT_DIR/DIY/taka旧主界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layo
 #sed -i 's/"4dp"/""/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
 sed -i 's/"right|center_vertical"/"center_vertical"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
 sed -i 's/"09:30 PM"/"00:00"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
-#sed -i 's/ts_40/ts_34/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-sed -i 's/"@color/color_FFFFFF_80"/ "#FFFFFFFF"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-sed -i 's/"@color/color_FFFFFF_80"/ "#FFFFFFFF"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_setting_menu.xml
-sed -i 's/MM月dd日/yyyy年 MM月 dd日/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
-sed -i 's/EE hh:mm aa/EE hh:mm/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
-sed -i 's/dd MMM/dd MMM yyyy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
-sed -i 's/EE hh:mm aa/EE hh:mm/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+sed -i 's/ts_24/ts_26/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+sed -i 's/"@color/color_FFFFFF_80"/ "@android:color/white"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+sed -i 's/"@color/color_FFFFFF_80"/ "@android:color/white"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_setting_menu.xml
+sed -i 's/"@color/color_FFFFFF_70"/ "@android:color/white"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_home_sort.xml
 
-wrap_content
+sed -i 's/MM月dd日/yyyy年 MM月 dd日/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
+#sed -i 's/EE hh:mm aa/EE hh:mm/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
+sed -i 's/dd MMM/dd MMM yyyy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+#sed -i 's/EE hh:mm aa/EE hh:mm/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+
 #共存
 sed -i 's/com.github.tvbox.osc/com.tvbox.taka.py/g' $CURRENT_DIR/$DIR/app/build.gradle
 
