@@ -60,7 +60,7 @@
                 android:text="@string/hm_hist"
                 android:textAlignment="gravity"
                 android:textColor="@color/color_white"
-                android:textSize="@dimen/ts_24" />
+                android:textSize="@dimen/ts_40" />
 
         </LinearLayout>
 
