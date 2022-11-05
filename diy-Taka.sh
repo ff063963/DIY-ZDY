@@ -39,7 +39,8 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 
 cp $CURRENT_DIR/DIY/taka旧主界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #sed -i 's/"4dp"/""/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
-sed -i 's/"right|center_vertical"/"center_vertical"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
+sed -i 's/"right|center_vertical"/"center_horizontal"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
+
 sed -i 's/"09:30 PM"/"00:00"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/ts_24/ts_26/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/"@color/color_FFFFFF_80"/ "@android:color/white"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
