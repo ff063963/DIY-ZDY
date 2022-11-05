@@ -189,7 +189,7 @@
                 android:gravity="center"
                 android:text="@string/hm_push"
                 android:textAlignment="gravity"
-                android:textColor="@color/color_white"
+                android:textColor="#ffffffff"
                 android:textSize="@dimen/ts_24" />
 
         </LinearLayout>
