@@ -36,7 +36,7 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 # 默认设置
 #cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java  
 #主界面
-sed -i 's/@color/"color_FFFFFF_80"/ "#FFFFFF"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_use
+sed -i 's/@color/\"color_FFFFFF_80"/ "#FFFFFFFF"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_use
 #cp $CURRENT_DIR/DIY/taka旧主界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #sed -i 's/"4dp"/""/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
 #sed -i 's/"right|center_vertical"/"center_horizontal"/' $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
