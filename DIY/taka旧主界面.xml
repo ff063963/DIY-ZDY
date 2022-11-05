@@ -59,7 +59,7 @@
                 android:gravity="center|start"
                 android:text="@string/hm_hist"
                 android:textAlignment="gravity"
-                android:textColor="@color/color_FFFFFF_80"
+                android:textColor="#ffffffff"
                 android:textSize="@dimen/ts_24" />
 
         </LinearLayout>
