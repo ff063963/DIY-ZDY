@@ -44,6 +44,7 @@
 
         <ImageView
             android:id="@+id/tvWifi"
+            android:visibility="gone"
             android:layout_width="@dimen/vs_40"
             android:layout_height="@dimen/vs_40"
             android:layout_marginStart="@dimen/vs_15"
@@ -57,6 +58,7 @@
 
         <ImageView
             android:id="@+id/tvFind"
+            android:visibility="gone"
             android:layout_width="@dimen/vs_40"
             android:layout_height="@dimen/vs_40"
             android:layout_marginStart="@dimen/vs_15"
