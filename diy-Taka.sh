@@ -34,7 +34,7 @@ sed -i 's/关于/关于                                                         
 sed -i 's/6000/600/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
 
 # 默认设置
-#cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java 
+sed -i 's/HawkConfig.HOME_REC, 2/HawkConfig.HOME_REC, 2/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java 
 
 #主界面
 cp $CURRENT_DIR/DIY/taka旧主界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
