@@ -30,7 +30,7 @@ sed -i 's/关于/关于                                                         
 
 #增加参数
 sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
-#其他
+#增加进度条消失时间
 sed -i 's/6000/12000/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
 
 # 播放界面
