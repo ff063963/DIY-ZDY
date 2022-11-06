@@ -22,14 +22,14 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 
 
 #版本号
-sed -i 's/1.0.0/1.1.6/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/1.0.0/1.1.7/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #设置界面
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml 
-sed -i 's/关于/关于                                                                   1.1.6/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/关于/关于                                                                   1.1.7/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #增加参数
-sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
+#sed -i '/android:layout_width="@dimen/vs_560"/a'  $CURRENT_DIR/$DIR/app/src/main/res/values/dimens.xml   
 #其他
 #sed -i 's/6000/15000/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
 
@@ -75,9 +75,9 @@ mv $CURRENT_DIR/DIY/图标2.png $CURRENT_DIR/$DIR/app/src/main/res/drawable-xxxh
 cp $CURRENT_DIR/DIY/背景1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 
 #主界面文字颜色修改
-#sed -i 's/color_CCFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+sed -i 's/color_CCFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #主界面首页文字颜色修改
-#sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_home_sort.xml
+sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_home_sort.xml
 
 #增加听书嗅探
 cp $CURRENT_DIR/DIY/libplayer.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libplayer.so
