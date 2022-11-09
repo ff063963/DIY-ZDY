@@ -27,7 +27,7 @@ sed -i 's/1.0.0/1.1.9/g' $CURRENT_DIR/$DIR/app/build.gradle
 #cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml 
 
 sed -i 's/epgApi"/epgApi" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i 's/关于/关于\\n                                                                   1.1.9/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/关于/关于\\n1.1.9/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/android:text=">"/android:text="$1.1.9>"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed –i 's/>"/1.1.9>"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed –i 's/android:text=">"/android:text="1.1.9  >"/1'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
