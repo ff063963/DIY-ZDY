@@ -31,7 +31,7 @@ sed -i 's/关于/关于                                                         
 #sed -i 's/android:text=">"/android:text="$1.1.9>"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed –i 's/>"/1.1.9>"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed –i 's/android:text=">"/android:text="1.1.9  >"/5g'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed '/关于/,/white/s/android:text=">"/android:text="$1.1.9>"/'   $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed '/关于/,/white/s/android:text=">"/android:text="1.1.9 >"/'   $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 cp $CURRENT_DIR/DIY/dialog_about_关于.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_about.xml 
 
