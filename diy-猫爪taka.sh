@@ -33,7 +33,7 @@ sed -i 's/800/570/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/u
 sed -i 's/getContext(), 3/getContext(), 2/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
 #共存
-sed -i 's/com.github.tvbox.osc/com.tvbox.taka.py/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/com.github.tvbox.osc/com.tvbox.watson.taka/g' $CURRENT_DIR/$DIR/app/build.gradle
 #自定义epg
 cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data.json
 
