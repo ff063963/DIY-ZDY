@@ -18,15 +18,13 @@ echo "RELEASE_STORE_FILE=./TVBoxOSC.jks" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_KEY_ALIAS=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_STORE_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
-#xwalk修复
-#sed -i 's/download.01.org\/crosswalk\/releases\/crosswalk\/android\/maven2/raw.githubusercontent.com\/lm317379829\/TVBoxDIY\/main/g' $CURRENT_DIR/$DIR/build.gradle
 
 #版本号
 sed -i 's/1.0.0/1.0.2/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #主界面
 #cp $CURRENT_DIR/DIY/taka旧主界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-cp $CURRENT_DIR/DIY/activity_home_top界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
+#cp $CURRENT_DIR/DIY/activity_home_top界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
 sed -i 's/MM月dd日/yyyy年 MM月 dd日/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
 sed -i 's/dd MMM/dd MMM yyyy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 
