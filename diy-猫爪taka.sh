@@ -22,7 +22,7 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 #版本号
 sed -i 's/1.0.0/1.0.2/g' $CURRENT_DIR/$DIR/app/build.gradle
 #关于
-sed -i 's/关于/关于\\n1.0.2/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/ android:text="@string/mn_about"/ android:text="关于\\n1.0.2"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #主界面
 cp $CURRENT_DIR/DIY/taka旧主界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 cp $CURRENT_DIR/DIY/activity_home_top界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
