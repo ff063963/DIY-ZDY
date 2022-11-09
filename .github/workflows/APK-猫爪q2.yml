@@ -1,4 +1,4 @@
-name: APK-猫爪 Build
+name: APK-猫爪q2 Build
 
 on:
 #  push:
@@ -18,8 +18,8 @@ jobs:
         run: git clone -b main --depth=1 https://github.com/watson1982/TVBoxOS-py
       - name: DIY
         run: |
-          chmod +x diy-猫爪.sh
-          bash ${{ github.workspace }}/diy-猫爪.sh
+          chmod +x diy-猫爪q2.sh
+          bash ${{ github.workspace }}/diy-猫爪q2.sh
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
