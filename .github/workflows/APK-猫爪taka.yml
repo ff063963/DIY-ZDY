@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Clone Project
-        run: git clone -b main --depth=1 https://github.com/watson1982/TVBoxOS-py
+        run: git clone -b main --depth=1 https://github.com/watson1982/Box
       - name: DIY
         run: |
           chmod +x diy-猫爪taka.sh
