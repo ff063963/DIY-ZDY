@@ -25,7 +25,7 @@ sed -i 's/1.0.0/1.0.2/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 sed -i 's/关于/关于                              1.0.2/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
 #主界面
-sed -i '/ android:visibility="gone"/d'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+sed -i 's/android:visibility="gone"//g'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/tvWifi"/tvWifi" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/tvFind"/tvFind" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #cp $CURRENT_DIR/DIY/taka旧主界面.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
