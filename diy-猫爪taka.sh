@@ -22,7 +22,8 @@ echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 #版本号
 sed -i 's/1.0.0/1.0.2/g' $CURRENT_DIR/$DIR/app/build.gradle
 #关于
-sed -i 's/关于/关于/n1.0.2/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
+sed -i 's/关于/关于
+1.0.2/g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
 #主界面
 sed -i 's/android:visibility="gone"//g'  $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/tvWifi"/tvWifi" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/activity_home.xml
