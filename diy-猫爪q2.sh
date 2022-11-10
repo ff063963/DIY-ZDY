@@ -45,6 +45,10 @@ sed -i 's/"上一集"/ "上集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/pla
 sed -i 's/"下一集"/ "下集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 
+#taka版本替换q2
+cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+
+
 #共存
 sed -i 's/com.github.tvbox.osc/com.tvbox.watson2/g' $CURRENT_DIR/$DIR/app/build.gradle
 
