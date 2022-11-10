@@ -21,11 +21,11 @@ echo "RELEASE_STORE_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 
 #版本号
-sed -i 's/1.0.0/1.1.0/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/1.0.0/1.1.2/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #设置界面
 sed -i 's/epgApi"/epgApi" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-
+sed -i 's/关于/关于\\n1.1.2/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #播放界面修改
 
 sed -i 's/"上一集"/ "上集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
