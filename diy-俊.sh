@@ -20,6 +20,9 @@ echo "RELEASE_KEY_ALIAS=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_STORE_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 echo "RELEASE_KEY_PASSWORD=TVBoxOSC" >>$CURRENT_DIR/$DIR/gradle.properties
 
+#taka版本替换q2
+cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
+
 
 #版本号
 sed -i 's/1.0.0/1.1.7/g' $CURRENT_DIR/$DIR/app/build.gradle
@@ -39,8 +42,6 @@ sed -i 's/6000/7000/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc
 # 默认设置
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java  
 
-#taka版本替换q2
-cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 
 #主界面
 #sed -i 's/ts_40/ts_34/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
