@@ -570,7 +570,9 @@ public class DetailActivity extends BaseActivity {
             }
         });
     }
-
+    
+   boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
+    
     private String getHtml(String label, String content) {
         if (content == null) {
             content = "";
