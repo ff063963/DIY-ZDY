@@ -69,7 +69,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
     private TextView tvHistoryNum;
     private TextView tvSearchView;
     private TextView tvShowPreviewText;
-     private TextView tvHomeShow;
+    private TextView tvHomeShow;
     private TextView tvFastSearchText;
     private TextView tvRecStyleText;
 
