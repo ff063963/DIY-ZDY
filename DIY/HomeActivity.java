@@ -173,7 +173,7 @@ public class HomeActivity extends BaseActivity {
         if (HomeShow) {
             if (home != null && home.getName() != null && !home.getName().isEmpty())
                 tvName.setText(home.getName());
-        }     
+        } }    
             
             public void onItemSelected(TvRecyclerView tvRecyclerView, View view, int position) {
                 if (view != null) {
