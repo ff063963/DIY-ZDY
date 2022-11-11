@@ -154,7 +154,9 @@ public class HomeActivity extends BaseActivity {
                     }, 10);
                 }
             }
-
+    // takagen99 : Switch to show / hide source title
+    boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
+            
             public void onItemSelected(TvRecyclerView tvRecyclerView, View view, int position) {
                 if (view != null) {
                     HomeActivity.this.isDownOrUp = false;
