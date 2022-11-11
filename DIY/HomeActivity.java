@@ -249,7 +249,7 @@ public class HomeActivity extends BaseActivity {
     private boolean jarInitOk = false;
 
     
-    // takagen99 : Switch to show / hide source title
+  // takagen99 : Switch to show / hide source title
     boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
 
     private void initData() {
@@ -260,8 +260,9 @@ public class HomeActivity extends BaseActivity {
             if (home != null && home.getName() != null && !home.getName().isEmpty())
                 tvName.setText(home.getName());
         }}
-        
-   
+
+
+
         if (dataInitOk && jarInitOk) {
             showLoading();
             sourceViewModel.getSort(ApiConfig.get().getHomeSourceBean().getKey());
@@ -272,6 +273,8 @@ public class HomeActivity extends BaseActivity {
             }
             return;
         }
+    
+        
         showLoading();
         if (dataInitOk && !jarInitOk) {
             if (!ApiConfig.get().getSpider().isEmpty()) {
