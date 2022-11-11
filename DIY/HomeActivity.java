@@ -259,10 +259,7 @@ public class HomeActivity extends BaseActivity {
         if (HomeShow) {
             if (home != null && home.getName() != null && !home.getName().isEmpty())
                 tvName.setText(home.getName());
-        }}
-
-
-
+        }
         if (dataInitOk && jarInitOk) {
             showLoading();
             sourceViewModel.getSort(ApiConfig.get().getHomeSourceBean().getKey());
@@ -272,7 +269,7 @@ public class HomeActivity extends BaseActivity {
                 LOG.e("无");
             }
             return;
-        }
+        }}
     
         
         showLoading();
