@@ -596,6 +596,9 @@ public class PlayActivity extends BaseActivity {
             }
         }
     }
+    // takagen99 : Add check for external players not enter PIP
+    private boolean extPlay = false;
+    boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
 
     private void initViewModel() {
         sourceViewModel = new ViewModelProvider(this).get(SourceViewModel.class);
