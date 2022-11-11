@@ -191,7 +191,7 @@ public class LivePlayActivity extends BaseActivity {
     protected int getLayoutResID() {
         return R.layout.activity_live_play;
     }
-
+   boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
     @Override
     protected void init() {
         context = this;
