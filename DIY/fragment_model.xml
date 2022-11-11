@@ -169,7 +169,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/mn_pip"
+                                android:text="画中画"
                                 android:textColor="@android:color/white"
                                 android:textSize="@dimen/ts_24" />
 
@@ -179,7 +179,7 @@
                                 android:layout_weight="1" />
 
                             <TextView
-                                android:id="画中画"
+                                android:id="@+id/tvPIP"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@android:color/white"
