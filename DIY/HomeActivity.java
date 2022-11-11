@@ -154,8 +154,34 @@ public class HomeActivity extends BaseActivity {
                     }, 10);
                 }
             }
-    // takagen99 : Switch to show / hide source title
+   // takagen99 : Switch to show / hide source title
     boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
+
+    // takagen99 : Check if network is available
+    boolean isNetworkAvailable() {
+        ConnectivityManager cm
+                = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = cm.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+    }
+
+    private void initData() {
+        SourceBean home = ApiConfig.get().getHomeSourceBean();
+
+        // takagen99 : Switch to show / hide source title
+        if (HomeShow) {
+            if (home != null && home.getName() != null && !home.getName().isEmpty())
+                tvName.setText(home.getName());
+        }
+
+    private void initData() {
+        SourceBean home = ApiConfig.get().getHomeSourceBean();
+
+        // takagen99 : Switch to show / hide source title
+        if (HomeShow) {
+            if (home != null && home.getName() != null && !home.getName().isEmpty())
+                tvName.setText(home.getName());
+        }     
             
             public void onItemSelected(TvRecyclerView tvRecyclerView, View view, int position) {
                 if (view != null) {
