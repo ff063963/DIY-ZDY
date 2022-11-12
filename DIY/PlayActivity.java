@@ -1287,7 +1287,19 @@ public class PlayActivity extends BaseActivity {
  // takagen99 : Add check for external players not enter PIP
     private boolean extPlay = false;
     boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
-
+ @Override
+    public void onUserLeaveHint() {
+        if (supportsPiPMode() && !extPlay && PIP) {
+            List<RemoteAction> actions = new ArrayList<>();
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_previous, PIP_BOARDCAST_ACTION_PREV, "Prev", "Play Previous"));
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_play, PIP_BOARDCAST_ACTION_PLAYPAUSE, "Play/Pause", "Play or Pause"));
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_next, PIP_BOARDCAST_ACTION_NEXT, "Next", "Play Next"));
+            PictureInPictureParams params = new PictureInPictureParams.Builder()
+                    .setActions(actions).build();
+            enterPictureInPictureMode(params);
+            mController.hideBottom();
+        }
+    }
     boolean checkVideoFormat(String url) {
         if (url.contains("url=http") || url.contains(".html")) {
             return false;
