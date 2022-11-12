@@ -99,14 +99,17 @@ public class HomeActivity extends BaseActivity {
         }
     };
 //画中画
-     // takagen99 : Switch to show / hide source title
+  // takagen99 : Switch to show / hide source title
     boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
+    
+ private void initData() {
+        SourceBean home = ApiConfig.get().getHomeSourceBean();
+     if (HomeShow) {
+        if (home != null && home.getName() != null && !home.getName().isEmpty())
+            tvName.setText(home.getName());
+     }
 
-      // takagen99 : Switch to show / hide source title
-        if (HomeShow) {
-            if (home != null && home.getName() != null && !home.getName().isEmpty())
-                tvName.setText(home.getName());
-        }
+
     
     @Override
     protected int getLayoutResID() {
