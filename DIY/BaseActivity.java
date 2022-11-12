@@ -166,6 +166,11 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomAd
         return "";
     }
 
+     public boolean supportsPiPMode() {
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
+    }
+
+    
     @Override
     public float getSizeInDp() {
         return isBaseOnWidth() ? 1280 : 720;
