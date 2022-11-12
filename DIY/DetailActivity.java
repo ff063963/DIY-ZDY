@@ -571,7 +571,28 @@ public class DetailActivity extends BaseActivity {
         });
     }
     
-   boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
+
+    //画中画
+      boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
+
+    @Override
+    public void onUserLeaveHint() {
+        // takagen99 : Additional check for external player
+        if (supportsPiPMode() && showPreview && !playFragment.extPlay && PIP) {
+            List<RemoteAction> actions = new ArrayList<>();
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_previous, PIP_BOARDCAST_ACTION_PREV, "Prev", "Play Previous"));
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_play, PIP_BOARDCAST_ACTION_PLAYPAUSE, "Play", "Play/Pause"));
+            actions.add(generateRemoteAction(android.R.drawable.ic_media_next, PIP_BOARDCAST_ACTION_NEXT, "Next", "Play Next"));
+            PictureInPictureParams params = new PictureInPictureParams.Builder().setActions(actions).build();
+            if (!fullWindows) {
+                toggleFullPreview();
+            }
+            enterPictureInPictureMode(params);
+            playFragment.getVodController().hideBottom();
+        }
+    }
+    
+    
     
     private String getHtml(String label, String content) {
         if (content == null) {
