@@ -107,7 +107,7 @@ public class HomeActivity extends BaseActivity {
      if (HomeShow) {
         if (home != null && home.getName() != null && !home.getName().isEmpty())
             tvName.setText(home.getName());
-     }
+     } }
 
 
     
