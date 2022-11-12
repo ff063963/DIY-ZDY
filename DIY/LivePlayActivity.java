@@ -195,7 +195,22 @@ public class LivePlayActivity extends BaseActivity {
     protected int getLayoutResID() {
         return R.layout.activity_live_play;
     }
+    
+    //画中画
+    boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
 
+    // takagen99 : Enter PIP if supported
+    @Override
+    public void onUserLeaveHint() {
+        if (supportsPiPMode() && PIP) {
+            // Hide controls when entering PIP
+            mHandler.post(mHideChannelListRun);
+            mHandler.post(mHideChannelInfoRun);
+            mHandler.post(mHideSettingLayoutRun);
+            enterPictureInPictureMode();
+        }
+    }
+    
     @Override
     protected void init() {
         context = this;
@@ -215,22 +230,7 @@ public class LivePlayActivity extends BaseActivity {
         tvChannelInfo = findViewById(R.id.tvChannel);
         tvTime = findViewById(R.id.tvTime);
         tvNetSpeed = findViewById(R.id.tvNetSpeed);
-
-       boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
-
-    // takagen99 : Enter PIP if supported
-    @Override
-    public void onUserLeaveHint() {
-        if (supportsPiPMode() && PIP) {
-            // Hide controls when entering PIP
-            mHandler.post(mHideChannelListRun);
-            mHandler.post(mHideChannelInfoRun);
-            mHandler.post(mHideSettingLayoutRun);
-            enterPictureInPictureMode();
-        }
-    }
-        
-        
+      
         //EPG  findViewById  by 龍
         tip_chname = (TextView)  findViewById(R.id.tv_channel_bar_name);//底部名称
         tv_channelnum = (TextView) findViewById(R.id.tv_channel_bottom_number); //底部数字
