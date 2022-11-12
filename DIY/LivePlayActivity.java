@@ -239,6 +239,22 @@ public class LivePlayActivity extends BaseActivity {
         divLoadEpg = (View) findViewById(R.id.divLoadEpg);
         divLoadEpgleft = (View) findViewById(R.id.divLoadEpgleft);
         divEpg = (LinearLayout) findViewById(R.id.divEPG);
+        
+        
+          boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
+
+    // takagen99 : Enter PIP if supported
+    @Override
+    public void onUserLeaveHint() {
+        if (supportsPiPMode() && PIP) {
+            // Hide controls when entering PIP
+            mHandler.post(mHideChannelListRun);
+            mHandler.post(mHideChannelInfoRun);
+            mHandler.post(mHideSettingLayoutRun);
+            enterPictureInPictureMode();
+        }
+    }
+        
         //右上角图片旋转
         objectAnimator = ObjectAnimator.ofFloat(iv_circle_bg,"rotation", 360.0f);
         objectAnimator.setDuration(5000);
@@ -413,6 +429,9 @@ public class LivePlayActivity extends BaseActivity {
         }
     }
 
+    
+    
+    
     public void getEpg(Date date) {
         String channelName = channel_Name.getChannelName();
         SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd");
