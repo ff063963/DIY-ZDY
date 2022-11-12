@@ -249,7 +249,7 @@ public class HomeActivity extends BaseActivity {
     private boolean dataInitOk = false;
     private boolean jarInitOk = false;
 
-    //画中画
+    //数据源显示
   // takagen99 : Switch to show / hide source title
     boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
     
