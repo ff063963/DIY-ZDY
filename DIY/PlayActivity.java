@@ -1300,6 +1300,63 @@ public class PlayActivity extends BaseActivity {
             mController.hideBottom();
         }
     }
+      @Override
+    protected void onPause() {
+        super.onPause();
+        if (mVideoView != null) {
+            if (supportsPiPMode()) {
+                if (isInPictureInPictureMode()) {
+                    // Continue playback
+                    mVideoView.resume();
+                } else {
+                    // Pause playback
+                    mVideoView.pause();
+                }
+            } else {
+                mVideoView.pause();
+            }
+        }
+    }
+    
+    
+      // takagen99 : PIP fix to close video when close window
+    @Override
+    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode) {
+        super.onPictureInPictureModeChanged(isInPictureInPictureMode);
+        if (supportsPiPMode() && isInPictureInPictureMode) {
+            pipActionReceiver = new BroadcastReceiver() {
+
+                @Override
+                public void onReceive(Context context, Intent intent) {
+                    if (intent == null || !intent.getAction().equals("PIP_VOD_CONTROL") || mController == null) {
+                        return;
+                    }
+
+                    int currentStatus = intent.getIntExtra("action", 1);
+                    if (currentStatus == PIP_BOARDCAST_ACTION_PREV) {
+                        playPrevious();
+                    } else if (currentStatus == PIP_BOARDCAST_ACTION_PLAYPAUSE) {
+                        mController.togglePlay();
+                    } else if (currentStatus == PIP_BOARDCAST_ACTION_NEXT) {
+                        playNext();
+                    }
+                }
+            };
+            registerReceiver(pipActionReceiver, new IntentFilter("PIP_VOD_CONTROL"));
+
+        } else {
+            // Closed playback
+            if (onStopCalled) {
+                mVideoView.release();
+            }
+            unregisterReceiver(pipActionReceiver);
+            pipActionReceiver = null;
+        }
+    }
+    
+    
+    
+    
     boolean checkVideoFormat(String url) {
         if (url.contains("url=http") || url.contains(".html")) {
             return false;
