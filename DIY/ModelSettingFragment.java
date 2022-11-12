@@ -69,7 +69,9 @@ public class ModelSettingFragment extends BaseLazyFragment {
     private TextView tvShowPreviewText;
     private TextView tvFastSearchText;
     private TextView tvRecStyleText;
-
+    private TextView tvHomeShow;
+    private TextView tvPIP;
+    
     public static ModelSettingFragment newInstance() {
         return new ModelSettingFragment().setArguments();
     }
