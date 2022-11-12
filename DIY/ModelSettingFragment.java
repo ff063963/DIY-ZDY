@@ -69,6 +69,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
     private TextView tvShowPreviewText;
     private TextView tvFastSearchText;
     private TextView tvRecStyleText;
+ private TextView tvPIP;
  private TextView tvHomeShow;
     public static ModelSettingFragment newInstance() {
         return new ModelSettingFragment().setArguments();
@@ -138,8 +139,19 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 tvHomeShow.setText(Hawk.get(HawkConfig.HOME_SHOW_SOURCE, true) ? "开启" : "关闭");
             }
         });
-        
-        
+    //增加画中画           
+       tvPIP = findViewById(R.id.tvPIP);
+        tvPIP.setText(Hawk.get(HawkConfig.PIC_IN_PIC, false) ? "开启" : "关闭");
+
+   // Switch to ON / OFF Picture-In-Picture -------------------------
+        findViewById(R.id.llPIP).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FastClickCheckUtil.check(v);
+                Hawk.put(HawkConfig.PIC_IN_PIC, !Hawk.get(HawkConfig.PIC_IN_PIC, false));
+                tvPIP.setText(Hawk.get(HawkConfig.PIC_IN_PIC, true) ? "开启" : "关闭");
+            }
+        });  
         
         
         findViewById(R.id.llParseWebVew).setOnClickListener(new View.OnClickListener() {
