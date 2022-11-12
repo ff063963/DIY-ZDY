@@ -216,6 +216,21 @@ public class LivePlayActivity extends BaseActivity {
         tvTime = findViewById(R.id.tvTime);
         tvNetSpeed = findViewById(R.id.tvNetSpeed);
 
+       boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
+
+    // takagen99 : Enter PIP if supported
+    @Override
+    public void onUserLeaveHint() {
+        if (supportsPiPMode() && PIP) {
+            // Hide controls when entering PIP
+            mHandler.post(mHideChannelListRun);
+            mHandler.post(mHideChannelInfoRun);
+            mHandler.post(mHideSettingLayoutRun);
+            enterPictureInPictureMode();
+        }
+    }
+        
+        
         //EPG  findViewById  by 龍
         tip_chname = (TextView)  findViewById(R.id.tv_channel_bar_name);//底部名称
         tv_channelnum = (TextView) findViewById(R.id.tv_channel_bottom_number); //底部数字
@@ -240,20 +255,7 @@ public class LivePlayActivity extends BaseActivity {
         divLoadEpgleft = (View) findViewById(R.id.divLoadEpgleft);
         divEpg = (LinearLayout) findViewById(R.id.divEPG);
         
-        
-          boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
-
-    // takagen99 : Enter PIP if supported
-    @Override
-    public void onUserLeaveHint() {
-        if (supportsPiPMode() && PIP) {
-            // Hide controls when entering PIP
-            mHandler.post(mHideChannelListRun);
-            mHandler.post(mHideChannelInfoRun);
-            mHandler.post(mHideSettingLayoutRun);
-            enterPictureInPictureMode();
-        }
-    }
+       
         
         //右上角图片旋转
         objectAnimator = ObjectAnimator.ofFloat(iv_circle_bg,"rotation", 360.0f);
