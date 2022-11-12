@@ -718,13 +718,6 @@ public class LivePlayActivity extends BaseActivity {
     }
 
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (mVideoView != null) {
-            mVideoView.pause();
-        }
-    }
 
     @Override
     protected void onDestroy() {
@@ -958,8 +951,7 @@ public class LivePlayActivity extends BaseActivity {
             }
         }
     };
-//画中画
-    boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
+
     
     
     //laodao 7天Epg数据绑定和展示
