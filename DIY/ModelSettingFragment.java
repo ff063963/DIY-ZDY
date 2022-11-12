@@ -315,10 +315,9 @@ public class ModelSettingFragment extends BaseLazyFragment {
             @Override
             public void onClick(View v) {
                 FastClickCheckUtil.check(v);
-                EpgDialog dialog = new EpgDialog(mActivity);
+              
                 EventBus.getDefault().register(dialog);
-                dialog.setOnListener(new EpgDialog.OnListener() {
-                    @Override
+            
                     public void onchange(String api) {
                         Hawk.put(HawkConfig.EPG_URL, api);
                         tvEpgApi.setText(api);
