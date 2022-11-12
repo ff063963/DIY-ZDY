@@ -5,8 +5,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.IntEvaluator;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -53,6 +55,7 @@ import com.github.tvbox.osc.util.EpgUtil;
 import com.github.tvbox.osc.util.FastClickCheckUtil;
 import com.github.tvbox.osc.util.HawkConfig;
 import com.github.tvbox.osc.util.LOG;
+import com.github.tvbox.osc.util.live.TxtSubscribe;
 import com.github.tvbox.osc.util.urlhttp.CallBackUtil;
 import com.github.tvbox.osc.util.urlhttp.UrlHttpUtil;
 import com.google.gson.Gson;
@@ -80,6 +83,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Hashtable;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -191,7 +195,7 @@ public class LivePlayActivity extends BaseActivity {
     protected int getLayoutResID() {
         return R.layout.activity_live_play;
     }
-   boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
+
     @Override
     protected void init() {
         context = this;
@@ -422,7 +426,14 @@ public class LivePlayActivity extends BaseActivity {
         String finalChannelName = channelName;
         epgListAdapter.CanBack(currentLiveChannelItem.getinclude_back());
         //epgListAdapter.updateData(date, new ArrayList<>());
-        UrlHttpUtil.get(epgStringAddress + "?ch="+ URLEncoder.encode(epgTagName) + "&date=" + timeFormat.format(date), new CallBackUtil.CallBackString() {
+
+        String url;
+        if(epgStringAddress.contains("{name}") && epgStringAddress.contains("{date}")){
+            url= epgStringAddress.replace("{name}",URLEncoder.encode(epgTagName)).replace("{date}",timeFormat.format(date));
+        }else {
+            url= epgStringAddress + "?ch="+ URLEncoder.encode(epgTagName) + "&date=" + timeFormat.format(date);
+        }
+        UrlHttpUtil.get(url, new CallBackUtil.CallBackString() {
             public void onFailure(int i, String str) {
                 showEpg(date, new ArrayList());
                 showBottomEpg();
@@ -892,7 +903,10 @@ public class LivePlayActivity extends BaseActivity {
             }
         }
     };
-
+//画中画
+    boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
+    
+    
     //laodao 7天Epg数据绑定和展示
     private void initEpgListView() {
         mRightEpgList.setHasFixedSize(true);
@@ -1526,7 +1540,6 @@ public class LivePlayActivity extends BaseActivity {
         }
 
         if (list.size() == 1 && list.get(0).getGroupName().startsWith("http://127.0.0.1")) {
-            showLoading();
             loadProxyLives(list.get(0).getGroupName());
         }
         else {
@@ -1538,6 +1551,15 @@ public class LivePlayActivity extends BaseActivity {
     }
 
     public void loadProxyLives(String url) {
+        try {
+            Uri parsedUrl = Uri.parse(url);
+            url = new String(Base64.decode(parsedUrl.getQueryParameter("ext"), Base64.DEFAULT | Base64.URL_SAFE | Base64.NO_WRAP), "UTF-8");
+        } catch (Throwable th) {
+            Toast.makeText(App.getInstance(), "频道列表为空", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+        showLoading();
         OkGo.<String>get(url).execute(new AbsCallback<String>() {
 
             @Override
@@ -1547,7 +1569,11 @@ public class LivePlayActivity extends BaseActivity {
 
             @Override
             public void onSuccess(Response<String> response) {
-                JsonArray livesArray = new Gson().fromJson(response.body(), JsonArray.class);
+                JsonArray livesArray;
+                LinkedHashMap<String, LinkedHashMap<String, ArrayList<String>>> linkedHashMap = new LinkedHashMap<>();
+                TxtSubscribe.parse(linkedHashMap, response.body());
+                livesArray = TxtSubscribe.live2JsonArray(linkedHashMap);
+
                 ApiConfig.get().loadLives(livesArray);
                 List<LiveChannelGroup> list = ApiConfig.get().getChannelGroupList();
                 if (list.isEmpty()) {
