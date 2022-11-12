@@ -18,8 +18,9 @@ import android.view.animation.BounceInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.constraintlayout.widget.ConstraintLayout;
+
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DiffUtil;
@@ -52,8 +53,9 @@ import com.github.tvbox.osc.util.LOG;
 import com.github.tvbox.osc.viewmodel.SourceViewModel;
 import com.orhanobut.hawk.Hawk;
 import com.owen.tvrecyclerview.widget.TvRecyclerView;
-import com.owen.tvrecyclerview.widget.V7LinearLayoutManager;
 import com.owen.tvrecyclerview.widget.V7GridLayoutManager;
+import com.owen.tvrecyclerview.widget.V7LinearLayoutManager;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -155,7 +157,6 @@ public class HomeActivity extends BaseActivity {
                 }
             }
 
-            
             public void onItemSelected(TvRecyclerView tvRecyclerView, View view, int position) {
                 if (view != null) {
                     HomeActivity.this.isDownOrUp = false;
@@ -227,8 +228,6 @@ public class HomeActivity extends BaseActivity {
         //mHandler.postDelayed(mFindFocus, 500);
     }
 
-
-                                                                  
     private void initViewModel() {
         sourceViewModel = new ViewModelProvider(this).get(SourceViewModel.class);
         sourceViewModel.sortResult.observe(this, new Observer<AbsSortXml>() {
@@ -247,15 +246,11 @@ public class HomeActivity extends BaseActivity {
 
     private boolean dataInitOk = false;
     private boolean jarInitOk = false;
-    
-  // takagen99 : Switch to show / hide source title
-    boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
-    
- private void initData() {
+
+    private void initData() {
         SourceBean home = ApiConfig.get().getHomeSourceBean();
-     if (HomeShow) {
         if (home != null && home.getName() != null && !home.getName().isEmpty())
-            tvName.setText(home.getName());}
+            tvName.setText(home.getName());
         if (dataInitOk && jarInitOk) {
             showLoading();
             sourceViewModel.getSort(ApiConfig.get().getHomeSourceBean().getKey());
@@ -266,7 +261,6 @@ public class HomeActivity extends BaseActivity {
             }
             return;
         }
-        
         showLoading();
         if (dataInitOk && !jarInitOk) {
             if (!ApiConfig.get().getSpider().isEmpty()) {
@@ -594,15 +588,16 @@ public class HomeActivity extends BaseActivity {
     void showSiteSwitch() {
         List<SourceBean> sites = ApiConfig.get().getSourceBeanList();
         if (sites.size() > 0) {
-            String homeSourceKey = ApiConfig.get().getHomeSourceBean().getKey();
             SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
-            dialog.setTip("请选择首页数据源");
             TvRecyclerView tvRecyclerView = dialog.findViewById(R.id.list);
-            tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), 3));
+            int spanCount;
+            spanCount = (int)Math.floor(sites.size()/10);
+            spanCount = Math.min(spanCount, 2);
+            tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), spanCount+1));
             ConstraintLayout cl_root = dialog.findViewById(R.id.cl_root);
             ViewGroup.LayoutParams clp = cl_root.getLayoutParams();
-            clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 800);
-
+            clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 380+200*spanCount);
+            dialog.setTip("首页固定数据源");
             dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<SourceBean>() {
                 @Override
                 public void click(SourceBean value, int pos) {
@@ -630,27 +625,22 @@ public class HomeActivity extends BaseActivity {
                     return oldItem.getKey().equals(newItem.getKey());
                 }
             }, sites, sites.indexOf(ApiConfig.get().getHomeSourceBean()));
-            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-
-
-                }
-            });
             dialog.show();
         }
     }
     void showSiteSwitch2() {
-        List<SourceBean> sites = ApiConfig.get().getSourceBeanList();        
+        List<SourceBean> sites = ApiConfig.get().getSourceBeanList();
         if (sites.size() > 0) {
             SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
-            dialog.setTip("点击打开源主页");
             TvRecyclerView tvRecyclerView = dialog.findViewById(R.id.list);
-            tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), 3));
+            int spanCount;
+            spanCount = (int)Math.floor(sites.size()/10);
+            spanCount = Math.min(spanCount, 2);
+            tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), spanCount+1));
             ConstraintLayout cl_root = dialog.findViewById(R.id.cl_root);
             ViewGroup.LayoutParams clp = cl_root.getLayoutParams();
-            clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 800);
-
+            clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 380+200*spanCount);
+            dialog.setTip("打开临时数据源");
             dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<SourceBean>() {
                 @Override
                 public void click(SourceBean value, int pos) {
@@ -676,7 +666,6 @@ public class HomeActivity extends BaseActivity {
                     return oldItem.getKey().equals(newItem.getKey());
                 }
             }, sites, sites.indexOf(ApiConfig.get().getHomeSourceBean()));
-
             dialog.show();
         }
     }
