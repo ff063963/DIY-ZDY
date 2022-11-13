@@ -220,7 +220,7 @@
                 <LinearLayout
                             
                             android:id="@+id/llPIP"
-                              android:visibility="gone"
+                    
                             android:layout_width="@dimen/vs_0"
                             android:layout_height="match_parent"
                             android:layout_marginStart="@dimen/vs_5"
