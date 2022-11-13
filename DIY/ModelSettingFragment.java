@@ -69,7 +69,10 @@ public class ModelSettingFragment extends BaseLazyFragment {
     private TextView tvShowPreviewText;
     private TextView tvFastSearchText;
     private TextView tvRecStyleText;
-
+    private TextView tvHomeShow;
+    ///private TextView tvLocale;
+    private TextView tvPIP;
+    
     public static ModelSettingFragment newInstance() {
         return new ModelSettingFragment().setArguments();
     }
@@ -85,6 +88,13 @@ public class ModelSettingFragment extends BaseLazyFragment {
 
     @Override
     protected void init() {
+        tvPIP = findViewById(R.id.tvPIP);
+        tvPIP.setText(Hawk.get(HawkConfig.PIC_IN_PIC, false) ? "开启" : "关闭");
+        //tvLocale = findViewById(R.id.tvLocale);
+        //tvLocale.setText(getLocaleView(Hawk.get(HawkConfig.HOME_LOCALE, 0)));
+        tvHomeShow = findViewById(R.id.tvHomeShow);
+        tvHomeShow.setText(Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false) ? "开启" : "关闭");
+        
         tvFastSearchText = findViewById(R.id.showFastSearchText);
         tvFastSearchText.setText(Hawk.get(HawkConfig.FAST_SEARCH_MODE, false) ? "已开启" : "已关闭");
         tvRecStyleText = findViewById(R.id.showRecStyleText);
@@ -124,6 +134,28 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 tvDebugOpen.setText(Hawk.get(HawkConfig.DEBUG_OPEN, false) ? "已打开" : "已关闭");
             }
         });
+        //数据显示
+         // Switch to show / hide source header --------------------------
+        findViewById(R.id.llHomeShow).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FastClickCheckUtil.check(v);
+                Hawk.put(HawkConfig.HOME_SHOW_SOURCE, !Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false));
+                tvHomeShow.setText(Hawk.get(HawkConfig.HOME_SHOW_SOURCE, true) ? "开启" : "关闭");
+            }
+        });
+        
+        //画中画
+        // Switch to ON / OFF Picture-In-Picture -------------------------
+        findViewById(R.id.llPIP).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FastClickCheckUtil.check(v);
+                Hawk.put(HawkConfig.PIC_IN_PIC, !Hawk.get(HawkConfig.PIC_IN_PIC, false));
+                tvPIP.setText(Hawk.get(HawkConfig.PIC_IN_PIC, true) ? "开启" : "关闭");
+            }
+        });
+        
         findViewById(R.id.llParseWebVew).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
