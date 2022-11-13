@@ -99,8 +99,6 @@ public class HomeActivity extends BaseActivity {
         }
     };
 
-
-    
     @Override
     protected int getLayoutResID() {
         return R.layout.activity_home;
@@ -249,16 +247,10 @@ public class HomeActivity extends BaseActivity {
     private boolean dataInitOk = false;
     private boolean jarInitOk = false;
 
-    //数据源显示
-  // takagen99 : Switch to show / hide source title
-    boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
-    
- private void initData() {
+    private void initData() {
         SourceBean home = ApiConfig.get().getHomeSourceBean();
-     if (HomeShow) {
         if (home != null && home.getName() != null && !home.getName().isEmpty())
             tvName.setText(home.getName());
-     } 
         if (dataInitOk && jarInitOk) {
             showLoading();
             sourceViewModel.getSort(ApiConfig.get().getHomeSourceBean().getKey());
