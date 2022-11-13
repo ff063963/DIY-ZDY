@@ -49,7 +49,8 @@ cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout
 sed -i 's/1.0.0 /1.2.0/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 //删除播放器
-sed -i 's/播放器 //g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
+ sed '/播放器/d'$CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
+#sed -i 's/播放器 //g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 
 //按键背景颜色
 sed -i 's/color_808080_95/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_dialog_bg_main.xml
