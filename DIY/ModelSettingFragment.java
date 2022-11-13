@@ -628,7 +628,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 tvRecStyleText.setText(Hawk.get(HawkConfig.HOME_REC_STYLE, false) ? "是" : "否");
             }
         });
-/*
+
         findViewById(R.id.llSearchTv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -692,7 +692,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
     public static SearchRemoteTvDialog loadingSearchRemoteTvDialog;
     public static List<String> remoteTvHostList;
     public static boolean foundRemoteTv;
-*/
+    
     @Override
     public void onDestroyView() {
         super.onDestroyView();
