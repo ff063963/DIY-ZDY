@@ -629,9 +629,9 @@ public class ModelSettingFragment extends BaseLazyFragment {
             }
         });
 /*
-        //findViewById(R.id.llSearchTv).setOnClickListener(new View.OnClickListener() {
-            //@Override
-           // public void onClick(View view) {
+        findViewById(R.id.llSearchTv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 FastClickCheckUtil.check(view);
                 loadingSearchRemoteTvDialog = new SearchRemoteTvDialog(mActivity);
                 EventBus.getDefault().register(loadingSearchRemoteTvDialog);
@@ -664,7 +664,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
                                             EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_SETTING_SEARCH_TV));
                                         }
                                     }
-*/
+
                                     @Override
                                     public void fail(boolean all, boolean end) {
                                         if (end) {
@@ -688,7 +688,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
         });
     }
 
-
+*/
     public static SearchRemoteTvDialog loadingSearchRemoteTvDialog;
     public static List<String> remoteTvHostList;
     public static boolean foundRemoteTv;
