@@ -642,7 +642,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         EventBus.getDefault().unregister(loadingSearchRemoteTvDialog);
                     }
                 });
-                */
+           
                 loadingSearchRemoteTvDialog.show();
 
                 RemoteTVBox tv = new RemoteTVBox();
@@ -664,7 +664,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
                                             EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_SETTING_SEARCH_TV));
                                         }
                                     }
-
+*/
                                     @Override
                                     public void fail(boolean all, boolean end) {
                                         if (end) {
