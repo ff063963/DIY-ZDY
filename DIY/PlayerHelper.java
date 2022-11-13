@@ -159,12 +159,12 @@ public class PlayerHelper {
     public static HashMap<Integer, String> getPlayersInfo() {
         if (mPlayersInfo == null) {
             HashMap<Integer, String> playersInfo = new HashMap<>();
-            playersInfo.put(0, "系统播放器");
-            playersInfo.put(1, "IJK播放器");
-            playersInfo.put(2, "Exo播放器");
-            playersInfo.put(10, "MX播放器");
-            playersInfo.put(11, "Reex播放器");
-            playersInfo.put(12, "Kodi播放器");
+            playersInfo.put(0, "系统");
+            playersInfo.put(1, "IJK");
+            playersInfo.put(2, "Exo");
+            playersInfo.put(10, "MX");
+            playersInfo.put(11, "Reex");
+            playersInfo.put(12, "Kodi");
             playersInfo.put(13, "附近TVBox");
             mPlayersInfo = playersInfo;
         }
