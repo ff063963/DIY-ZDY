@@ -628,10 +628,10 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 tvRecStyleText.setText(Hawk.get(HawkConfig.HOME_REC_STYLE, false) ? "是" : "否");
             }
         });
-
-        findViewById(R.id.llSearchTv).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+/*
+        //findViewById(R.id.llSearchTv).setOnClickListener(new View.OnClickListener() {
+            //@Override
+           // public void onClick(View view) {
                 FastClickCheckUtil.check(view);
                 loadingSearchRemoteTvDialog = new SearchRemoteTvDialog(mActivity);
                 EventBus.getDefault().register(loadingSearchRemoteTvDialog);
@@ -642,6 +642,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         EventBus.getDefault().unregister(loadingSearchRemoteTvDialog);
                     }
                 });
+                */
                 loadingSearchRemoteTvDialog.show();
 
                 RemoteTVBox tv = new RemoteTVBox();
