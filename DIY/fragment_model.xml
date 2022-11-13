@@ -218,9 +218,9 @@
     
                 
                 <LinearLayout
-                              android:visibility="gone"
-                            android:id="@+id/llPIP"
                             
+                            android:id="@+id/llPIP"
+                              android:visibility="gone"
                             android:layout_width="@dimen/vs_0"
                             android:layout_height="match_parent"
                             android:layout_marginStart="@dimen/vs_5"
@@ -702,9 +702,9 @@
                             android:textSize="@dimen/ts_30" />
                     </LinearLayout>    
                        
-                       <LinearLayout
-                                     android:visibility="gone"
+                       <LinearLayout   
                         android:id="@+id/llSearchTv"
+                                             android:visibility="gone"
                                   android:visibility="gone"
                         android:layout_width="@dimen/vs_0"
                         android:layout_height="match_parent"
