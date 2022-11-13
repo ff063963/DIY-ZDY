@@ -45,7 +45,7 @@ cp $CURRENT_DIR/DIY/dialog_about_关于.xml $CURRENT_DIR/$DIR/app/src/main/res/l
 #sed -i 's/epgApi"/epgApi" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/关于/关于\\n1.1.9/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 //设置界面修改
-cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/1.0.0 /1.2.1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 //删除播放器
