@@ -202,7 +202,8 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_30" />
                     </LinearLayout>
-                
+      </LinearLayout>
+
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/vs_60"
@@ -829,8 +830,7 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_30" />
                     </LinearLayout>
-                </LinearLayout>
-
+         
 
             </LinearLayout>
 
