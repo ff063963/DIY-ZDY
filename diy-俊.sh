@@ -49,8 +49,8 @@ sed -i 's/关于/关于\\n1.2.1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fra
 #sed -i 's/1.0.0 /1.2.1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 //删除播放器
-cp $CURRENT_DIR/DIY/PlayerHelper.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
- #sed '/播放器/d'$CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
+#cp $CURRENT_DIR/DIY/PlayerHelper.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
+ sed -i'/播放器/d'$CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 #sed -i 's/播放器 //g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 
 //按键背景颜色
