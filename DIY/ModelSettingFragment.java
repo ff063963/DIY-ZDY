@@ -1,15 +1,12 @@
 package com.github.tvbox.osc.ui.fragment;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
-
 import com.github.tvbox.osc.R;
 import com.github.tvbox.osc.api.ApiConfig;
 import com.github.tvbox.osc.base.BaseActivity;
@@ -46,13 +43,26 @@ import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
 import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 
+
+    
+          
+            
+    
+
+          
+          
+            
+    
+
+          
+    
+    @@ -86,6 +91,28 @@ protected int getLayoutResID() {
+  
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 import okhttp3.HttpUrl;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
-
 /**
  * @author pj567
  * @date :2020/12/23
@@ -81,17 +91,16 @@ public class ModelSettingFragment extends BaseLazyFragment {
     public static ModelSettingFragment newInstance() {
         return new ModelSettingFragment().setArguments();
     }
-
     public ModelSettingFragment setArguments() {
         return this;
     }
-
     @Override
     protected int getLayoutResID() {
         return R.layout.fragment_model;
     }
 
-    
+   
+
     @Override
     protected void init() {
         tvPIP = findViewById(R.id.tvPIP);
@@ -123,7 +132,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
         tvDebugOpen.setText(Hawk.get(HawkConfig.DEBUG_OPEN, false) ? "已打开" : "已关闭");
         tvParseWebView.setText(Hawk.get(HawkConfig.PARSE_WEBVIEW, true) ? "系统自带" : "XWalkView");
         tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
-
         tvDns.setText(OkGoHelper.dnsHttpsList.get(Hawk.get(HawkConfig.DOH_URL, 0)));
         tvHomeRec.setText(getHomeRecName(Hawk.get(HawkConfig.HOME_REC, 0)));
         tvHistoryNum.setText(HistoryHelper.getHistoryNumName(Hawk.get(HawkConfig.HISTORY_NUM, 0)));
@@ -162,8 +170,8 @@ public class ModelSettingFragment extends BaseLazyFragment {
             }
         });
         
-        //历史配置列表
-                findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
+         //历史配置列表
+ findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
@@ -199,6 +207,9 @@ public class ModelSettingFragment extends BaseLazyFragment {
             }
         };
     }
+    
+        
+        
         
         findViewById(R.id.llParseWebVew).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -245,12 +256,10 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         public void onSuccess(Response<File> response) {
                             ((BaseActivity) requireActivity()).changeWallpaper(true);
                         }
-
                         @Override
                         public void onError(Response<File> response) {
                             super.onError(response);
                         }
-
                         @Override
                         public void downloadProgress(Progress progress) {
                             super.downloadProgress(progress);
@@ -281,7 +290,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         public void click(SourceBean value, int pos) {
                             ApiConfig.get().setSourceBean(value);
                             tvHomeApi.setText(ApiConfig.get().getHomeSourceBean().getName());
-
                             Intent intent =new Intent(mContext, HomeActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             Bundle bundle = new Bundle();
@@ -289,7 +297,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                             intent.putExtras(bundle);
                             startActivity(intent);
                         }
-
                         @Override
                         public String getDisplay(SourceBean val) {
                             return val.getName();
@@ -299,7 +306,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         public boolean areItemsTheSame(@NonNull @NotNull SourceBean oldItem, @NonNull @NotNull SourceBean newItem) {
                             return oldItem == newItem;
                         }
-
                         @Override
                         public boolean areContentsTheSame(@NonNull @NotNull SourceBean oldItem, @NonNull @NotNull SourceBean newItem) {
                             return oldItem.getKey().equals(newItem.getKey());
@@ -314,7 +320,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
             public void onClick(View v) {
                 FastClickCheckUtil.check(v);
                 int dohUrl = Hawk.get(HawkConfig.DOH_URL, 0);
-
                 SelectDialog<String> dialog = new SelectDialog<>(mActivity);
                 dialog.setTip("请选择安全DNS");
                 dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<String>() {
@@ -326,7 +331,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         OkGoHelper.dnsOverHttps.setUrl(url.isEmpty() ? null : HttpUrl.get(url));
                         IjkMediaPlayer.toggleDotPort(pos > 0);
                     }
-
                     @Override
                     public String getDisplay(String val) {
                         return val;
@@ -336,7 +340,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public boolean areItemsTheSame(@NonNull @NotNull String oldItem, @NonNull @NotNull String newItem) {
                         return oldItem.equals(newItem);
                     }
-
                     @Override
                     public boolean areContentsTheSame(@NonNull @NotNull String oldItem, @NonNull @NotNull String newItem) {
                         return oldItem.equals(newItem);
@@ -345,10 +348,29 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.show();
             }
         });
-       
-
-
-
+        findViewById(R.id.llApi).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FastClickCheckUtil.check(v);
+                ApiDialog dialog = new ApiDialog(mActivity);
+                EventBus.getDefault().register(dialog);
+                dialog.setOnListener(new ApiDialog.OnListener() {
+                    @Override
+                    public void onchange(String api) {
+                        Hawk.put(HawkConfig.API_URL, api);
+                        tvApi.setText(api);
+                    }
+                });
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        ((BaseActivity) mActivity).hideSysBar();
+                        EventBus.getDefault().unregister(dialog);
+                    }
+                });
+                dialog.show();
+            }
+        });
         findViewById(R.id.llMediaCodec).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -356,7 +378,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 if (ijkCodes == null || ijkCodes.size() == 0)
                     return;
                 FastClickCheckUtil.check(v);
-
                 int defaultPos = 0;
                 String ijkSel = Hawk.get(HawkConfig.IJK_CODEC, "");
                 for (int j = 0; j < ijkCodes.size(); j++) {
@@ -365,7 +386,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         break;
                     }
                 }
-
                 SelectDialog<IJKCode> dialog = new SelectDialog<>(mActivity);
                 dialog.setTip("请选择IJK解码");
                 dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<IJKCode>() {
@@ -374,7 +394,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         value.selected(true);
                         tvMediaCodec.setText(value.getName());
                     }
-
                     @Override
                     public String getDisplay(IJKCode val) {
                         return val.getName();
@@ -384,7 +403,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public boolean areItemsTheSame(@NonNull @NotNull IJKCode oldItem, @NonNull @NotNull IJKCode newItem) {
                         return oldItem == newItem;
                     }
-
                     @Override
                     public boolean areContentsTheSame(@NonNull @NotNull IJKCode oldItem, @NonNull @NotNull IJKCode newItem) {
                         return oldItem.getName().equals(newItem.getName());
@@ -413,7 +431,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         Hawk.put(HawkConfig.PLAY_SCALE, value);
                         tvScale.setText(PlayerHelper.getScaleName(value));
                     }
-
                     @Override
                     public String getDisplay(Integer val) {
                         return PlayerHelper.getScaleName(val);
@@ -423,7 +440,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
                     }
-
                     @Override
                     public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
@@ -456,7 +472,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         tvPlay.setText(PlayerHelper.getPlayerName(thisPlayerType));
                         PlayerHelper.init();
                     }
-
                     @Override
                     public String getDisplay(Integer val) {
                         Integer playerType = players.get(val);
@@ -467,7 +482,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
                     }
-
                     @Override
                     public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
@@ -493,7 +507,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         tvRender.setText(PlayerHelper.getRenderName(value));
                         PlayerHelper.init();
                     }
-
                     @Override
                     public String getDisplay(Integer val) {
                         return PlayerHelper.getRenderName(val);
@@ -503,7 +516,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
                     }
-
                     @Override
                     public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
@@ -529,7 +541,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         Hawk.put(HawkConfig.HOME_REC, value);
                         tvHomeRec.setText(getHomeRecName(value));
                     }
-
                     @Override
                     public String getDisplay(Integer val) {
                         return getHomeRecName(val);
@@ -539,7 +550,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
                     }
-
                     @Override
                     public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
@@ -564,7 +574,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         Hawk.put(HawkConfig.SEARCH_VIEW, value);
                         tvSearchView.setText(getSearchView(value));
                     }
-
                     @Override
                     public String getDisplay(Integer val) {
                         return getSearchView(val);
@@ -574,7 +583,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
                     }
-
                     @Override
                     public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
@@ -589,7 +597,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 findViewById(R.id.llDebug).setVisibility(View.VISIBLE);
             }
         };
-
         findViewById(R.id.showPreview).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -615,7 +622,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         Hawk.put(HawkConfig.HISTORY_NUM, value);
                         tvHistoryNum.setText(HistoryHelper.getHistoryNumName(value));
                     }
-
                     @Override
                     public String getDisplay(Integer val) {
                         return HistoryHelper.getHistoryNumName(val);
@@ -625,7 +631,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                     public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
                     }
-
                     @Override
                     public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
                         return oldItem.intValue() == newItem.intValue();
@@ -650,7 +655,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 tvRecStyleText.setText(Hawk.get(HawkConfig.HOME_REC_STYLE, false) ? "是" : "否");
             }
         });
-
         findViewById(R.id.llSearchTv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -666,14 +670,12 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 });
            
                 loadingSearchRemoteTvDialog.show();
-
                 RemoteTVBox tv = new RemoteTVBox();
                 remoteTvHostList = new ArrayList<>();
                 foundRemoteTv = false;
                 view.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
@@ -686,7 +688,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                                             EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_SETTING_SEARCH_TV));
                                         }
                                     }
-
                                     @Override
                                     public void fail(boolean all, boolean end) {
                                         if (end) {
@@ -701,16 +702,11 @@ public class ModelSettingFragment extends BaseLazyFragment {
                                 });
                             }
                         }).start();
-
                     }
                 }, 500);
-
-
             }
         });
     }
-
-
     public static SearchRemoteTvDialog loadingSearchRemoteTvDialog;
     public static List<String> remoteTvHostList;
     public static boolean foundRemoteTv;
@@ -720,7 +716,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
         super.onDestroyView();
         SettingActivity.callback = null;
     }
-
     String getHomeRecName(int type) {
         if (type == 1) {
             return "站点推荐";
@@ -730,7 +725,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
             return "豆瓣热播";
         }
     }
-
     String getSearchView(int type) {
         if (type == 0) {
             return "文字列表";
