@@ -66,10 +66,12 @@
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
 
-   <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+          <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/vs_50"
+                    android:layout_marginBottom="@dimen/vs_10"
+                    android:focusable="false"
+                    android:orientation="horizontal">
             <LinearLayout
                     android:id="@+id/llApi"
                     android:layout_width="match_parent"
@@ -140,9 +142,9 @@
                     android:focusable="false"
                     android:orientation="horizontal">
               
-                   <LinearLayout                                   
-                    android:id="@+id/llHomeApi"
-                 android:layout_width="@dimen/vs_0"
+            <LinearLayout                                   
+                        android:id="@+id/llHomeApi"
+                        android:layout_width="@dimen/vs_0"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="@dimen/vs_5"
                         android:layout_marginRight="@dimen/vs_5"
@@ -384,7 +386,7 @@
                         
    <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/vs_50"
+                    android:layout_height="@dimen/vs_60"
                     android:layout_marginBottom="@dimen/vs_10"
                     android:focusable="false"
                     android:orientation="horizontal">
@@ -485,13 +487,6 @@
                     </LinearLayout>
             
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/vs_60"
-                    android:layout_marginBottom="@dimen/vs_10"
-                    android:focusable="false"
-                    android:orientation="horizontal">
-
                 <LinearLayout
                         android:id="@+id/llPlay"
                         android:layout_width="@dimen/vs_0"
@@ -578,8 +573,7 @@
                             android:textSize="@dimen/ts_30" />
                 </LinearLayout>
             </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
+      </LinearLayout>
 
 </LinearLayout>
                     
