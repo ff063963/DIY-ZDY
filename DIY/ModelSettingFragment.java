@@ -149,7 +149,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
             }
         });
         //历史配置列表
-            findViewById(R.id.apiHistory).setOnClickListener(new View.OnClickListener() {
+             findViewById(R.id.apiHistory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
@@ -177,14 +177,8 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.show();
             }
         });
-        
-           findViewById(R.id.llHomeApi).requestFocus();
-        SettingActivity.callback = new SettingActivity.DevModeCallback() {
-            @Override
-            public void onChange() {
-                findViewById(R.id.llDebug).setVisibility(View.VISIBLE);
-            }
-        };
+ 
+        refreshQRCode();
     }
         
         findViewById(R.id.llParseWebVew).setOnClickListener(new View.OnClickListener() {
