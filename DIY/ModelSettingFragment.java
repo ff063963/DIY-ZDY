@@ -179,9 +179,10 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
                     @Override
                     public void click(String value) {
-                        inputApi.setText(value);
-                        listener.onchange(value);
+                           Hawk.put(HawkConfig.API_URL, value);
+                        tvApi.setText(value);
                         dialog.dismiss();
+                       
                     }
 
                     @Override
