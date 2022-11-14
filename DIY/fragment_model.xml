@@ -80,7 +80,7 @@
                     android:layout_marginEnd="@dimen/vs_5"
                     android:layout_marginRight="@dimen/vs_5"
                     android:layout_marginBottom="@dimen/vs_10"
-                    android:layout_weight="3.1"
+                    android:layout_weight="3.05"
                     android:background="@drawable/shape_setting_model_focus"
                     android:focusable="true"
       
@@ -140,7 +140,8 @@
 
                     <TextView  
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"              
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|center_horizontal"      
                         android:text="配置历史"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_24" />
@@ -177,7 +178,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginEnd="@dimen/vs_5"
                         android:layout_marginRight="@dimen/vs_5"                    
-                        android:layout_weight="3.1"
+                        android:layout_weight="1"
                         android:background="@drawable/shape_setting_model_focus"
                         android:focusable="true"
                         android:gravity="center_vertical"
@@ -240,17 +241,11 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
-                        <Space
+                          
+                      <Space
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1" />
-
-                        <TextView
-                            android:id="@+id/showPreviewText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@android:color/white"
-                            android:textSize="@dimen/ts_24" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -261,6 +256,9 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_30" />
                     </LinearLayout>
+                          
+                          
+                   
                 
                  </LinearLayout>           
                
@@ -996,11 +994,17 @@
                             android:text="窗口预览"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
-
-                        <Space
+                         <Space
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/showPreviewText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/ts_24" />
 
                         <TextView
                             android:layout_width="wrap_content"
