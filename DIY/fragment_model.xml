@@ -235,7 +235,13 @@
                     android:focusable="false"
                     android:orientation="horizontal">
 
-            
+                   <LinearLayout
+                        android:layout_width="@dimen/vs_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/vs_5"
+                        android:layout_marginRight="@dimen/vs_5"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
                 
             <LinearLayout
                         android:id="@+id/llHomeShow"
