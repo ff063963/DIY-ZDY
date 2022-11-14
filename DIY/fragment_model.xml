@@ -66,12 +66,6 @@
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
 
-           
-
-
-
-                
-        
 
             <LinearLayout
                     android:id="@+id/llApi"
@@ -263,7 +257,14 @@
                             android:textSize="@dimen/ts_30" />
                     </LinearLayout>
                      
-
+   <LinearLayout
+                        android:layout_width="@dimen/vs_0"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/vs_5"
+                        android:layout_marginLeft="@dimen/vs_5"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+           
                     <LinearLayout
                         android:id="@+id/llScale"
                         android:layout_width="@dimen/vs_0"
@@ -347,7 +348,7 @@
                                 android:textColor="@android:color/white"
                                 android:textSize="@dimen/ts_30" />
                         </LinearLayout>   
-                
+                    </LinearLayout>
                  
                 </LinearLayout>
                         
