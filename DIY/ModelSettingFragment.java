@@ -38,6 +38,11 @@ import com.lzy.okgo.model.Progress;
 import com.lzy.okgo.model.Response;
 import com.orhanobut.hawk.Hawk;
 
+import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
+import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
+
+
+
 import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 
@@ -86,6 +91,28 @@ public class ModelSettingFragment extends BaseLazyFragment {
         return R.layout.fragment_model;
     }
 
+    //历史配置列表
+      findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
+                if (history.isEmpty())
+                    return;
+                String current = Hawk.get(HawkConfig.API_URL, "");
+                int idx = 0;
+                if (history.contains(current))
+                    idx = history.indexOf(current);
+                ApiHistoryDialog dialog = new ApiHistoryDialog(getContext());
+                dialog.setTip("历史配置列表");
+                dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
+                    @Override
+                    public void click(String value) {
+                        Hawk.put(HawkConfig.API_URL, value);
+                        tvApi.setText(value);
+                        dialog.dismiss();
+                    }
+    
+    
     @Override
     protected void init() {
         tvPIP = findViewById(R.id.tvPIP);
