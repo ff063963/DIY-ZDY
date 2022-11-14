@@ -92,7 +92,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
     }
 
     //历史配置列表
-      findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
+         findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
@@ -111,8 +111,23 @@ public class ModelSettingFragment extends BaseLazyFragment {
                         tvApi.setText(value);
                         dialog.dismiss();
                     }
-    
-    
+
+                    @Override
+                    public void del(String value, ArrayList<String> data) {
+                        Hawk.put(HawkConfig.API_HISTORY, data);
+                    }
+                }, history, idx);
+                dialog.show();
+            }
+        });
+        findViewById(R.id.llHomeApi).requestFocus();
+        SettingActivity.callback = new SettingActivity.DevModeCallback() {
+            @Override
+            public void onChange() {
+                findViewById(R.id.llDebug).setVisibility(View.VISIBLE);
+            }
+        };
+    }
     @Override
     protected void init() {
         tvPIP = findViewById(R.id.tvPIP);
