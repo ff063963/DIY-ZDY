@@ -65,20 +65,20 @@
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
-
-                   <LinearLayout
+                
+     <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-
-                    <LinearLayout
-          
+             
+             <LinearLayout
                     android:id="@+id/llHomeApi"
-                    android:layout_width="@dimen/vs_0"
+                android:layout_width="@dimen/vs_0"
                     android:layout_height="@dimen/vs_60"
                     android:layout_marginEnd="@dimen/vs_10"
                     android:layout_marginRight="@dimen/vs_10"
-                    android:layout_marginBottom="@dimen/vs_10"  
+                    android:layout_marginBottom="@dimen/vs_10"
+                    android:layout_weight="3"
                     android:background="@drawable/shape_setting_model_focus"
                     android:focusable="true"
                     android:gravity="center_vertical"
@@ -89,7 +89,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="首页数据源"
+                        android:text="数据源"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_24" />
 
@@ -116,7 +116,8 @@
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
-         <LinearLayout
+                
+              <LinearLayout
                     android:id="@+id/llApiHistory"
                     android:layout_width="@dimen/vs_0"
                     android:layout_height="match_parent"
@@ -137,7 +138,9 @@
                         android:textSize="@dimen/ts_24" />
                 </LinearLayout>
 
-            </LinearLayout>
+            </LinearLayout>   
+                
+                
       <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/vs_60"
