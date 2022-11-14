@@ -157,7 +157,7 @@
                                 android:textColor="@android:color/white"
                                 android:textSize="@dimen/ts_30" />
                         </LinearLayout>
-
+     </LinearLayout>
             <LinearLayout
                     android:id="@+id/llHomeApi"
                     android:layout_width="match_parent"
