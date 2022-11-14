@@ -162,6 +162,39 @@ public class ModelSettingFragment extends BaseLazyFragment {
             }
         });
         
+        
+        //历史配置列表
+                findViewById(R.id.apiHistory).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
+                if (history.isEmpty())
+                    return;
+                String current = Hawk.get(HawkConfig.API_URL, "");
+                int idx = 0;
+                if (history.contains(current))
+                    idx = history.indexOf(current);
+                ApiHistoryDialog dialog = new ApiHistoryDialog(getContext());
+                dialog.setTip("历史配置列表");
+                dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
+                    @Override
+                    public void click(String value) {
+                        inputApi.setText(value);
+                        listener.onchange(value);
+                        dialog.dismiss();
+                    }
+
+                    @Override
+                    public void del(String value, ArrayList<String> data) {
+                        Hawk.put(HawkConfig.API_HISTORY, data);
+                    }
+                }, history, idx);
+                dialog.show();
+            }
+        });
+        
+        
+        
         findViewById(R.id.llParseWebVew).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
