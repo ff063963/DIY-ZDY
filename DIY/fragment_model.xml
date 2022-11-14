@@ -66,7 +66,10 @@
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
 
-
+   <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
             <LinearLayout
                     android:id="@+id/llApi"
                     android:layout_width="match_parent"
@@ -109,7 +112,27 @@
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>
+<LinearLayout
+                    android:id="@+id/llApiHistory"
+                    android:layout_width="@dimen/vs_0"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/vs_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_setting_model_focus"
+                    android:focusable="true"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|center_horizontal"
+                        android:gravity="center"
+                        android:text="配置历史"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/ts_24" />
+                </LinearLayout>
+      </LinearLayout>
       <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/vs_60"
