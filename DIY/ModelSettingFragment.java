@@ -164,7 +164,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
         
         
         //历史配置列表
-                findViewById(R.id.apiHistory).setOnClickListener(new View.OnClickListener() {
+           findViewById(R.id.apiHistory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
@@ -179,10 +179,9 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
                     @Override
                     public void click(String value) {
-                           Hawk.put(HawkConfig.API_URL, value);
-                        tvApi.setText(value);
+                        inputApi.setText(value);
+                        listener.onchange(value);
                         dialog.dismiss();
-                       
                     }
 
                     @Override
@@ -193,8 +192,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.show();
             }
         });
-        
-        
         
         findViewById(R.id.llParseWebVew).setOnClickListener(new View.OnClickListener() {
             @Override
