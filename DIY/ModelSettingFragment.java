@@ -34,30 +34,10 @@ import com.lzy.okgo.callback.FileCallback;
 import com.lzy.okgo.model.Progress;
 import com.lzy.okgo.model.Response;
 import com.orhanobut.hawk.Hawk;
-
 import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
 import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
-
-
-
 import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
-
-
-    
-          
-            
-    
-
-          
-          
-            
-    
-
-          
-    
-    @@ -86,6 +91,28 @@ protected int getLayoutResID() {
-  
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -99,11 +79,20 @@ public class ModelSettingFragment extends BaseLazyFragment {
         return R.layout.fragment_model;
     }
 
-   
 
     @Override
     protected void init() {
         tvPIP = findViewById(R.id.tvPIP);
+
+    
+          
+            
+    
+
+          
+    
+    
+  
         tvPIP.setText(Hawk.get(HawkConfig.PIC_IN_PIC, false) ? "开启" : "关闭");
         //tvLocale = findViewById(R.id.tvLocale);
         //tvLocale.setText(getLocaleView(Hawk.get(HawkConfig.HOME_LOCALE, 0)));
@@ -169,47 +158,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 tvPIP.setText(Hawk.get(HawkConfig.PIC_IN_PIC, true) ? "开启" : "关闭");
             }
         });
-        
-         //历史配置列表
- findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
-                if (history.isEmpty())
-                    return;
-                String current = Hawk.get(HawkConfig.API_URL, "");
-                int idx = 0;
-                if (history.contains(current))
-                    idx = history.indexOf(current);
-                ApiHistoryDialog dialog = new ApiHistoryDialog(getContext());
-                dialog.setTip("历史配置列表");
-                dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
-                    @Override
-                    public void click(String value) {
-                        Hawk.put(HawkConfig.API_URL, value);
-                        tvApi.setText(value);
-                        dialog.dismiss();
-                    }
-
-                    @Override
-                    public void del(String value, ArrayList<String> data) {
-                        Hawk.put(HawkConfig.API_HISTORY, data);
-                    }
-                }, history, idx);
-                dialog.show();
-            }
-        });
-        findViewById(R.id.llHomeApi).requestFocus();
-        SettingActivity.callback = new SettingActivity.DevModeCallback() {
-            @Override
-            public void onChange() {
-                findViewById(R.id.llDebug).setVisibility(View.VISIBLE);
-            }
-        };
-    }
-    
-        
-        
         
         findViewById(R.id.llParseWebVew).setOnClickListener(new View.OnClickListener() {
             @Override
