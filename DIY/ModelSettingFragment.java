@@ -36,6 +36,7 @@ import com.lzy.okgo.model.Response;
 import com.orhanobut.hawk.Hawk;
 import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
 import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
+
 import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 import java.io.File;
@@ -149,7 +150,7 @@ public class ModelSettingFragment extends BaseLazyFragment {
             }
         });
         //历史配置列表
-    findViewById(R.id.apiHistory).setOnClickListener(new View.OnClickListener() {
+     findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
@@ -160,12 +161,12 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 if (history.contains(current))
                     idx = history.indexOf(current);
                 ApiHistoryDialog dialog = new ApiHistoryDialog(getContext());
-                dialog.setTip("历史配置列表");
+                dialog.setTip(getString(R.string.dia_history_list));
                 dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
                     @Override
-                    public void click(String value) {
-                        inputApi.setText(value);
-                        listener.onchange(value);
+                    public void click(String api) {
+                        Hawk.put(HawkConfig.API_URL, api);
+                        tvApi.setText(api);
                         dialog.dismiss();
                     }
 
@@ -177,11 +178,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.show();
             }
         });
-    
-    public interface OnListener {
-        void onchange(String api);
-    }
-}
         
         findViewById(R.id.llParseWebVew).setOnClickListener(new View.OnClickListener() {
             @Override
