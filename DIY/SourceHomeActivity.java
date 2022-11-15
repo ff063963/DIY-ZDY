@@ -61,11 +61,26 @@ public class SourceHomeActivity extends BaseActivity {
     private Handler mHandler = new Handler();
     private String sourceKey = null;
 
+        private long mExitTime = 0;
+    private Runnable mRunnable = new Runnable() {
+        @SuppressLint({"DefaultLocale", "SetTextI18n"})
+        @Override
+        public void run() {
+            Date date = new Date();
+            @SuppressLint("SimpleDateFormat")
+            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+            tvDate.setText(timeFormat.format(date));
+            mHandler.postDelayed(this, 1000);
+        }
+    };
+
     @Override
     protected int getLayoutResID() {
-        return R.layout.activity_source_home;
+        return R.layout.activity_home;
     }
+
     
+ 
     @Override
     protected void init() {
         initView();
@@ -78,6 +93,9 @@ public class SourceHomeActivity extends BaseActivity {
 
     private void initView() {
         this.contentLayout = findViewById(R.id.ty_contentLayout);
+        this.topLayout = findViewById(R.id.topLayout);
+        this.tvDate = findViewById(R.id.tvDate);
+        this.tvName = findViewById(R.id.tvName);
         //this.zyGridView = findViewById(R.id.ty_zyGridView);
         this.mGridView = findViewById(R.id.ty_mGridView);
         this.mViewPager = findViewById(R.id.ty_mViewPager);
