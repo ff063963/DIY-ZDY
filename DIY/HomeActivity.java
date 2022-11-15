@@ -531,7 +531,7 @@ public class HomeActivity extends BaseActivity {
         int keyCode = event.getKeyCode();
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             if (keyCode == KeyEvent.KEYCODE_MENU) {
-                showSiteSwitch2();
+                showSiteSwitch();
             }
         } else if (event.getAction() == KeyEvent.ACTION_UP) {
 
@@ -652,7 +652,7 @@ public class HomeActivity extends BaseActivity {
             dialog.show();
         }
     }
-    void showSiteSwitch2() {
+    void showSiteSwitch() {
         List<SourceBean> sites = ApiConfig.get().getSourceBeanList();
         if (sites.size() > 0) {
             SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
@@ -671,7 +671,7 @@ public class HomeActivity extends BaseActivity {
                     Bundle bundle = new Bundle();
                     bundle.putString("type", "SourceHome");
                     bundle.putStringArray("sourceKey", new String[]{value.getKey()});
-                    jumpActivity(HomeActivity俊.class, bundle);
+                    jumpActivity(HomeActivity.class, bundle);
                     //dialog.dismiss();
                 }
 
