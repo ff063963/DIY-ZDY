@@ -42,7 +42,7 @@ sed -i 's/关于/关于\\n1.2.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fra
 
 #首页多排
 #mv $CURRENT_DIR/DIY/activity_source_home.xml $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/activity_source_home.xml
-#mv $CURRENT_DIR/DIY/SourceHomeActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/SourceHomeActivity.java
+cp $CURRENT_DIR/DIY/SourceHomeActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/SourceHomeActivity.java
 sed -i 's/380+200*spanCount/380+100*spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 sed -i 's/spanCount+1/spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
