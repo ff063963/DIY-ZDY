@@ -32,12 +32,13 @@ cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/string
 cp $CURRENT_DIR/DIY/HawkConfig.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/HawkConfig.java
 #设置界面
 cp $CURRENT_DIR/DIY/AndroidManifest.xml $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
-cp $CURRENT_DIR/DIY/SourceHomeActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/SourceHomeActivity.java
+
 cp $CURRENT_DIR/DIY/HomeActivity猫爪.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+cp $CURRENT_DIR/DIY/ModelSettingFragment.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 
 #首页多排
-cp $CURRENT_DIR/DIY/activity_source_home.xml $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/activity_source_home.xml
-cp $CURRENT_DIR/DIY/ModelSettingFragment.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
+mv $CURRENT_DIR/DIY/activity_source_home.xml $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/activity_source_home.xml
+mv $CURRENT_DIR/DIY/SourceHomeActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/SourceHomeActivity.java
 sed -i 's/380+200*spanCount/380+100*spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 sed -i 's/spanCount+1/spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
