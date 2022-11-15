@@ -214,7 +214,13 @@ public class HomeActivity extends BaseActivity {
             public void onClick(View v) {
                 dataInitOk = false;
                 jarInitOk = true;
-                showSiteSwitch2();
+                showSiteSwitch
+                    
+                    
+                    
+                    
+                    
+                    ();
             }
         });
         tvName.setOnLongClickListener(new View.OnLongClickListener() {
