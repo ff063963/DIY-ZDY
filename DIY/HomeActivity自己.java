@@ -678,7 +678,7 @@ public class HomeActivity extends BaseActivity {
                     Bundle bundle = new Bundle();
                     bundle.putString("type", "SourceHome");
                     bundle.putStringArray("sourceKey", new String[]{value.getKey()});
-                    jumpActivity(HomeActivity2.class, bundle);
+                    jumpActivity(SourceHomeActivity2.class, bundle);
                     //dialog.dismiss();
                 }
 
