@@ -187,7 +187,8 @@ public class HomeActivity extends BaseActivity {
                     if ((baseLazyFragment instanceof GridFragment) && !sortAdapter.getItem(position).filters.isEmpty()) {// 弹出筛选
                         ((GridFragment) baseLazyFragment).showFilter();
                     } else if (baseLazyFragment instanceof UserFragment) {
-                        showSiteSwitch();
+                        showSiteSwitch
+                            ();
                     }
                 }
             }
@@ -214,7 +215,7 @@ public class HomeActivity extends BaseActivity {
             public void onClick(View v) {
                 dataInitOk = false;
                 jarInitOk = true;
-                showSiteSwitch
+                showSiteSwitch2
                     
                     
                     
@@ -537,7 +538,7 @@ public class HomeActivity extends BaseActivity {
         int keyCode = event.getKeyCode();
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             if (keyCode == KeyEvent.KEYCODE_MENU) {
-                showSiteSwitch();
+                showSiteSwitch2();
             }
         } else if (event.getAction() == KeyEvent.ACTION_UP) {
 
@@ -658,7 +659,7 @@ public class HomeActivity extends BaseActivity {
             dialog.show();
         }
     }
-    void showSiteSwitch() {
+    void showSiteSwitch2() {
         List<SourceBean> sites = ApiConfig.get().getSourceBeanList();
         if (sites.size() > 0) {
             SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
