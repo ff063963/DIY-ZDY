@@ -132,7 +132,9 @@ public class SourceHomeActivity extends BaseActivity {
             }
         
             public void onItemSelected(TvRecyclerView tvRecyclerView, View view, int position) {
+   
                 if (view != null) {
+                    SourceHomeActivity.this.currentView = view;
                     SourceHomeActivity.this.isDownOrUp = false;
                     SourceHomeActivity.this.sortChange = true;
                     view.animate().scaleX(1.1f).scaleY(1.1f).setInterpolator(new BounceInterpolator()).setDuration(300).start();
@@ -141,15 +143,17 @@ public class SourceHomeActivity extends BaseActivity {
                     textView.setTextColor(SourceHomeActivity.this.getResources().getColor(R.color.color_FFFFFF));
                     textView.invalidate();
                     MovieSort.SortData item = sortAdapter.getItem(position);
-                    if (item != null && !item.filters.isEmpty())
-                        view.findViewById(R.id.tvFilter).setVisibility(View.VISIBLE);
+            
+                    if (!sortData.filters.isEmpty()) {
+                        showFilterIcon(sortData.filterSelectCount());
+                    }
                     SourceHomeActivity.this.sortFocusView = view;
                     SourceHomeActivity.this.sortFocused = position;
                     mHandler.removeCallbacks(mDataRunnable);
                     mHandler.postDelayed(mDataRunnable, 200);
                 }
+            
             }
-        
             @Override
             public void onItemClick(TvRecyclerView parent, View itemView, int position) {
                 if (itemView != null && currentSelected == position) {
@@ -187,9 +191,9 @@ public class SourceHomeActivity extends BaseActivity {
             public void onChanged(AbsSortXml absXml) {
                 showSuccess();
                 if (absXml != null && absXml.classes != null && absXml.classes.sortList != null) {
-                    sortAdapter.setNewData(DefaultConfig.adjustSort(sourceKey, absXml.classes.sortList, false));
+                    sortAdapter.setNewData(DefaultConfig.adjustSort(sourceKey, absXml.classes.sortList, true));
                 } else {
-                    sortAdapter.setNewData(DefaultConfig.adjustSort(sourceKey, new ArrayList<>(), false));
+                    sortAdapter.setNewData(DefaultConfig.adjustSort(sourceKey, new ArrayList<>(), true));
                 }
                 initViewPager(absXml);
             }
