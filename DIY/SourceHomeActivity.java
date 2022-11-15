@@ -105,10 +105,29 @@ public class SourceHomeActivity extends BaseActivity {
         this.mGridView.setSpacingWithMargins(0, AutoSizeUtils.dp2px(this.mContext, 10.0f));
         this.mGridView.setAdapter(this.sortAdapter);
         this.mGridView.setOnItemListener(new TvRecyclerView.OnItemListener() {
+            
             public void onItemPreSelected(TvRecyclerView tvRecyclerView, View view, int position) {
                 if (view != null && !SourceHomeActivity.this.isDownOrUp) {
-                    view.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).start();
-                    view.findViewById(R.id.tvFilter).setVisibility(View.GONE);
+                     mHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            TextView textView = view.findViewById(R.id.tvTitle);
+                            textView.getPaint().setFakeBoldText(false);
+                            if (sortFocused == p) {
+                                view.animate().scaleX(1.1f).scaleY(1.1f).setInterpolator(new BounceInterpolator()).setDuration(300).start();
+                                textView.setTextColor(SourceHomeActivity.this.getResources().getColor(R.color.color_FFFFFF));
+                            } else {
+                                view.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).start();
+                                textView.setTextColor(SourceHomeActivitythis.getResources().getColor(R.color.color_BBFFFFFF));
+                                view.findViewById(R.id.tvFilter).setVisibility(View.GONE);
+                                view.findViewById(R.id.tvFilterColor).setVisibility(View.GONE);
+                            }
+                            textView.invalidate();
+                        }
+
+                        public View v = view;
+                        public int p = position;
+                    }, 10);
                 }
             }
         
