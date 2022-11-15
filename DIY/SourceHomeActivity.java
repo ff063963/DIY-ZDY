@@ -40,7 +40,7 @@ import java.util.List;
  * 根据参数 直接打开对应 源主页数据
  */
 public class SourceHomeActivity extends BaseActivity {
-    private LinearLayout contentLayout;
+
     
   private LinearLayout topLayout;
     private LinearLayout contentLayout;
