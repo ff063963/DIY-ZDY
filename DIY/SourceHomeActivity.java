@@ -41,7 +41,12 @@ import java.util.List;
  */
 public class SourceHomeActivity extends BaseActivity {
     private LinearLayout contentLayout;
-
+    
+  private LinearLayout topLayout;
+    private LinearLayout contentLayout;
+    private TextView tvDate;
+    private TextView tvName;
+    
     private TvRecyclerView mGridView;
     private NoScrollViewPager mViewPager;
     private SourceViewModel sourceViewModel;
