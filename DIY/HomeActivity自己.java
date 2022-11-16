@@ -148,7 +148,7 @@ public class HomeActivity extends BaseActivity {
                                 view.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).start();
                                 textView.setTextColor(HomeActivity.this.getResources().getColor(R.color.color_BBFFFFFF));
                                 view.findViewById(R.id.tvFilter).setVisibility(View.GONE);
-                                view.findViewById(R.id.tvFilterColor).setVisibility(View.GONE);
+                                view.findViewById(R.id.tvFilterColor).setVisibility(View.GONE);                          
                             }
                             textView.invalidate();
                         }
@@ -214,7 +214,7 @@ public class HomeActivity extends BaseActivity {
             public void onClick(View v) {
                 dataInitOk = false;
                 jarInitOk = true;
-                showSiteSwitch();
+                showSiteSwitch2();
             }
         });
         tvName.setOnLongClickListener(new View.OnLongClickListener() {
@@ -487,10 +487,9 @@ public class HomeActivity extends BaseActivity {
         } else if (event.type == RefreshEvent.TYPE_FILTER_CHANGE) {
             if (currentView != null) {
                 showFilterIcon((int) event.obj);
-            }
+            } 
         }
     }
-
     private void showFilterIcon(int count) {
         boolean visible = count > 0;
         currentView.findViewById(R.id.tvFilterColor).setVisibility(visible ? View.VISIBLE : View.GONE);
@@ -522,7 +521,7 @@ public class HomeActivity extends BaseActivity {
         int keyCode = event.getKeyCode();
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             if (keyCode == KeyEvent.KEYCODE_MENU) {
-                showSiteSwitch();
+                showSiteSwitch2();
             }
         } else if (event.getAction() == KeyEvent.ACTION_UP) {
 
@@ -612,7 +611,7 @@ public class HomeActivity extends BaseActivity {
             ConstraintLayout cl_root = dialog.findViewById(R.id.cl_root);
             ViewGroup.LayoutParams clp = cl_root.getLayoutParams();
             clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 380+200*spanCount);
-            dialog.setTip("请选择首页数据源");
+            dialog.setTip("首页固定数据源");
             dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<SourceBean>() {
                 @Override
                 public void click(SourceBean value, int pos) {
@@ -643,4 +642,5 @@ public class HomeActivity extends BaseActivity {
             dialog.show();
         }
     }
+
 }
