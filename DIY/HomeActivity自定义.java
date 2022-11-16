@@ -79,6 +79,7 @@ public class HomeActivity extends BaseActivity {
     private SourceViewModel sourceViewModel;
     private SortAdapter sortAdapter;
     private HomePageAdapter pageAdapter;
+    private View currentView;
     private List<BaseLazyFragment> fragments = new ArrayList<>();
     private boolean isDownOrUp = false;
     private boolean sortChange = false;
@@ -147,6 +148,7 @@ public class HomeActivity extends BaseActivity {
                                 view.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).start();
                                 textView.setTextColor(HomeActivity.this.getResources().getColor(R.color.color_BBFFFFFF));
                                 view.findViewById(R.id.tvFilter).setVisibility(View.GONE);
+                                view.findViewById(R.id.tvFilterColor).setVisibility(View.GONE);
                             }
                             textView.invalidate();
                         }
@@ -159,6 +161,7 @@ public class HomeActivity extends BaseActivity {
 
             public void onItemSelected(TvRecyclerView tvRecyclerView, View view, int position) {
                 if (view != null) {
+                    HomeActivity.this.currentView = view;
                     HomeActivity.this.isDownOrUp = false;
                     HomeActivity.this.sortChange = true;
                     view.animate().scaleX(1.1f).scaleY(1.1f).setInterpolator(new BounceInterpolator()).setDuration(300).start();
@@ -166,8 +169,10 @@ public class HomeActivity extends BaseActivity {
                     textView.getPaint().setFakeBoldText(true);
                     textView.setTextColor(HomeActivity.this.getResources().getColor(R.color.color_FFFFFF));
                     textView.invalidate();
-                    if (!sortAdapter.getItem(position).filters.isEmpty())
-                        view.findViewById(R.id.tvFilter).setVisibility(View.VISIBLE);
+                    MovieSort.SortData sortData = sortAdapter.getItem(position);
+                    if (!sortData.filters.isEmpty()) {
+                        showFilterIcon(sortData.filterSelectCount());
+                    }
                     HomeActivity.this.sortFocusView = view;
                     HomeActivity.this.sortFocused = position;
                     mHandler.removeCallbacks(mDataRunnable);
@@ -209,7 +214,7 @@ public class HomeActivity extends BaseActivity {
             public void onClick(View v) {
                 dataInitOk = false;
                 jarInitOk = true;
-                showSiteSwitch2();
+                showSiteSwitch();
             }
         });
         tvName.setOnLongClickListener(new View.OnLongClickListener() {
@@ -247,7 +252,7 @@ public class HomeActivity extends BaseActivity {
     private boolean dataInitOk = false;
     private boolean jarInitOk = false;
 
-    //数据源显示
+//数据源显示
        // takagen99 : Switch to show / hide source title
     boolean HomeShow = Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false);
     
@@ -270,7 +275,44 @@ public class HomeActivity extends BaseActivity {
             }
             return;
         }
-      
+
+        showLoading();
+        if (dataInitOk && !jarInitOk) {
+            if (!ApiConfig.get().getSpider().isEmpty()) {
+                ApiConfig.get().loadJar(useCacheConfig, ApiConfig.get().getSpider(), new ApiConfig.LoadConfigCallback() {
+                    @Override
+                    public void success() {
+                        jarInitOk = true;
+                        mHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (!useCacheConfig)
+                                    Toast.makeText(HomeActivity.this, "自定义jar加载成功", Toast.LENGTH_SHORT).show();
+                                initData();
+                            }
+                        }, 50);
+                    }
+
+                    @Override
+                    public void retry() {
+
+                    }
+
+                    @Override
+                    public void error(String msg) {
+                        jarInitOk = true;
+                        mHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(HomeActivity.this, "jar加载失败", Toast.LENGTH_SHORT).show();
+                                initData();
+                            }
+                        });
+                    }
+                });
+            }
+            return;
+        }
         ApiConfig.get().loadConfig(useCacheConfig, new ApiConfig.LoadConfigCallback() {
             TipDialog dialog = null;
 
@@ -452,7 +494,17 @@ public class HomeActivity extends BaseActivity {
                 newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 HomeActivity.this.startActivity(newIntent);
             }
+        } else if (event.type == RefreshEvent.TYPE_FILTER_CHANGE) {
+            if (currentView != null) {
+                showFilterIcon((int) event.obj);
+            }
         }
+    }
+
+    private void showFilterIcon(int count) {
+        boolean visible = count > 0;
+        currentView.findViewById(R.id.tvFilterColor).setVisibility(visible ? View.VISIBLE : View.GONE);
+        currentView.findViewById(R.id.tvFilter).setVisibility(visible ? View.GONE : View.VISIBLE);
     }
 
     private Runnable mDataRunnable = new Runnable() {
@@ -480,7 +532,7 @@ public class HomeActivity extends BaseActivity {
         int keyCode = event.getKeyCode();
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             if (keyCode == KeyEvent.KEYCODE_MENU) {
-                showSiteSwitch2();
+                showSiteSwitch();
             }
         } else if (event.getAction() == KeyEvent.ACTION_UP) {
 
@@ -564,13 +616,13 @@ public class HomeActivity extends BaseActivity {
             SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
             TvRecyclerView tvRecyclerView = dialog.findViewById(R.id.list);
             int spanCount;
-            spanCount = (int)Math.floor(sites.size()/10);
+            spanCount = (int)Math.floor(sites.size()/60);
             spanCount = Math.min(spanCount, 2);
             tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), spanCount+1));
             ConstraintLayout cl_root = dialog.findViewById(R.id.cl_root);
             ViewGroup.LayoutParams clp = cl_root.getLayoutParams();
             clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 380+200*spanCount);
-            dialog.setTip("首页固定数据源");
+            dialog.setTip("请选择首页数据源");
             dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<SourceBean>() {
                 @Override
                 public void click(SourceBean value, int pos) {
@@ -581,47 +633,6 @@ public class HomeActivity extends BaseActivity {
                     bundle.putBoolean("useCache", true);
                     intent.putExtras(bundle);
                     HomeActivity.this.startActivity(intent);
-                }
-
-                @Override
-                public String getDisplay(SourceBean val) {
-                    return val.getName();
-                }
-            }, new DiffUtil.ItemCallback<SourceBean>() {
-                @Override
-                public boolean areItemsTheSame(@NonNull @NotNull SourceBean oldItem, @NonNull @NotNull SourceBean newItem) {
-                    return oldItem == newItem;
-                }
-
-                @Override
-                public boolean areContentsTheSame(@NonNull @NotNull SourceBean oldItem, @NonNull @NotNull SourceBean newItem) {
-                    return oldItem.getKey().equals(newItem.getKey());
-                }
-            }, sites, sites.indexOf(ApiConfig.get().getHomeSourceBean()));
-            dialog.show();
-        }
-    }
-    void showSiteSwitch2() {
-        List<SourceBean> sites = ApiConfig.get().getSourceBeanList();
-        if (sites.size() > 0) {
-            SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
-            TvRecyclerView tvRecyclerView = dialog.findViewById(R.id.list);
-            int spanCount;
-            spanCount = (int)Math.floor(sites.size()/10);
-            spanCount = Math.min(spanCount, 2);
-            tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), spanCount+1));
-            ConstraintLayout cl_root = dialog.findViewById(R.id.cl_root);
-            ViewGroup.LayoutParams clp = cl_root.getLayoutParams();
-            clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 380+200*spanCount);
-            dialog.setTip("打开临时数据源");
-            dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<SourceBean>() {
-                @Override
-                public void click(SourceBean value, int pos) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString("type", "SourceHome");
-                    bundle.putStringArray("sourceKey", new String[]{value.getKey()});
-                    jumpActivity(HomeActivity.class, bundle);
-                    //dialog.dismiss();
                 }
 
                 @Override
