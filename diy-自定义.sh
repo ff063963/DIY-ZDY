@@ -25,11 +25,11 @@ cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/string
 
 
 #画中画
-cp $CURRENT_DIR/DIY/AndroidManifest.xml $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
-cp $CURRENT_DIR/DIY/HawkConfig.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/HawkConfig.java
+#cp $CURRENT_DIR/DIY/AndroidManifest.xml $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
+
 
 //设置界面修改
-cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/关于/关于\\n1.2.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #版本号
 sed -i 's/1.0.0/1.2.3/g' $CURRENT_DIR/$DIR/app/build.gradle
