@@ -642,5 +642,29 @@ public class HomeActivity extends BaseActivity {
             dialog.show();
         }
     }
+  void showSiteSwitch2() {
+        List<SourceBean> sites = ApiConfig.get().getSourceBeanList();
+        if (sites.size() > 0) {
+            SelectDialog<SourceBean> dialog = new SelectDialog<>(HomeActivity.this);
+            TvRecyclerView tvRecyclerView = dialog.findViewById(R.id.list);
+            int spanCount;
+            spanCount = (int)Math.floor(sites.size()/10);
+            spanCount = Math.min(spanCount, 2);
+            tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), spanCount+1));
+            ConstraintLayout cl_root = dialog.findViewById(R.id.cl_root);
+            ViewGroup.LayoutParams clp = cl_root.getLayoutParams();
+            clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 380+200*spanCount);
+            dialog.setTip("首页固定数据源");
+            dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<SourceBean>() {
+                @Override
+                public void click(SourceBean value, int pos) {
+                    ApiConfig.get().setSourceBean(value);
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    Bundle bundle = new Bundle();
+                    bundle.putBoolean("useCache", true);
+                    intent.putExtras(bundle);
+                    HomeActivity.this.startActivity(intent);
+                }
 
 }
