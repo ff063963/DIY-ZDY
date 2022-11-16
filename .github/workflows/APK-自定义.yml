@@ -1,4 +1,4 @@
-name: APK-zxy Build
+name: APK-自定义 Build
 
 on:
 #  push:
@@ -18,8 +18,8 @@ jobs:
         run: git clone -b main --depth=1 https://github.com/zxyadc/TVBoxOS-py/tree/TVBoxQ-DIY
       - name: DIY
         run: |
-          chmod +x diy-zxy.sh
-          bash ${{ github.workspace }}/diy-zxy.sh
+          chmod +x diy-自定义.sh
+          bash ${{ github.workspace }}/diy-自定义.sh
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
