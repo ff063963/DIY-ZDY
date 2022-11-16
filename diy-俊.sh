@@ -37,7 +37,7 @@ sed -i 's/关于/关于\\n1.2.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fra
 #sed -i 's/1.0.0 /1.2.2/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #首页多排
-#sed -i 's/sites.size()/60/sites.size()/10/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+sed -i 's/sites.size()/60/sites.size()/10/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 #sed -i 's/380+200*spanCount/380+300*spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 #sed -i 's/spanCount+1/spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
@@ -49,6 +49,8 @@ cp $CURRENT_DIR/DIY/dialog_about_关于.xml $CURRENT_DIR/$DIR/app/src/main/res/l
 sed -i 's/1.0.0/1.2.3/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 
+//主界面修改
+cp $CURRENT_DIR/DIY/fragment_user.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 
 //设置界面文字修改
 sed -i 's/站点推荐/推荐/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
@@ -96,12 +98,12 @@ mv $CURRENT_DIR/DIY/原版透明.png $CURRENT_DIR/$DIR/app/src/main/res/drawable
 #背景修改
 cp $CURRENT_DIR/DIY/背景1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_bg.png
 
-#主界面修改
+#主界面文字修改
 sed -i 's/vs_40/vs_30/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/vs_50/vs_40/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/0.75/1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 
-#主界面首页修改
+#主界面首页文字修改
 sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_home_sort.xml
 sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
