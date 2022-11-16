@@ -624,24 +624,6 @@ public class HomeActivity extends BaseActivity {
                     HomeActivity.this.startActivity(intent);
                 }
 
-                @Override
-                public String getDisplay(SourceBean val) {
-                    return val.getName();
-                }
-            }, new DiffUtil.ItemCallback<SourceBean>() {
-                @Override
-                public boolean areItemsTheSame(@NonNull @NotNull SourceBean oldItem, @NonNull @NotNull SourceBean newItem) {
-                    return oldItem == newItem;
-                }
-
-                @Override
-                public boolean areContentsTheSame(@NonNull @NotNull SourceBean oldItem, @NonNull @NotNull SourceBean newItem) {
-                    return oldItem.getKey().equals(newItem.getKey());
-                }
-            }, sites, sites.indexOf(ApiConfig.get().getHomeSourceBean()));
-            dialog.show();
-        }
-    }
   void showSiteSwitch2() {
         List<SourceBean> sites = ApiConfig.get().getSourceBeanList();
         if (sites.size() > 0) {
@@ -667,4 +649,22 @@ public class HomeActivity extends BaseActivity {
                     HomeActivity.this.startActivity(intent);
                 }
 
+                @Override
+                public String getDisplay(SourceBean val) {
+                    return val.getName();
+                }
+            }, new DiffUtil.ItemCallback<SourceBean>() {
+                @Override
+                public boolean areItemsTheSame(@NonNull @NotNull SourceBean oldItem, @NonNull @NotNull SourceBean newItem) {
+                    return oldItem == newItem;
+                }
+
+                @Override
+                public boolean areContentsTheSame(@NonNull @NotNull SourceBean oldItem, @NonNull @NotNull SourceBean newItem) {
+                    return oldItem.getKey().equals(newItem.getKey());
+                }
+            }, sites, sites.indexOf(ApiConfig.get().getHomeSourceBean()));
+            dialog.show();
+        }
+    }
 }
