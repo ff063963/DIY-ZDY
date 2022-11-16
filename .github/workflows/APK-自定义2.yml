@@ -18,8 +18,8 @@ jobs:
         run: git clone -b main --depth=1 https://github.com/zxyadc/TVBoxOS-py.git
       - name: DIY
         run: |
-          chmod +x diy-自定义2.sh
-          bash ${{ github.workspace }}/diy-自定义2.sh
+          chmod +x diy-自定义.sh
+          bash ${{ github.workspace }}/diy-自定义.sh
       - name: Build With Gradle
         run: |
           num=$(find ${{ github.workspace }} -name gradlew  | awk -F"/" '{print NF-1}')
