@@ -36,7 +36,7 @@ sed -i 's/1.0.0/1.2.3/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #首页多排
 cp $CURRENT_DIR/DIY/HomeActivity自己.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/HomeActivity.java
-sed -i 's/380+200*spanCount/500/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+sed -i 's/380+200*spanCount/1000/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 sed -i 's/spanCount+1/spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
 //关于说明
