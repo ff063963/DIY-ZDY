@@ -653,3 +653,4 @@ public class HomeActivity extends BaseActivity {
             dialog.show();
         }
     }
+}
