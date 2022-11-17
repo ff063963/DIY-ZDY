@@ -72,7 +72,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
     TvRecyclerView tvHotList2;
     
  
-    private EditText inputApi;
+
     
     public static UserFragment newInstance() {
         return new UserFragment();
