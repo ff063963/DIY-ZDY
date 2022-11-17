@@ -33,7 +33,7 @@ cp $CURRENT_DIR/DIY/ModelSettingFragment自定义.java $CURRENT_DIR/$DIR/app/src
 
 //设置界面修改
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i 's/关于/关于\\n1.2.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/关于/关于\\n1.2.4/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/1.0.0 /1.2.2/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 //主界面修改
@@ -88,7 +88,7 @@ sed -i 's/"下一集"/ "下集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/pla
 sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 
 #共存
-sed -i 's/com.github.tvbox.osc/com.tvbox.q2.py/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/com.github.tvbox.osc/com.TVBoxPy.Q/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #自定义epg
 cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data.json
