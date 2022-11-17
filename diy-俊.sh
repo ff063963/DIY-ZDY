@@ -48,7 +48,11 @@ cp $CURRENT_DIR/DIY/dialog_about_关于.xml $CURRENT_DIR/$DIR/app/src/main/res/l
 #版本号
 sed -i 's/1.0.0/1.2.3/g' $CURRENT_DIR/$DIR/app/build.gradle
 
+#增加听书嗅探
+sed -i 's/|mp4|/|mp4|mp3|m4a|p2p|/'g $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/DefaultConfig.java
 
+#取消选中filter后图标变色
+sed -i 's/48dp""/48dp" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/icon_filter_color.xml 
 //主界面修改
 cp $CURRENT_DIR/DIY/fragment_user.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 
