@@ -279,7 +279,7 @@
                     android:src="@drawable/icon_setting" />
 
       <TextView
-                        android:id="@+id/tvApi"
+                        android:id="@+id/llApiHistory"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ellipsize="middle"
@@ -295,10 +295,10 @@
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:gravity="center"
-                    android:text="地址"
+                    android:text="配置历史"
                     android:textAlignment="gravity"
                     android:textColor="@color/color_CCFFFFFF"
-                    android:textSize="@dimen/ts_40" />
+                    android:textSize="@dimen/ts_25" />
 
             </LinearLayout>
         </LinearLayout>
