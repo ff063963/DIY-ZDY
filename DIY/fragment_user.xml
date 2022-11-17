@@ -298,7 +298,7 @@
                     android:text="配置历史"
                     android:textAlignment="gravity"
                     android:textColor="@color/color_CCFFFFFF"
-                    android:textSize="@dimen/ts_25" />
+                    android:textSize="@dimen/ts_20" />
 
             </LinearLayout>
         </LinearLayout>
