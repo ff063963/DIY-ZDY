@@ -38,7 +38,7 @@ sed -i 's/关于/关于\\n1.2.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fra
 
 //主界面修改
 cp $CURRENT_DIR/DIY/fragment_user自定义.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-cp $CURRENT_DIR/DIY/UserFragment.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/UserFragment.java
+cp $CURRENT_DIR/DIY/UserFragment自定义.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/UserFragment.java
 
 #首页多排
 #sed -i 's/sites.size()/60/sites.size()/10/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
