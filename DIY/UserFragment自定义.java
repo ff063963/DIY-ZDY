@@ -71,7 +71,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
     TvRecyclerView tvHotList1;
     TvRecyclerView tvHotList2;
     
-  private LinearLayout tvApi;
+     private TextView tvApi;
 
     
     public static UserFragment newInstance() {
@@ -185,7 +185,6 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
 
         
         //历史配置列表
-        
      findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -202,10 +201,8 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
                     @Override
                     public void click(String api) {
                         Hawk.put(HawkConfig.API_URL, api);
-                                
                         tvApi.setText(api);
                         dialog.dismiss();
-                     
                     }
 
                     @Override
@@ -216,8 +213,6 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
                 dialog.show();
             }
         });
-        
-        
         
         
         homeHotVodAdapter.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() {
