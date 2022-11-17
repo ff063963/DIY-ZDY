@@ -621,7 +621,7 @@ public class HomeActivity extends BaseActivity {
             tvRecyclerView.setLayoutManager(new V7GridLayoutManager(dialog.getContext(), spanCount+1));
             ConstraintLayout cl_root = dialog.findViewById(R.id.cl_root);
             ViewGroup.LayoutParams clp = cl_root.getLayoutParams();
-            clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 280+100*spanCount);
+            clp.width = AutoSizeUtils.mm2px(dialog.getContext(), 380+200*spanCount);
             dialog.setTip("首页固定数据源");
             dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<SourceBean>() {
                 @Override
