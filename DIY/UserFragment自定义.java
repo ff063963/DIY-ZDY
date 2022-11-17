@@ -47,7 +47,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import android.widget.TextView;
+
 import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
 import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
 import com.github.tvbox.osc.ui.dialog.ApiDialog;
@@ -71,7 +71,8 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
     TvRecyclerView tvHotList1;
     TvRecyclerView tvHotList2;
     
-    private TextView tvApi;
+ 
+    private EditText inputApi;
     
     public static UserFragment newInstance() {
         return new UserFragment();
@@ -182,6 +183,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
          tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
         
         //历史配置列表
+        
      findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,9 +200,10 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
                     @Override
                     public void click(String api) {
                         Hawk.put(HawkConfig.API_URL, api);
-                         inputApi.setText(value);
-                        listener.onchange(value);
+                                
+                        tvApi.setText(api);
                         dialog.dismiss();
+                     
                     }
 
                     @Override
