@@ -198,7 +198,8 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
                     @Override
                     public void click(String api) {
                         Hawk.put(HawkConfig.API_URL, api);
-                        tvApi.setText(api);
+                         inputApi.setText(value);
+                        listener.onchange(value);
                         dialog.dismiss();
                     }
 
