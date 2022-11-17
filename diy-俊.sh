@@ -37,7 +37,7 @@ sed -i 's/关于/关于\\n1.2.3/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fra
 #sed -i 's/1.0.0 /1.2.2/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 //主界面修改
-cp $CURRENT_DIR/DIY/fragment_user.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+cp $CURRENT_DIR/DIY/fragment_user自定义.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 cp $CURRENT_DIR/DIY/UserFragment.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/UserFragment.java
 
 #首页多排
