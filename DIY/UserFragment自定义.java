@@ -148,7 +148,10 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         tvHotList1 = findViewById(R.id.tvHotList1);
         tvHotList2 = findViewById(R.id.tvHotList2);
         homeHotVodAdapter = new HomeHotVodAdapter();
-       
+        
+         tvApi = findViewById(R.id.tvApi);
+         tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
+        
         homeHotVodAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -179,8 +182,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
             }
         });
 
-         tvApi = findViewById(R.id.tvApi);
-         tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
+
         
         //历史配置列表
         
