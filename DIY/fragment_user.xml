@@ -295,10 +295,10 @@
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:gravity="center"
-                    android:text="配置历史"
+                    android:text="配置/n历史"
                     android:textAlignment="gravity"
                     android:textColor="@color/color_CCFFFFFF"
-                    android:textSize="@dimen/ts_20" />
+                    android:textSize="@dimen/ts_40" />
 
             </LinearLayout>
         </LinearLayout>
