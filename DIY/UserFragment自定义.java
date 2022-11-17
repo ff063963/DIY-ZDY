@@ -49,7 +49,8 @@ import java.util.List;
 
 import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
 import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
-
+import com.github.tvbox.osc.ui.dialog.ApiDialog;
+import com.github.tvbox.osc.api.ApiConfig;
 /**
  * @author pj567
  * @date :2021/3/9
@@ -125,7 +126,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         tvCollect = findViewById(R.id.tvFavorite);
         tvHistory = findViewById(R.id.tvHistory);
         tvPush = findViewById(R.id.tvPush);
-        ApiHistory = findViewById(R.id.ApiHistory);
+      
         tvLive.setOnClickListener(this);
         tvSearch.setOnClickListener(this);
         tvSetting.setOnClickListener(this);
