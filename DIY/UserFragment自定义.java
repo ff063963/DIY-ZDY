@@ -64,6 +64,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
     private LinearLayout tvCollect;
     private LinearLayout tvPush;
     private LinearLayout ApiHistory;
+     private TextView tvApi;
     private HomeHotVodAdapter homeHotVodAdapter;
     private List<Movie.Video> homeSourceRec;
     TvRecyclerView tvHotList1;
@@ -175,6 +176,8 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
             }
         });
 
+         tvApi = findViewById(R.id.tvApi);
+         tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
         
         //历史配置列表
      findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
