@@ -28,8 +28,7 @@ import com.github.tvbox.osc.util.FastClickCheckUtil;
 import com.github.tvbox.osc.util.HawkConfig;
 import com.github.tvbox.osc.util.UA;
 
-//
-import com.github.tvbox.osc.ui.activity.DriveActivity;
+//import com.github.tvbox.osc.ui.activity.DriveActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
