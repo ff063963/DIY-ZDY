@@ -153,8 +153,7 @@ private LinearLayout inputApi;
              tvApi.setOnClickListener(this);
           tvApi.setOnFocusChangeListener(focusChangeListener);
 
-         inputApi = findViewById(R.id.input);
-         inputApi.setText(Hawk.get(HawkConfig.API_URL, ""));
+
         homeHotVodAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
