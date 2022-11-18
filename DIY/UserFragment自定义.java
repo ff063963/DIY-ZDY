@@ -64,7 +64,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
     TvRecyclerView tvHotList2;
 
      private LinearLayout tvApi;
-
+private EditText inputApi;
 
     public static UserFragment newInstance() {
 
@@ -146,9 +146,9 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         tvHotList2 = findViewById(R.id.tvHotList2);
         homeHotVodAdapter = new HomeHotVodAdapter();
         
-         tvApi = findViewById(R.id.tvApi);
-         tvApi.LinearLayout(Hawk.get(HawkConfig.API_URL, ""));
-        
+         tvApi = findViewById(R.id.tvApi); 
+         inputApi = findViewById(R.id.input);
+         inputApi.setText(Hawk.get(HawkConfig.API_URL, ""));
         homeHotVodAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
