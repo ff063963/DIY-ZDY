@@ -46,7 +46,7 @@ sed -i 's/tvDrive"/ tvDrive" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/
 #mv $CURRENT_DIR/DIY/DetailActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 #首页多排
 #sed -i 's/sites.size()/60/sites.size()/10/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
-sed -i 's/380+200/200+100/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+sed -i 's/380+200/250+150/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 sed -i 's/spanCount+1/spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
 //关于说明
