@@ -127,8 +127,8 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         tvHistory = findViewById(R.id.tvHistory);
         tvPush = findViewById(R.id.tvPush);
         
-        tvDrive = findViewById(R.id.tvDrive);
-        tvDrive.setOnClickListener(this);
+        //tvDrive = findViewById(R.id.tvDrive);
+        //tvDrive.setOnClickListener(this);
         
         tvLive.setOnClickListener(this);
         tvSearch.setOnClickListener(this);
@@ -143,7 +143,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         tvPush.setOnFocusChangeListener(focusChangeListener);
         tvCollect.setOnFocusChangeListener(focusChangeListener);
         
-         tvDrive.setOnFocusChangeListener(focusChangeListener);
+         //tvDrive.setOnFocusChangeListener(focusChangeListener);
         
         tvHotList1 = findViewById(R.id.tvHotList1);
         tvHotList2 = findViewById(R.id.tvHotList2);
