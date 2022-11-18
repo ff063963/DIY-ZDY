@@ -147,7 +147,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         homeHotVodAdapter = new HomeHotVodAdapter();
         
          tvApi = findViewById(R.id.tvApi);
-         tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
+         tvApi.LinearLayout(Hawk.get(HawkConfig.API_URL, ""));
         
         homeHotVodAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -196,7 +196,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
                     @Override
                     public void click(String api) {
                         Hawk.put(HawkConfig.API_URL, api);
-                        tvApi.setText(api);
+                        tvApi.LinearLayout(api);
                         dialog.dismiss();
                     }
                     @Override
