@@ -45,6 +45,8 @@ import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
 import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
 import com.github.tvbox.osc.ui.dialog.ApiDialog;
 import com.github.tvbox.osc.api.ApiConfig;
+
+import android.widget.EditText;
 /**
  * @author pj567
  * @date :2021/3/9
