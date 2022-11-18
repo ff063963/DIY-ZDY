@@ -1,9 +1,11 @@
 package com.github.tvbox.osc.ui.fragment;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.widget.LinearLayout;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.github.tvbox.osc.R;
 import com.github.tvbox.osc.api.ApiConfig;
@@ -35,19 +37,15 @@ import com.orhanobut.hawk.Hawk;
 import com.owen.tvrecyclerview.widget.TvRecyclerView;
 import com.owen.tvrecyclerview.widget.V7GridLayoutManager;
 import com.owen.tvrecyclerview.widget.V7LinearLayoutManager;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
-import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
-import com.github.tvbox.osc.ui.dialog.ApiDialog;
 
-
-import android.widget.TextView;
-import android.widget.EditText;
 /**
  * @author pj567
  * @date :2021/3/9
@@ -60,35 +58,24 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
     private LinearLayout tvHistory;
     private LinearLayout tvCollect;
     private LinearLayout tvPush;
-    private LinearLayout ApiHistory;
     private HomeHotVodAdapter homeHotVodAdapter;
     private List<Movie.Video> homeSourceRec;
     TvRecyclerView tvHotList1;
     TvRecyclerView tvHotList2;
 
-  private LinearLayout tvApi;
-private LinearLayout inputApi;
-
     public static UserFragment newInstance() {
-
-    
-          
-            
-    
-
-          
-    
-    
-  
         return new UserFragment();
     }
+
     public static UserFragment newInstance(List<Movie.Video> recVod) {
         return new UserFragment().setArguments(recVod);
     }
+
     public UserFragment setArguments(List<Movie.Video> recVod) {
         this.homeSourceRec = recVod;
         return this;
     }
+
     @Override
     protected void onFragmentResume() {
         if(Hawk.get(HawkConfig.HOME_REC_STYLE, false)){
@@ -117,10 +104,12 @@ private LinearLayout inputApi;
             homeHotVodAdapter.setNewData(vodList);
         }
     }
+
     @Override
     protected int getLayoutResID() {
         return R.layout.fragment_user;
     }
+
     @Override
     protected void init() {
         EventBus.getDefault().register(this);
@@ -130,30 +119,21 @@ private LinearLayout inputApi;
         tvCollect = findViewById(R.id.tvFavorite);
         tvHistory = findViewById(R.id.tvHistory);
         tvPush = findViewById(R.id.tvPush);
-      
         tvLive.setOnClickListener(this);
         tvSearch.setOnClickListener(this);
         tvSetting.setOnClickListener(this);
         tvHistory.setOnClickListener(this);
         tvPush.setOnClickListener(this);
-        ApiHistory.setOnClickListener(this);
         tvCollect.setOnClickListener(this);
         tvLive.setOnFocusChangeListener(focusChangeListener);
         tvSearch.setOnFocusChangeListener(focusChangeListener);
         tvSetting.setOnFocusChangeListener(focusChangeListener);
         tvHistory.setOnFocusChangeListener(focusChangeListener);
         tvPush.setOnFocusChangeListener(focusChangeListener);
-        ApiHistory.setOnFocusChangeListener(focusChangeListener);
         tvCollect.setOnFocusChangeListener(focusChangeListener);
         tvHotList1 = findViewById(R.id.tvHotList1);
         tvHotList2 = findViewById(R.id.tvHotList2);
         homeHotVodAdapter = new HomeHotVodAdapter();
-        
-         tvApi = findViewById(R.id.tvApi); 
-             tvApi.setOnClickListener(this);
-          tvApi.setOnFocusChangeListener(focusChangeListener);
-
-
         homeHotVodAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -183,38 +163,7 @@ private LinearLayout inputApi;
                 }
             }
         });
-        
-        //历史配置列表
-      findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
-                if (history.isEmpty())
-                    return;
-                String current = Hawk.get(HawkConfig.API_URL, "");
-                int idx = 0;
-                if (history.contains(current))
-                    idx = history.indexOf(current);
-                ApiHistoryDialog dialog = new ApiHistoryDialog(getContext());
-                dialog.setTip("历史配置列表");
-                dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
-                    @Override
-                    public void click(String api) {
-                        Hawk.put(HawkConfig.API_URL, api);
-                     
-                        dialog.dismiss();
-                    }
 
-                    @Override
-                    public void del(String value, ArrayList<String> data) {
-                        Hawk.put(HawkConfig.API_HISTORY, data);
-                    }
-                }, history, idx);
-                dialog.show();
-            }
-        });
-        
-        
         homeHotVodAdapter.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
@@ -226,17 +175,21 @@ private LinearLayout inputApi;
                 return true;
             }
         });
+
         tvHotList1.setOnItemListener(new TvRecyclerView.OnItemListener() {
             @Override
             public void onItemPreSelected(TvRecyclerView parent, View itemView, int position) {
                 itemView.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
             }
+
             @Override
             public void onItemSelected(TvRecyclerView parent, View itemView, int position) {
                 itemView.animate().scaleX(1.05f).scaleY(1.05f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
             }
+
             @Override
             public void onItemClick(TvRecyclerView parent, View itemView, int position) {
+
             }
         });
         tvHotList1.setAdapter(homeHotVodAdapter);
@@ -245,17 +198,22 @@ private LinearLayout inputApi;
             public void onItemPreSelected(TvRecyclerView parent, View itemView, int position) {
                 itemView.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
             }
+
             @Override
             public void onItemSelected(TvRecyclerView parent, View itemView, int position) {
                 itemView.animate().scaleX(1.05f).scaleY(1.05f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
             }
+
             @Override
             public void onItemClick(TvRecyclerView parent, View itemView, int position) {
+
             }
         });
         tvHotList2.setAdapter(homeHotVodAdapter);
+
         initHomeHotVod(homeHotVodAdapter);
     }
+
     private void initHomeHotVod(HomeHotVodAdapter adapter) {
         if (Hawk.get(HawkConfig.HOME_REC, 0) == 1) {
             if (homeSourceRec != null) {
@@ -298,6 +256,7 @@ private LinearLayout inputApi;
                         }
                     });
                 }
+
                 @Override
                 public String convertResponse(okhttp3.Response response) throws Throwable {
                     return response.body().string();
@@ -307,6 +266,7 @@ private LinearLayout inputApi;
             th.printStackTrace();
         }
     }
+
     private ArrayList<Movie.Video> loadHots(String json) {
         ArrayList<Movie.Video> result = new ArrayList<>();
         try {
@@ -321,9 +281,11 @@ private LinearLayout inputApi;
                 result.add(vod);
             }
         } catch (Throwable th) {
+
         }
         return result;
     }
+
     private View.OnFocusChangeListener focusChangeListener = new View.OnFocusChangeListener() {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
@@ -333,6 +295,7 @@ private LinearLayout inputApi;
                 v.animate().scaleX(1.0f).scaleY(1.0f).setDuration(300).setInterpolator(new BounceInterpolator()).start();
         }
     };
+
     @Override
     public void onClick(View v) {
         FastClickCheckUtil.check(v);
@@ -350,11 +313,13 @@ private LinearLayout inputApi;
             jumpActivity(CollectActivity.class);
         }
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void server(ServerEvent event) {
         if (event.type == ServerEvent.SERVER_CONNECTION) {
         }
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
