@@ -66,7 +66,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
     TvRecyclerView tvHotList1;
     TvRecyclerView tvHotList2;
 
-     private LinearLayout tvApi;
+  private TextView tvApi;
 private EditText inputApi;
 
     public static UserFragment newInstance() {
