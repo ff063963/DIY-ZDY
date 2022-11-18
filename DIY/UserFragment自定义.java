@@ -198,7 +198,7 @@ private EditText inputApi;
                     @Override
                     public void click(String value) {
                         inputApi.setText(value);
-                        listener.onchange(value);
+                       tvApi.setText(api);
                         dialog.dismiss();
                     }
 
