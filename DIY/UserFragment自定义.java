@@ -150,7 +150,8 @@ private LinearLayout inputApi;
         homeHotVodAdapter = new HomeHotVodAdapter();
         
          tvApi = findViewById(R.id.tvApi); 
-         tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
+             tvApi.setOnClickListener(this);
+          tvApi.setOnFocusChangeListener(focusChangeListener);
 
          inputApi = findViewById(R.id.input);
          inputApi.setText(Hawk.get(HawkConfig.API_URL, ""));
