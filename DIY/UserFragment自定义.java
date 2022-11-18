@@ -24,7 +24,6 @@ import com.github.tvbox.osc.ui.activity.SearchActivity;
 import com.github.tvbox.osc.ui.activity.SettingActivity;
 import com.github.tvbox.osc.ui.adapter.HomeHotVodAdapter;
 import com.github.tvbox.osc.util.FastClickCheckUtil;
-
 import com.github.tvbox.osc.util.HawkConfig;
 import com.github.tvbox.osc.util.UA;
 import com.google.gson.Gson;
@@ -47,11 +46,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-
-import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
-import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
-import com.github.tvbox.osc.ui.dialog.ApiDialog;
-import com.github.tvbox.osc.api.ApiConfig;
 /**
  * @author pj567
  * @date :2021/3/9
@@ -64,16 +58,11 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
     private LinearLayout tvHistory;
     private LinearLayout tvCollect;
     private LinearLayout tvPush;
-    private LinearLayout ApiHistory;
-
     private HomeHotVodAdapter homeHotVodAdapter;
     private List<Movie.Video> homeSourceRec;
     TvRecyclerView tvHotList1;
     TvRecyclerView tvHotList2;
-    
-     private LinearLayou tvApi;
 
-    
     public static UserFragment newInstance() {
         return new UserFragment();
     }
@@ -130,28 +119,21 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         tvCollect = findViewById(R.id.tvFavorite);
         tvHistory = findViewById(R.id.tvHistory);
         tvPush = findViewById(R.id.tvPush);
-      
         tvLive.setOnClickListener(this);
         tvSearch.setOnClickListener(this);
         tvSetting.setOnClickListener(this);
         tvHistory.setOnClickListener(this);
         tvPush.setOnClickListener(this);
-        ApiHistory.setOnClickListener(this);
         tvCollect.setOnClickListener(this);
         tvLive.setOnFocusChangeListener(focusChangeListener);
         tvSearch.setOnFocusChangeListener(focusChangeListener);
         tvSetting.setOnFocusChangeListener(focusChangeListener);
         tvHistory.setOnFocusChangeListener(focusChangeListener);
         tvPush.setOnFocusChangeListener(focusChangeListener);
-        ApiHistory.setOnFocusChangeListener(focusChangeListener);
         tvCollect.setOnFocusChangeListener(focusChangeListener);
         tvHotList1 = findViewById(R.id.tvHotList1);
         tvHotList2 = findViewById(R.id.tvHotList2);
         homeHotVodAdapter = new HomeHotVodAdapter();
-        
-         tvApi = findViewById(R.id.tvApi);
-         tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
-        
         homeHotVodAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
@@ -182,39 +164,6 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
             }
         });
 
-
-        
-        //历史配置列表
-     findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
-                if (history.isEmpty())
-                    return;
-                String current = Hawk.get(HawkConfig.API_URL, "");
-                int idx = 0;
-                if (history.contains(current))
-                    idx = history.indexOf(current);
-                ApiHistoryDialog dialog = new ApiHistoryDialog(getContext());
-                dialog.setTip("历史配置列表");
-                dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
-                    @Override
-                    public void click(String api) {
-                        Hawk.put(HawkConfig.API_URL, api);
-                        tvApi.setText(api);
-                        dialog.dismiss();
-                    }
-
-                    @Override
-                    public void del(String value, ArrayList<String> data) {
-                        Hawk.put(HawkConfig.API_HISTORY, data);
-                    }
-                }, history, idx);
-                dialog.show();
-            }
-        });
-        
-        
         homeHotVodAdapter.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
