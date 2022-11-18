@@ -85,10 +85,7 @@
             android:name=".ui.activity.SourceHomeActivity"
             android:screenOrientation="sensorLandscape"/>
         
-          <activity
-            android:name=".ui.activity.HomeActivity"
-            android:screenOrientation="sensorLandscape"/>
-        
+ 
          
         
          <activity
