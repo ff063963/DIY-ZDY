@@ -86,14 +86,15 @@
             android:screenOrientation="sensorLandscape"/>
         
           <activity
-            android:name=".ui.activity.HomeActivity2"
+            android:name=".ui.activity.HomeActivity"
             android:screenOrientation="sensorLandscape"/>
         
-          <activity
-            android:name=".ui.activity.HomeActivity俊"
-            android:screenOrientation="sensorLandscape"/>
+         
         
-        
+         <activity
+            android:name="com.github.tvbox.osc.ui.activity.DriveActivity"
+            android:screenOrientation="landscape" />
+
         <receiver android:name=".receiver.SearchReceiver">
             <intent-filter>
                 <action android:name="android.content.movie.search.Action" />
