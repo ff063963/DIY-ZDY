@@ -28,6 +28,7 @@ import com.github.tvbox.osc.util.FastClickCheckUtil;
 import com.github.tvbox.osc.util.HawkConfig;
 import com.github.tvbox.osc.util.UA;
 
+//
 import com.github.tvbox.osc.ui.activity.DriveActivity;
 
 import com.google.gson.Gson;
@@ -236,6 +237,8 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
             return;
         } else if (Hawk.get(HawkConfig.HOME_REC, 0) == 2) {
             return;
+            
+            
         }
         try {
             Calendar cal = Calendar.getInstance();
@@ -323,9 +326,11 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
             jumpActivity(HistoryActivity.class);
         } else if (v.getId() == R.id.tvPush) {
             jumpActivity(PushActivity.class);  
-        } else if(v.getId() == R.id.tvDrive) {
-            jumpActivity(DriveActivity.class);
-        }else if (v.getId() == R.id.tvFavorite) {
+        } 
+       // else if(v.getId() == R.id.tvDrive) {
+          //  jumpActivity(DriveActivity.class);
+       // }
+        else if (v.getId() == R.id.tvFavorite) {
             jumpActivity(CollectActivity.class);
         }
     }
