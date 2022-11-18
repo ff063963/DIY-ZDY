@@ -42,7 +42,7 @@ cp $CURRENT_DIR/DIY/UserFragment自定义.java $CURRENT_DIR/$DIR/app/src/main/ja
 
 //增加存储
 mv $CURRENT_DIR/DIY/icon_drive.xml $CURRENT_DIR/$DIR/app/src/main/res/drawable/icon_drive.xml
-mv $CURRENT_DIR/DIY/DetailActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
+#mv $CURRENT_DIR/DIY/DetailActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 #首页多排
 #sed -i 's/sites.size()/60/sites.size()/10/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 sed -i 's/380+200*spanCount/280+200*spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
