@@ -149,6 +149,8 @@ private EditText inputApi;
         homeHotVodAdapter = new HomeHotVodAdapter();
         
          tvApi = findViewById(R.id.tvApi); 
+         tvApi.setText(Hawk.get(HawkConfig.API_URL, ""));
+
          inputApi = findViewById(R.id.input);
          inputApi.setText(Hawk.get(HawkConfig.API_URL, ""));
         homeHotVodAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
@@ -182,7 +184,7 @@ private EditText inputApi;
         });
         
         //历史配置列表
-       findViewById(R.id.apiHistory).setOnClickListener(new View.OnClickListener() {
+      findViewById(R.id.llApiHistory).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
@@ -196,9 +198,9 @@ private EditText inputApi;
                 dialog.setTip("历史配置列表");
                 dialog.setAdapter(new ApiHistoryDialogAdapter.SelectDialogInterface() {
                     @Override
-                    public void click(String value) {
-                        inputApi.setText(value);
-                       tvApi.setText(api);
+                    public void click(String api) {
+                        Hawk.put(HawkConfig.API_URL, api);
+                        tvApi.setText(api);
                         dialog.dismiss();
                     }
 
