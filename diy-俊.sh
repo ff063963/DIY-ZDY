@@ -42,11 +42,11 @@ cp $CURRENT_DIR/DIY/UserFragment自定义.java $CURRENT_DIR/$DIR/app/src/main/ja
 
 //增加存储
 mv $CURRENT_DIR/DIY/icon_drive.xml $CURRENT_DIR/$DIR/app/src/main/res/drawable/icon_drive.xml
-#sed -i 's/ android:text="存储"/ android:text="存储" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+#sed -i 's/tvDrive"/ tvDrive" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #mv $CURRENT_DIR/DIY/DetailActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 #首页多排
 #sed -i 's/sites.size()/60/sites.size()/10/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
-sed -i 's/200/100/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+sed -i 's/380+200/30+100/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 sed -i 's/spanCount+1/spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
 //关于说明
