@@ -201,7 +201,7 @@ private EditText inputApi;
                     @Override
                     public void click(String api) {
                         Hawk.put(HawkConfig.API_URL, api);
-                        tvApi.setText(api);
+                     
                         dialog.dismiss();
                     }
 
