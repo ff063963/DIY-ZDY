@@ -46,7 +46,7 @@ sed -i 's/tvDrive"/ tvDrive" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/
 #mv $CURRENT_DIR/DIY/DetailActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 #首页多排
 #sed -i 's/sites.size()/60/sites.size()/10/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
-sed -i 's/380+200/250+150/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+sed -i 's/380+200/250+200/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 sed -i 's/spanCount+1/spanCount/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
 //关于说明
@@ -111,10 +111,10 @@ cp $CURRENT_DIR/DIY/背景1.png $CURRENT_DIR/$DIR/app/src/main/res/drawable/app_
 sed -i 's/vs_30/vs_15/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_select.xml
 
 #主界面文字修改
-sed -i 's/ts_40/ts_30/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-sed -i 's/vs_50/vs_40/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+#sed -i 's/ts_40/ts_30/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+#sed -i 's/vs_50/vs_40/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #sed -i 's/vs_100/vs_80/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-sed -i 's/0.75/1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+#sed -i 's/0.75/1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/color_CCFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #主界面首页文字修改
 sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_home_sort.xml
