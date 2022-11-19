@@ -40,4 +40,6 @@ public class HawkConfig {
     public static final String STORAGE_DRIVE_SORT = "storage_drive_sort";//存储
     public static final String NOW_DATE = "now_date"; //当前日期
     public static final String REMOTE_TVBOX = "remote_tvbox_host";
+    public static final String SETTING_LIVE = "setting_live";//直播
+  
 }
