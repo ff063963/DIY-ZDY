@@ -139,7 +139,7 @@ public class VodController extends BaseController {
 
     Handler myHandle;
     Runnable myRunnable;
-    int myHandleSeconds = 6000;//闲置多少毫秒秒关闭底栏  默认6秒
+    int myHandleSeconds = 10000;//闲置多少毫秒秒关闭底栏  默认6秒
 
     
     int videoPlayState = 0;
@@ -160,12 +160,8 @@ public class VodController extends BaseController {
             mHandler.postDelayed(this, 1000);
         }
     };
-
     
-    
-    
-    
-   private boolean shouldShowBottom = true;
+     private boolean shouldShowBottom = true;
     private boolean shouldShowLoadingSpeed = Hawk.get(HawkConfig.DISPLAY_LOADING_SPEED, true);
     private Runnable mRunnable = new Runnable() {
         @SuppressLint({"DefaultLocale", "SetTextI18n"})
@@ -188,11 +184,6 @@ public class VodController extends BaseController {
             mHandler.postDelayed(this, 1000);
         }
     };
-
-
-    
-
-
 
     @Override
     protected void initView() {
@@ -416,6 +407,15 @@ public class VodController extends BaseController {
             }
         });
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
         mPlayerBtn.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -923,6 +923,50 @@ public class VodController extends BaseController {
         return super.dispatchKeyEvent(event);
     }
 
+    
+    private boolean fromLongPress;
+    private float speed_old = 1.0f;
+    @Override
+    public void onLongPress(MotionEvent e) {
+        if (videoPlayState!=VideoView.STATE_PAUSED) {
+            fromLongPress = true;
+            try {
+                speed_old = (float) mPlayerConfig.getDouble("sp");
+                float speed = 3.0f;
+                mPlayerConfig.put("sp", speed);
+                updatePlayerCfgView();
+                listener.updatePlayerCfg();
+                mControlWrapper.setSpeed(speed);
+            } catch (JSONException f) {
+                f.printStackTrace();
+            }
+        }
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    public boolean onTouchEvent(MotionEvent e) {
+        if (e.getAction() == MotionEvent.ACTION_UP) {
+            if (fromLongPress) {
+                fromLongPress =false;
+                try {
+                    float speed = speed_old;
+                    mPlayerConfig.put("sp", speed);
+                    updatePlayerCfgView();
+                    listener.updatePlayerCfg();
+                    mControlWrapper.setSpeed(speed);
+                } catch (JSONException f) {
+                    f.printStackTrace();
+                }
+            }
+        }
+        return super.onTouchEvent(e);
+    }
+
+    
+    
+    
+    
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
         myHandle.removeCallbacks(myRunnable);
