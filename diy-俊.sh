@@ -98,7 +98,7 @@ sed -i 's/com.github.tvbox.osc/com.TVBoxPy.Q/g' $CURRENT_DIR/$DIR/app/build.grad
 cp $CURRENT_DIR/DIY/epg_data.json $CURRENT_DIR/$DIR/app/src/main/assets/epg_data.json
 
 #增加颜色
-cp $CURRENT_DIR/DIY/colors.xml $CURRENT_DIR/$DIR/app/src/main/res/values/colors.xml
+cp $CURRENT_DIR/DIY/colors自定义.xml $CURRENT_DIR/$DIR/app/src/main/res/values/colors.xml
 
 #名称修改
 sed -i 's/TVBox/TVBoxPy/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
