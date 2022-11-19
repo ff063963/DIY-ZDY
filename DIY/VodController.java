@@ -1,5 +1,7 @@
 package com.github.tvbox.osc.player.controller;
 
+import android.annotation.SuppressLint;
+
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
@@ -118,6 +120,11 @@ public class VodController extends BaseController {
     TextView mPlayerIJKBtn;
     TextView mPlayerRetry;
     TextView mPlayrefresh;
+    
+    TextView tvDate;
+   TextView finishAt;
+   TextView loadingSpeed;
+    
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
     public TextView mPlayerTimeSkipBtn;
@@ -158,27 +165,6 @@ public class VodController extends BaseController {
         }
     };
 
- private Runnable mRunnable = new Runnable() {
-        @SuppressLint({"DefaultLocale", "SetTextI18n"})
-        @Override
-        public void run() {
-            Date date = new Date();
-            @SuppressLint("SimpleDateFormat")
-            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            tvDate.setText(timeFormat.format(date));
-            if(mControlWrapper.getDuration() > 0) {
-                SimpleDateFormat onlyTimeFormat = new SimpleDateFormat("HH:mm");
-                long remainTime = mControlWrapper.getDuration() - mControlWrapper.getCurrentPosition();
-                Date endTime = new Date(date.getTime() + remainTime);
-                finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
-            } else {
-                finishAt.setText("");
-            }
-            if(loadingSpeed.getVisibility() == VISIBLE)
-                loadingSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
-            mHandler.postDelayed(this, 1000);
-        }
-    };
 
     
 
@@ -187,6 +173,10 @@ public class VodController extends BaseController {
     @Override
     protected void initView() {
         super.initView();
+        tvDate = findViewById(R.id.tv_info_time);
+       finishAt = findViewById(R.id.tv_finish_at);
+       loadingSpeed = findViewById(R.id.loadingSpeed);
+        
         mCurrentTime = findViewById(R.id.curr_time);
         mTotalTime = findViewById(R.id.total_time);
         mPlayTitle = findViewById(R.id.tv_info_name);
