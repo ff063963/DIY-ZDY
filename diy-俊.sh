@@ -117,7 +117,7 @@ sed -i 's/vs_30/vs_15/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_select
 sed -i 's/vs_50/vs_40/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #sed -i 's/vs_100/vs_80/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 sed -i 's/0.75/1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
-sed -i 's/color_CCFFFFFF/color_FFFFFF_90/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
+sed -i 's/color_CCFFFFFF/color_FFFFFF_85/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #主界面首页文字修改
 sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_home_sort.xml
 sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
