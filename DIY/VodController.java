@@ -221,7 +221,7 @@ public class VodController extends BaseController {
         //mPlayPauseTime = findViewById(R.id.tv_sys_time);
         mPlayLoadNetSpeed = findViewById(R.id.tv_play_load_net_speed);
         //mVideoSize = findViewById(R.id.tv_videosize);
-        mSubtitleView = findViewById(R.id.subtitle_view);
+       // mSubtitleView = findViewById(R.id.subtitle_view);
         mZimuBtn = findViewById(R.id.zimu_select);
         mAudioTrackBtn = findViewById(R.id.audio_track_select);
         mLandscapePortraitBtn = findViewById(R.id.landscape_portrait);
