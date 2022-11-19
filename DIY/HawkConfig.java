@@ -42,4 +42,8 @@ public class HawkConfig {
     public static final String REMOTE_TVBOX = "remote_tvbox_host";
     public static final String SETTING_LIVE = "setting_live";//直播
   
+        public static final String FORGET_NEW_VERSION = "forget_new_version";
+    public static final String DISPLAY_LOADING_SPEED = "display_loading_speed";
+    public static final String HOME_VIEW_STYLE = "home_view_style";
+    
 }
