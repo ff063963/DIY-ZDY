@@ -184,7 +184,7 @@ public class VodController extends BaseController {
                 finishAt.setText("");
             }
             if(loadingSpeed.getVisibility() == VISIBLE)
-                loadingSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
+                //loadingSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
             mHandler.postDelayed(this, 1000);
         }
     };
@@ -199,7 +199,7 @@ public class VodController extends BaseController {
         super.initView();
         tvDate = findViewById(R.id.tv_info_time);
        finishAt = findViewById(R.id.tv_finish_at);
-       loadingSpeed = findViewById(R.id.loadingSpeed);
+      // loadingSpeed = findViewById(R.id.loadingSpeed);
         
         mCurrentTime = findViewById(R.id.curr_time);
         mTotalTime = findViewById(R.id.total_time);
