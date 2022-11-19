@@ -184,7 +184,7 @@ public class VodController extends BaseController {
                 finishAt.setText("");
             }
             if(loadingSpeed.getVisibility() == VISIBLE)
-                //loadingSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
+                loadingSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
             mHandler.postDelayed(this, 1000);
         }
     };
