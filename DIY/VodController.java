@@ -134,24 +134,53 @@ public class VodController extends BaseController {
     Runnable myRunnable;
     int myHandleSeconds = 6000;//闲置多少毫秒秒关闭底栏  默认6秒
 
-    private Runnable myRunnable2 = new Runnable() {
+   private boolean shouldShowBottom = true;
+    private boolean shouldShowLoadingSpeed = Hawk.get(HawkConfig.DISPLAY_LOADING_SPEED, true);
+    private Runnable mRunnable = new Runnable() {
+        @SuppressLint({"DefaultLocale", "SetTextI18n"})
         @Override
         public void run() {
             Date date = new Date();
-            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
-            mPlayPauseTime.setText(timeFormat.format(date));
-            String speed = PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed());
-            mPlayLoadNetSpeedRightTop.setText(speed);
-            mPlayLoadNetSpeed.setText(speed);
-            String width = Integer.toString(mControlWrapper.getVideoSize()[0]);
-            String height = Integer.toString(mControlWrapper.getVideoSize()[1]);
-            mVideoSize.setText("[ " + width + " X " + height +" ]");
-
+            @SuppressLint("SimpleDateFormat")
+            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            tvDate.setText(timeFormat.format(date));
+            if(mControlWrapper.getDuration() > 0) {
+                SimpleDateFormat onlyTimeFormat = new SimpleDateFormat("HH:mm");
+                long remainTime = mControlWrapper.getDuration() - mControlWrapper.getCurrentPosition();
+                Date endTime = new Date(date.getTime() + remainTime);
+                finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
+            } else {
+                finishAt.setText("");
+            }
+            if(loadingSpeed.getVisibility() == VISIBLE)
+                loadingSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
             mHandler.postDelayed(this, 1000);
         }
     };
 
+ private Runnable mRunnable = new Runnable() {
+        @SuppressLint({"DefaultLocale", "SetTextI18n"})
+        @Override
+        public void run() {
+            Date date = new Date();
+            @SuppressLint("SimpleDateFormat")
+            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            tvDate.setText(timeFormat.format(date));
+            if(mControlWrapper.getDuration() > 0) {
+                SimpleDateFormat onlyTimeFormat = new SimpleDateFormat("HH:mm");
+                long remainTime = mControlWrapper.getDuration() - mControlWrapper.getCurrentPosition();
+                Date endTime = new Date(date.getTime() + remainTime);
+                finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
+            } else {
+                finishAt.setText("");
+            }
+            if(loadingSpeed.getVisibility() == VISIBLE)
+                loadingSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
+            mHandler.postDelayed(this, 1000);
+        }
+    };
 
+    
 
 
 
