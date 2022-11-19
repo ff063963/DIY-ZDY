@@ -83,7 +83,7 @@ sed -i 's/6000/5000/g'  $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc
 cp $CURRENT_DIR/DIY/App.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/base/App.java  
 
 #播放界面修改
-cp $CURRENT_DIR/DIY/player_vod_control_view猫.xml  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
+#cp $CURRENT_DIR/DIY/player_vod_control_view猫.xml  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/"上一集"/ "上集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/"下一集"/ "下集"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
