@@ -198,12 +198,12 @@ public class VodController extends BaseController {
     @Override
     protected void initView() {
         super.initView();
-       tvDate = findViewById(R.id.tv_info_time);
-       finishAt = findViewById(R.id.tv_finish_at);
-       loadingSpeed = findViewById(R.id.loadingSpeed);
-        lockerLeft = findViewById(R.id.play_screen_lock_left);
-        lockerRight = findViewById(R.id.play_screen_lock_right);
-        tvBack = findViewById(R.id.tv_back);
+      // tvDate = findViewById(R.id.tv_info_time);
+      // finishAt = findViewById(R.id.tv_finish_at);
+      // loadingSpeed = findViewById(R.id.loadingSpeed);
+      //  lockerLeft = findViewById(R.id.play_screen_lock_left);
+      //  lockerRight = findViewById(R.id.play_screen_lock_right);
+      //  tvBack = findViewById(R.id.tv_back);
 
 
 
