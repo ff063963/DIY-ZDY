@@ -132,6 +132,9 @@ public class VodController extends BaseController {
     TextView tvDate;
    TextView finishAt;
    TextView loadingSpeed;
+    ImageView lockerLeft;
+    ImageView lockerRight;
+    ImageView tvBack;
     
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
