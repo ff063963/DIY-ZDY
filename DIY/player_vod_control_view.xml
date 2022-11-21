@@ -103,7 +103,7 @@
             android:tag="vod_control_pause_time"
             android:text="0Kb/s"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_20" />
+            android:textSize="@dimen/ts_24" />
     </LinearLayout>
 
     <com.github.tvbox.osc.subtitle.widget.SimpleSubtitleView
