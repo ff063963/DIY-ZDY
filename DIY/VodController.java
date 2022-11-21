@@ -139,6 +139,7 @@ public class VodController extends BaseController {
 
     private Runnable myRunnable2 = new Runnable() {
         @Override
+        public void run() {
         Date date = new Date();
          @SuppressLint("SimpleDateFormat")
   
@@ -153,7 +154,9 @@ public class VodController extends BaseController {
             mPlayLoadNetSpeed.setText(speed);
             String width = Integer.toString(mControlWrapper.getVideoSize()[0]);
             String height = Integer.toString(mControlWrapper.getVideoSize()[1]);
-            mVideoSize.setText("本集完结于 " + onlyTimeFormat.format(endTime));
+            
+            mVideoSize.setText("[ " + width + " X " + height +" ]");
+            finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
 
             mHandler.postDelayed(this, 1000);
         }
