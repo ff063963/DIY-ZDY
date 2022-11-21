@@ -13,6 +13,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="Left|Start"
+                android:visibility="gone"
+        tools:visibility="visible"
                 android:layout_marginTop="@dimen/vs_10"
                android:layout_marginStart="@dimen/vs_20"
             android:layout_marginLeft="@dimen/vs_20"
