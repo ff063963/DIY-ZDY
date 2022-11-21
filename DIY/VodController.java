@@ -160,7 +160,7 @@ public class VodController extends BaseController {
             String height = Integer.toString(mControlWrapper.getVideoSize()[1]);
             
             mVideoSize.setText("[ " + width + " X " + height +" ]");
-            //finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
+            finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
 
             mHandler.postDelayed(this, 1000);
         }
@@ -206,7 +206,9 @@ public class VodController extends BaseController {
         mZimuBtn = findViewById(R.id.zimu_select);
         mAudioTrackBtn = findViewById(R.id.audio_track_select);
         mLandscapePortraitBtn = findViewById(R.id.landscape_portrait);
-
+        
+  finishAt = findViewById(R.id.tv_finish_at);
+        
         initSubtitleInfo();
 
         myHandle = new Handler();
