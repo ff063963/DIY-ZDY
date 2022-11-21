@@ -172,12 +172,10 @@ public class VodController extends BaseController {
         }
     };
     */
-    
-  private Runnable mRunnable2 = new Runnable() {
-        @SuppressLint({"DefaultLocale", "SetTextI18n"})
+  private Runnable myRunnable2 = new Runnable() {
         @Override
         public void run() {
-                 Date date = new Date();
+            Date date = new Date();
             SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
             mPlayPauseTime.setText(timeFormat.format(date));
             String speed = PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed());
@@ -190,6 +188,7 @@ public class VodController extends BaseController {
             mHandler.postDelayed(this, 1000);
         }
     };
+
 
     @Override
     protected void initView() {
