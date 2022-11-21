@@ -202,8 +202,8 @@ public class VodController extends BaseController {
         mProgressIcon = findViewById(R.id.tv_progress_icon);
         mProgressText = findViewById(R.id.tv_progress_text);
         mBottomRoot = findViewById(R.id.bottom_container);
-        mTopRoot1 = findViewById(R.id.tv_top_l_container);
-        mTopRoot2 = findViewById(R.id.tv_top_r_container);
+        //mTopRoot1 = findViewById(R.id.tv_top_l_container);
+        //mTopRoot2 = findViewById(R.id.tv_top_r_container);
         mParseRoot = findViewById(R.id.parse_root);
         mGridView = findViewById(R.id.mGridView);
         mPlayerRetry = findViewById(R.id.play_retry);
@@ -218,10 +218,10 @@ public class VodController extends BaseController {
         mPlayerTimeStartBtn = findViewById(R.id.play_time_start);
         mPlayerTimeSkipBtn = findViewById(R.id.play_time_end);
         mPlayerTimeResetBtn = findViewById(R.id.play_time_reset);
-        mPlayPauseTime = findViewById(R.id.tv_sys_time);
-        mPlayLoadNetSpeed = findViewById(R.id.tv_play_load_net_speed);
-        mVideoSize = findViewById(R.id.tv_videosize);
-        mSubtitleView = findViewById(R.id.subtitle_view);
+        //mPlayPauseTime = findViewById(R.id.tv_sys_time);
+        //mPlayLoadNetSpeed = findViewById(R.id.tv_play_load_net_speed);
+        //mVideoSize = findViewById(R.id.tv_videosize);
+        //mSubtitleView = findViewById(R.id.subtitle_view);
         mZimuBtn = findViewById(R.id.zimu_select);
         mAudioTrackBtn = findViewById(R.id.audio_track_select);
         mLandscapePortraitBtn = findViewById(R.id.landscape_portrait);
