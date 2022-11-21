@@ -863,6 +863,23 @@ public class VodController extends BaseController {
             case VideoView.STATE_PLAYBACK_COMPLETED:
                 listener.playNext(true);
                 break;
+                            case VideoView.STATE_ERROR:
+                this.loadingSpeed.setVisibility(GONE);
+                listener.errReplay();
+                break;
+            case VideoView.STATE_PREPARED:
+                if(mControlWrapper.getVideoSize().length >= 2) {
+                    String resolution = mControlWrapper.getVideoSize()[0] + " x " + mControlWrapper.getVideoSize()[1];
+                    tvVideoInfo.setText(resolution);
+                }
+            case VideoView.STATE_BUFFERED:
+                this.loadingSpeed.setVisibility(GONE);
+                break;
+            case VideoView.STATE_PREPARING:
+            case VideoView.STATE_BUFFERING:
+                if(shouldShowLoadingSpeed)
+                    this.loadingSpeed.setVisibility(VISIBLE);
+                break;
         }
     }
 
