@@ -38,10 +38,10 @@ sed -i 's/关于/关于\\n1.2.7/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fra
 #sed -i 's/1.0.0 /1.2.7/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #版本号
-sed -i 's/1.0.0/1.2.5/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/1.0.0/1.2.7/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #共存
-sed -i 's/com.github.tvbox.osc/com.tvboxq/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/com.github.tvbox.osc/com.tvboxpq/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 //主界面修改
 cp $CURRENT_DIR/DIY/fragment_user自定义.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
