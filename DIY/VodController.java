@@ -119,6 +119,10 @@ public class VodController extends BaseController {
     TextView mPlayerIJKBtn;
     TextView mPlayerRetry;
     TextView mPlayrefresh;
+    
+     TextView finishAt;
+    
+    
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
     public TextView mPlayerTimeSkipBtn;
@@ -143,7 +147,7 @@ public class VodController extends BaseController {
         Date date = new Date();
          @SuppressLint("SimpleDateFormat")
   
-
+  if(mControlWrapper.getDuration() > 0) {
             SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
               SimpleDateFormat onlyTimeFormat = new SimpleDateFormat("HH:mm");
                 long remainTime = mControlWrapper.getDuration() - mControlWrapper.getCurrentPosition();
@@ -156,8 +160,10 @@ public class VodController extends BaseController {
             String height = Integer.toString(mControlWrapper.getVideoSize()[1]);
             
             mVideoSize.setText("[ " + width + " X " + height +" ]");
-            finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
-
+            finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime)); }
+else {
+                finishAt.setText("");
+            }
             mHandler.postDelayed(this, 1000);
         }
     };
