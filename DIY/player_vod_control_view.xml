@@ -408,10 +408,7 @@
                     app:tv_selectedItemIsCentered="true"
                     app:tv_verticalSpacingWithMargins="@dimen/vs_5" />
             </LinearLayout>
-        </LinearLayout>
 
-
-    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/tv_pause_container"
