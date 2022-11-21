@@ -60,17 +60,14 @@
 
         <TextView
             android:id="@+id/tv_sys_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:paddingTop="@dimen/vs_20"
-            android:paddingRight="@dimen/vs_20"
-            android:tag="vod_control_pause_time"
-            android:text="00:00:00"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_20" />
+              android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/vs_5"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/ts_24" />
 
              <TextView
                     android:id="@+id/tv_finish_at"
