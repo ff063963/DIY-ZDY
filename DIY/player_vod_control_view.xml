@@ -14,7 +14,7 @@
     
     <LinearLayout
             android:id="@+id/tv_top_l_container"
-              android:layout_marginTop="@dimen/vs_10"     
+     
             android:layout_width="720dp"
             android:layout_height="wrap_content"
             android:tag="tv_top_container"
@@ -63,6 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|end"
                 android:layout_marginTop="@dimen/vs_10"
+               android:layout_marginStart="@dimen/vs_20"
+            android:layout_marginLeft="@dimen/vs_20"
                 android:gravity="right|end"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/vs_20"
