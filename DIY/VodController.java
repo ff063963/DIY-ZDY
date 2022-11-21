@@ -143,7 +143,7 @@ public class VodController extends BaseController {
 
     
     int videoPlayState = 0;
-
+/*
     private Runnable myRunnable2 = new Runnable() {
         @Override
         public void run() {
@@ -160,7 +160,7 @@ public class VodController extends BaseController {
             mHandler.postDelayed(this, 1000);
         }
     };
-    
+    */
      private boolean shouldShowBottom = true;
     private boolean shouldShowLoadingSpeed = Hawk.get(HawkConfig.DISPLAY_LOADING_SPEED, true);
     private Runnable mRunnable = new Runnable() {
