@@ -11,14 +11,13 @@
     <LinearLayout
              android:id="@+id/tv_top_l_container"
              android:layout_width="wrap_content"
-              android:tag="tv_top_container"
-            android:visibility="gone"
+        android:layout_height="wrap_content"
+             android:visibility="gone"
             tools:visibility="visible"
-                android:layout_height="wrap_content"
-                android:layout_gravity="Left|Start"
+  
                 android:layout_marginTop="@dimen/vs_10"
           
-                android:gravity="Left|Start"
+       
                 android:orientation="vertical"
 
                 android:paddingRight="@dimen/vs_20"
