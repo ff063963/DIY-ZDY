@@ -139,12 +139,13 @@ public class VodController extends BaseController {
 
     private Runnable myRunnable2 = new Runnable() {
         @Override
-        public void run() {
-            Date date = new Date();
+        Date date = new Date();
+         @SuppressLint("SimpleDateFormat")
+  
 
-            SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
               SimpleDateFormat onlyTimeFormat = new SimpleDateFormat("HH:mm");
-                  long remainTime = mControlWrapper.getDuration() - mControlWrapper.getCurrentPosition();
+                long remainTime = mControlWrapper.getDuration() - mControlWrapper.getCurrentPosition();
                 Date endTime = new Date(date.getTime() + remainTime);
             mPlayPauseTime.setText(timeFormat.format(date));
             String speed = PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed());
