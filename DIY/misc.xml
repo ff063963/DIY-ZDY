@@ -39,6 +39,8 @@
         <entry key="..\:/tvbox/TVBoxOS/app/src/main/res/layout/item_quick_search_lite.xml" value="0.3619791666666667" />
         <entry key="..\:/tvbox/TVBoxOS/app/src/main/res/layout/loadsir_loading_layout.xml" value="0.3619791666666667" />
         <entry key="..\:/tvbox/TVBoxOS/app/src/main/res/layout/player_vod_control_view.xml" value="0.3619791666666667" />
+        
+       <entry key="..\:/New_work/HomeWeb/CatVodTVOSC/app/src/main/res/drawable/icon_vodcontroller_unlock.xml" value="0.2135" />
       </map>
     </option>
   </component>
