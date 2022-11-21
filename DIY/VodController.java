@@ -172,9 +172,8 @@ public class VodController extends BaseController {
         }
     };
     */
-     private boolean shouldShowBottom = true;
-    private boolean shouldShowLoadingSpeed = Hawk.get(HawkConfig.DISPLAY_LOADING_SPEED, true);
-    private Runnable mRunnable = new Runnable() {
+    
+  private Runnable mRunnable2 = new Runnable() {
         @SuppressLint({"DefaultLocale", "SetTextI18n"})
         @Override
         public void run() {
