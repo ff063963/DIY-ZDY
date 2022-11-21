@@ -409,10 +409,23 @@ public class VodController extends BaseController {
 
         
         
-        
-      
-        
-        
+      public void toggleLockController() {
+        if(deviceType == 0)
+            return;
+        if(isControllerLock) {
+            isControllerLock = false;
+            lockerLeft.setImageResource(R.drawable.icon_vodcontroller_unlock);
+            lockerRight.setImageResource(R.drawable.icon_vodcontroller_unlock);
+            showBottom();
+            mControlWrapper.setLocked(false);
+        } else {
+            isControllerLock = true;
+            lockerLeft.setImageResource(R.drawable.icon_vodcontroller_lock);
+            lockerRight.setImageResource(R.drawable.icon_vodcontroller_lock);
+            hideBottom();
+            mControlWrapper.setLocked(true);
+        }
+    }
         
         
         
