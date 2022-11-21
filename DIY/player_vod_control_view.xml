@@ -55,7 +55,7 @@
                         tools:text="100" />
 
     </LinearLayout>
-
+ </LinearLayout>
     <LinearLayout
         android:id="@+id/tv_top_r_container"
                     android:layout_width="wrap_content"
