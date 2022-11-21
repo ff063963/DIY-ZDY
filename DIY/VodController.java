@@ -185,12 +185,11 @@ public class VodController extends BaseController {
                 SimpleDateFormat onlyTimeFormat = new SimpleDateFormat("HH:mm");
                 long remainTime = mControlWrapper.getDuration() - mControlWrapper.getCurrentPosition();
                 Date endTime = new Date(date.getTime() + remainTime);
-                finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
+                   mVideoSize.setText("本集完结于 " + onlyTimeFormat.format(endTime));
             } else {
-                finishAt.setText("");
+                    mVideoSize.setText("");
             }
-            if(loadingSpeed.getVisibility() == VISIBLE)
-                loadingSpeed.setText(PlayerHelper.getDisplaySpeed(mControlWrapper.getTcpSpeed()));
+
             mHandler.postDelayed(this, 1000);
         }
     };
