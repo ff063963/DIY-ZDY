@@ -91,7 +91,7 @@
                     android:maxLines="1"
                     android:paddingBottom="@dimen/vs_5"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/ts_30" />
+                    android:textSize="@dimen/ts_24" />
         
         
         <TextView
