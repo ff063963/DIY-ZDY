@@ -238,7 +238,7 @@ public class VodController extends BaseController {
         mPlayPauseTime.post(new Runnable() {
             @Override
             public void run() {
-                mHandler.post(myRunnable2);
+                mHandler.post(myRunnable);//myRunnable2
             }
         });
 
