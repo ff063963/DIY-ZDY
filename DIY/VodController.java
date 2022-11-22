@@ -368,8 +368,9 @@ public class VodController extends BaseController {
         mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mSpeed == 5.0f) {
-                    mSpeed = 1.0f;
+                   float speed = (float) mPlayerConfig.getDouble("sp");
+                if (Speed == 5.0f) {
+                    Speed = 1.0f;
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
                   //  mplayerFFImg.setImageDrawable(dFFwd);
                 } else {
