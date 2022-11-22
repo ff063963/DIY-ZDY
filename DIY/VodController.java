@@ -208,6 +208,7 @@ public class VodController extends BaseController {
         mLandscapePortraitBtn = findViewById(R.id.landscape_portrait);
         
   finishAt = findViewById(R.id.tv_finish_at);
+    mPlayerFFwd = findViewById(R.id.play_ff);
         
         initSubtitleInfo();
 
@@ -361,6 +362,25 @@ public class VodController extends BaseController {
                 return true;
             }
         });
+        
+          // Button : Fast Forward (added by takagen99) ---------------------
+        mPlayerFFwd.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mSpeed == 5.0f) {
+                    mSpeed = 1.0f;
+//                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
+                  //  mplayerFFImg.setImageDrawable(dFFwd);
+                } else {
+                    mSpeed = 5.0f;
+//                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
+                   // mplayerFFImg.setImageDrawable(dPlay);
+                }
+                setPlaySpeed(mSpeed);
+            }
+        });
+        
+        
         mPlayerBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
