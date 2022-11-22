@@ -317,7 +317,7 @@ public class VodController extends BaseController {
                 try {
                     int scaleType = mPlayerConfig.getInt("sc");
                     scaleType++;
-                    if (scaleType > 5)
+                    if (scaleType > 3)
                         scaleType = 0;
                     mPlayerConfig.put("sc", scaleType);
                     updatePlayerCfgView();
@@ -336,7 +336,7 @@ public class VodController extends BaseController {
                 try {
                     float speed = (float) mPlayerConfig.getDouble("sp");
                     speed += 0.25f;
-                    if (speed > 5)
+                    if (speed > 3)
                         speed = 0.5f;
                     mPlayerConfig.put("sp", speed);
                     updatePlayerCfgView();
@@ -365,7 +365,7 @@ public class VodController extends BaseController {
             }
         });
         
-                // Button : Fast Forward (added by takagen99) ---------------------
+                // Button : Fast Forward (added by takagen99) 快进---------------------
              mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
      public void onClick(View view) {
