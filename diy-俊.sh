@@ -58,8 +58,8 @@ sed -i 's/tvDrive"/ tvDrive" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/
 
 
 #播放界面修改
-mv $CURRENT_DIR/DIY/vod_ffwd.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_ffwd.xml
-mv $CURRENT_DIR/DIY/vod_play.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_play.xml
+#mv $CURRENT_DIR/DIY/vod_ffwd.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_ffwd.xml
+#mv $CURRENT_DIR/DIY/vod_play.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_play.xml
 
 cp $CURRENT_DIR/DIY/misc.xml  $CURRENT_DIR/$DIR/.idea/misc.xml
 cp $CURRENT_DIR/DIY/player_vod_control_view.xml  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
