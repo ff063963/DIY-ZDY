@@ -365,7 +365,7 @@ public class VodController extends BaseController {
             }
         });
         
-                // Button : Fast Forward (added by takagen99) 快进---------------------
+     /*           // Button : Fast Forward (added by takagen99) 快进---------------------
              mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
      public void onClick(View view) {
@@ -383,6 +383,23 @@ public class VodController extends BaseController {
         }
          });
         
+        */
+       // Button : Fast Forward (added by takagen99) ---------------------
+        mPlayerFFwd.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ( float speed = 3.0f) {
+                     float speed = 1.0f;
+//                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
+              //      mplayerFFImg.setImageDrawable(dFFwd);
+                } else {
+                     float speed = 3.0f;
+//                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
+                //    mplayerFFImg.setImageDrawable(dPlay);
+                }
+                setPlaySpeed( float speed);
+            }
+        });
 
         
         mPlayerBtn.setOnClickListener(new OnClickListener() {
