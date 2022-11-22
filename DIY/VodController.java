@@ -389,9 +389,9 @@ public class VodController extends BaseController {
             @Override
             public void onClick(View view) {
                  float speed = (float) mPlayerConfig.getDouble("sp");
-               mSpeed = float speed;
-                if ( mSpeed == 3.0f) {
-                     mSpeed = 1.0f;
+                 speed += 3.0f;
+                if ( speed == 3.0f) {
+                    speed = 1.0f;
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
               //      mplayerFFImg.setImageDrawable(dFFwd);
                 } else {
@@ -399,7 +399,7 @@ public class VodController extends BaseController {
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
                 //    mplayerFFImg.setImageDrawable(dPlay);
                 }
-                setPlaySpeed( mSpeed);
+                setPlaySpeed( speed);
             }
         });
 
