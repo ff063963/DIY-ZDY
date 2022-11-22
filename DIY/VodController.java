@@ -388,8 +388,10 @@ public class VodController extends BaseController {
         mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( float speed = 3.0f) {
-                     float speed = 1.0f;
+                 float speed = (float) mPlayerConfig.getDouble("sp");
+               mSpeed = float speed;
+                if ( mSpeed == 3.0f) {
+                     mSpeed = 1.0f;
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
               //      mplayerFFImg.setImageDrawable(dFFwd);
                 } else {
@@ -397,7 +399,7 @@ public class VodController extends BaseController {
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
                 //    mplayerFFImg.setImageDrawable(dPlay);
                 }
-                setPlaySpeed( float speed);
+                setPlaySpeed( mSpeed);
             }
         });
 
