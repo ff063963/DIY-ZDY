@@ -382,7 +382,7 @@ public class VodController extends BaseController {
                 f.printStackTrace();
             }
         }
-    
+         });
         
   
         mPlayerFFwd.setOnClickListener(new OnClickListener() {
