@@ -122,6 +122,7 @@ public class VodController extends BaseController {
     
      TextView finishAt;
   TextView mPlayerFFwd;
+  float mSpeed;
     
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
@@ -334,7 +335,7 @@ public class VodController extends BaseController {
                 try {
                     float speed = (float) mPlayerConfig.getDouble("sp");
                     speed += 0.25f;
-                    if (speed > 3)
+                    if (speed > 5)
                         speed = 0.5f;
                     mPlayerConfig.put("sp", speed);
                     updatePlayerCfgView();
@@ -367,16 +368,16 @@ public class VodController extends BaseController {
         mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Speed == 5.0f) {
-                    Speed = 1.0f;
+                if (mSpeed == 5.0f) {
+                    mSpeed = 1.0f;
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
                   //  mplayerFFImg.setImageDrawable(dFFwd);
                 } else {
-                    Speed = 5.0f;
+                    mSpeed = 5.0f;
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
                    // mplayerFFImg.setImageDrawable(dPlay);
                 }
-                setPlaySpeed(Speed);
+                setPlaySpeed(mSpeed);
             }
         });
         
