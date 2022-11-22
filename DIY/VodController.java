@@ -400,16 +400,7 @@ public class VodController extends BaseController {
         });
         
         
-       void setPlaySpeed(float value) {
-        try {
-            mPlayerConfig.put("sp", value);
-            updatePlayerCfgView();
-            listener.updatePlayerCfg();
-            mControlWrapper.setSpeed(value);
-        } catch (JSONException err) {
-            err.printStackTrace();
-        }
-    }
+  
         
         
         
@@ -888,6 +879,17 @@ public class VodController extends BaseController {
         mHandler.sendEmptyMessage(1003);
     }
 
+         void setPlaySpeed(float value) {
+        try {
+            mPlayerConfig.put("sp", value);
+            updatePlayerCfgView();
+            listener.updatePlayerCfg();
+            mControlWrapper.setSpeed(value);
+        } catch (JSONException err) {
+            err.printStackTrace();
+        }
+    }
+    
     @Override
     public boolean onKeyEvent(KeyEvent event) {
         myHandle.removeCallbacks(myRunnable);
