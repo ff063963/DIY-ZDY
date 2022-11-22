@@ -399,7 +399,9 @@ public class VodController extends BaseController {
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
                 //    mplayerFFImg.setImageDrawable(dPlay);
                 }
-           f.printStackTrace();
+          catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
