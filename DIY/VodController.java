@@ -395,7 +395,7 @@ public class VodController extends BaseController {
 
                 } 
 
-        });
+        }});
 
         
         mPlayerBtn.setOnClickListener(new OnClickListener() {
