@@ -210,6 +210,8 @@ public class VodController extends BaseController {
         
   finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
+   Drawable dPlay = getResources().getDrawable(R.drawable.vod_play);
+    Drawable dFFwd = getResources().getDrawable(R.drawable.vod_ffwd);
         
         initSubtitleInfo();
 
@@ -369,13 +371,13 @@ public class VodController extends BaseController {
             @Override
             public void onClick(View view) {
                    float speed = (float) mPlayerConfig.getDouble("sp");
-                if (Speed == 5.0f) {
-                    Speed = 1.0f;
-//                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
+                if (mSpeed == 5.0f) {
+                    mSpeed = 1.0f;
+                   mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
                   //  mplayerFFImg.setImageDrawable(dFFwd);
                 } else {
                     mSpeed = 5.0f;
-//                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
+                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
                    // mplayerFFImg.setImageDrawable(dPlay);
                 }
                // setPlaySpeed(mSpeed);
