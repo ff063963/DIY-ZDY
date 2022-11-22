@@ -121,7 +121,7 @@ public class VodController extends BaseController {
     TextView mPlayrefresh;
     
      TextView finishAt;
-    
+  TextView mPlayerFFwd;
     
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
@@ -367,16 +367,16 @@ public class VodController extends BaseController {
         mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mSpeed == 5.0f) {
-                    mSpeed = 1.0f;
+                if (Speed == 5.0f) {
+                    Speed = 1.0f;
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
                   //  mplayerFFImg.setImageDrawable(dFFwd);
                 } else {
-                    mSpeed = 5.0f;
+                    Speed = 5.0f;
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
                    // mplayerFFImg.setImageDrawable(dPlay);
                 }
-                setPlaySpeed(mSpeed);
+                setPlaySpeed(Speed);
             }
         });
         
