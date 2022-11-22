@@ -384,19 +384,34 @@ public class VodController extends BaseController {
          });
         
         */
-       // Button : Fast Forward (added by takagen99) ---------------------
+        // Button : Fast Forward (added by takagen99) ---------------------
         mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                 float speed = (float) mPlayerConfig.getDouble("sp");
-                 speed += 3.0f;
-                if ( speed == 3.0f) {
-                    speed = 1.0f;
+                if (mSpeed == 5.0f) {
+                    mSpeed = 1.0f;
 
-                } 
+                } else {
+                    mSpeed = 5.0f;
 
-        }});
-
+                }
+                setPlaySpeed(mSpeed);
+            }
+        });
+        
+        
+       void setPlaySpeed(float value) {
+        try {
+            mPlayerConfig.put("sp", value);
+            updatePlayerCfgView();
+            listener.updatePlayerCfg();
+            mControlWrapper.setSpeed(value);
+        } catch (JSONException err) {
+            err.printStackTrace();
+        }
+    }
+        
+        
         
         mPlayerBtn.setOnClickListener(new OnClickListener() {
             @Override
