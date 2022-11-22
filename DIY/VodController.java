@@ -395,11 +395,11 @@ public class VodController extends BaseController {
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dFFwd, null, null, null);
               //      mplayerFFImg.setImageDrawable(dFFwd);
                 } else {
-                     float speed = 3.0f;
+         
 //                    mPlayerFFwd.setCompoundDrawablesWithIntrinsicBounds(dPlay, null, null, null);
                 //    mplayerFFImg.setImageDrawable(dPlay);
                 }
-                setPlaySpeed( speed);
+              return true;
             }
         });
 
