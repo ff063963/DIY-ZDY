@@ -336,7 +336,7 @@ public class VodController extends BaseController {
                 try {
                     float speed = (float) mPlayerConfig.getDouble("sp");
                     speed += 0.25f;
-                    if (speed > 3)
+                    if (speed > 5)
                         speed = 0.5f;
                     mPlayerConfig.put("sp", speed);
                     updatePlayerCfgView();
@@ -388,11 +388,11 @@ public class VodController extends BaseController {
         mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mSpeed == 5.0f) {
+                if (mSpeed == 3.0f) {
                     mSpeed = 1.0f;
 
                 } else {
-                    mSpeed = 5.0f;
+                    mSpeed = 3.0f;
 
                 }
                 setPlaySpeed(mSpeed);
