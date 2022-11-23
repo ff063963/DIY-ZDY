@@ -44,6 +44,7 @@ sed -i 's/1.0.0/1.2.8/g' $CURRENT_DIR/$DIR/app/build.gradle
 sed -i 's/com.github.tvbox.osc/com.tvbox.q/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 
+
 #名称修改
 sed -i 's/TVBox/影视Box/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 
@@ -56,9 +57,10 @@ mv $CURRENT_DIR/DIY/icon_drive.xml $CURRENT_DIR/$DIR/app/src/main/res/drawable/i
 sed -i 's/tvDrive"/ tvDrive" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_user.xml
 #mv $CURRENT_DIR/DIY/DetailActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/DetailActivity.java
 
-//增加版本
+//增加版本 更新说明
 mv $CURRENT_DIR/DIY/VersionDialog.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/dialog/VersionDialog.java
 mv $CURRENT_DIR/DIY/dialog_version.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
+sed -i 's/6666/增加快进按键，手动3倍快进修改为5倍快进/g'   $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
 
 #播放界面修改
 #mv $CURRENT_DIR/DIY/vod_ffwd.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_ffwd.xml
