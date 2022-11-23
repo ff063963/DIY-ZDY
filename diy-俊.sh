@@ -34,11 +34,12 @@ cp $CURRENT_DIR/DIY/ModelSettingFragment自定义.java $CURRENT_DIR/$DIR/app/src
 //设置界面修改
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
-sed -i 's/关于/关于\\n1.2.8/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+#sed -i 's/关于/关于\\n1.2.9/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/1.0.0 /1.2.8/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/版本/版本\\n1.2.9/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #版本号
-sed -i 's/1.0.0/1.2.8/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/1.0.0/1.2.9/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #共存
 sed -i 's/com.github.tvbox.osc/com.tvbox.q/g' $CURRENT_DIR/$DIR/app/build.gradle
@@ -62,6 +63,13 @@ mv $CURRENT_DIR/DIY/VersionDialog.java $CURRENT_DIR/$DIR/app/src/main/java/com/g
 mv $CURRENT_DIR/DIY/dialog_version.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
 sed -i 's/6666/增加快进按键，手动3倍快进修改为5倍快进/g'   $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
 
+
+
+//关于说明
+cp $CURRENT_DIR/DIY/dialog_about_关于.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_about.xml 
+#sed -i 's/epgApi"/epgApi" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+
+
 #播放界面修改
 #mv $CURRENT_DIR/DIY/vod_ffwd.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_ffwd.xml
 #mv $CURRENT_DIR/DIY/vod_play.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_play.xml
@@ -77,10 +85,6 @@ sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_c
 
 #播放界面增加完结时间
 cp $CURRENT_DIR/DIY/VodController.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
-
-//关于说明
-cp $CURRENT_DIR/DIY/dialog_about_关于.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_about.xml 
-#sed -i 's/epgApi"/epgApi" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #增加听书嗅探
 sed -i 's/|mp4|/|mp4|mp3|m4a|p2p|/'g $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/DefaultConfig.java
