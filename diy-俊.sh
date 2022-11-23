@@ -58,7 +58,7 @@ sed -i 's/tvDrive"/ tvDrive" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/
 
 //增加版本
 mv $CURRENT_DIR/DIY/VersionDialog.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/dialog/VersionDialog.java
-
+mv $CURRENT_DIR/DIY/dialog_version.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
 
 #播放界面修改
 #mv $CURRENT_DIR/DIY/vod_ffwd.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_ffwd.xml
