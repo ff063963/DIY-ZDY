@@ -681,13 +681,14 @@
                     </LinearLayout>
                 </LinearLayout>           
                        
-             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/vs_60"
-                    android:layout_marginBottom="@dimen/vs_10"
+                <LinearLayout
+                    android:layout_width="@dimen/vs_0"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/vs_5"
+                    android:layout_marginLeft="@dimen/vs_5"
+                    android:layout_weight="1"
                     android:focusable="false"
                     android:orientation="horizontal">
-
                 <LinearLayout
                         android:id="@+id/llPlay"
                         android:layout_width="@dimen/vs_0"
