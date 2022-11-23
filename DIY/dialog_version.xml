@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:lineSpacingExtra="@dimen/ts_50"
         android:lineSpacingMultiplier="0"
-        android:text="更新日志：6666"
+        android:text="更新日志：\n6666"
         android:textColor="@color/color_CC000000"
         android:textSize="@dimen/ts_24" />
 
