@@ -50,6 +50,10 @@ import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 import com.github.tvbox.osc.ui.adapter.ApiHistoryDialogAdapter;
 import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
+
+
+import com.github.tvbox.osc.ui.dialog.VersionDialog;
+
 /**
  * @author pj567
  * @date :2020/12/23
@@ -163,11 +167,14 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.show();
             }
         });
-        findViewById(R.id.llAbout).setOnClickListener(new View.OnClickListener() {
+        
+        
+        //版本
+        findViewById(R.id.llVersion).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FastClickCheckUtil.check(v);
-                AboutDialog dialog = new AboutDialog(mActivity);
+                VersionDialog dialog = new VersionDialog(mActivity);
                 dialog.show();
             }
         });
@@ -364,7 +371,15 @@ public class ModelSettingFragment extends BaseLazyFragment {
         });
 
 
-
+  findViewById(R.id.llAbout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FastClickCheckUtil.check(v);
+                AboutDialog dialog = new AboutDialog(mActivity);
+                dialog.show();
+            }
+        });
+        
         findViewById(R.id.llMediaCodec).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
