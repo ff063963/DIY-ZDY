@@ -241,7 +241,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center|center_horizontal"
                     
-                        android:text="配置历史"
+                        android:text="配置 历史"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_24" />
           
