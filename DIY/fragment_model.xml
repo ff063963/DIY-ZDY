@@ -1163,7 +1163,7 @@
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>         
           </LinearLayout>
-                  
-        </LinearLayout>
+        </LinearLayout>            
+      </LinearLayout>
     </ScrollView>
 </FrameLayout>
