@@ -89,7 +89,7 @@ cp $CURRENT_DIR/DIY/VodController.java $CURRENT_DIR/$DIR/app/src/main/java/com/g
 #增加听书嗅探
 sed -i 's/|mp4|/|mp4|mp3|m4a|p2p|/'g $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/DefaultConfig.java
 
-//设置界面文字修改
+//设置界面选择文字修改
 sed -i 's/站点推荐/推荐/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 sed -i 's/观看历史/历史/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 sed -i 's/豆瓣热播/豆瓣/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
@@ -98,6 +98,8 @@ sed -i 's/缩略图/图片/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvb
 sed -i 's/已开启/开启/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 sed -i 's/已关闭/关闭/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 
+//设置界面文字修改
+sed -i 's/IJK解码方式/解码方式/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 //删除播放器
 sed -i 's/播放器//g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 
