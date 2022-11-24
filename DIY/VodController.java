@@ -51,11 +51,19 @@ import xyz.doikki.videoplayer.util.PlayerUtils;
 import static xyz.doikki.videoplayer.util.PlayerUtils.stringForTime;
 
 public class VodController extends BaseController {
-        private int deviceType = 0;
-    
+     private PlayerFragment playerFragment;
+    private ParseAdapter parseAdapter;
+    private JsonObject progressData = new JsonObject();
+    private boolean isControllerLock = false;
+    private boolean isShowingLocker = false;
+    private int deviceType = 0;
+    private boolean enabledWebRemote = true;
+        
     public VodController(@NonNull @NotNull Context context) {
         super(context);
-   
+      this.playerFragment = playerFragment;
+        deviceType = Hawk.get(HawkConfig.TV_TYPE, 0);
+        enabledWebRemote = Hawk.get(HawkConfig.REMOTE_CONTROL, true);
         
         mHandlerCallback = new HandlerCallback() {
             @Override
@@ -647,7 +655,14 @@ public class VodController extends BaseController {
             }
         }
     }
-
+  tvBack.setOnClickListener(new OnClickListener() {
+         if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
+            tvBack.setVisibility(GONE);
+        } else {
+           }
+            });
+ 
+        
     void setLandscapePortrait() {
         int requestedOrientation = mActivity.getRequestedOrientation();
         if (requestedOrientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE || requestedOrientation == ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE || requestedOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE) {
