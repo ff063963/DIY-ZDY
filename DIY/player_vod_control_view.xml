@@ -391,7 +391,13 @@
 
         </LinearLayout>
 
-         <LinearLayout
+        
+  <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
@@ -426,13 +432,25 @@
                     android:textColor="@color/color_FFFFFF"
                     android:textSize="@dimen/ts_24" />
 
-             
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vs_10"
+            android:layout_marginBottom="@dimen/vs_10"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/vs_40"
+            android:paddingRight="@dimen/vs_40">
+
             <SeekBar
                 android:id="@+id/seekBar"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1"
                 android:background="@null"
                 android:focusable="false"
                 android:focusableInTouchMode="false"
@@ -445,27 +463,10 @@
                 android:progressDrawable="@drawable/shape_player_control_vod_seek"
                 android:thumb="@drawable/shape_player_control_vod_seek_thumb"
                 android:thumbOffset="@dimen/vs_0" />
-             
-             
-            </LinearLayout>
 
         </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/tv_play_load_net_speed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/vs_40"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:tag="play_load_net_speed"
-        android:text="0"
-        android:textColor="@color/color_FFFFFF"
-        android:textSize="@dimen/ts_20" />
-
-        <LinearLayout
+    
+          <LinearLayout
             android:id="@+id/parse_root"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -497,9 +498,11 @@
         </LinearLayout>
 
 
+ 
 
+    </LinearLayout>
 
-  <FrameLayout
+    <FrameLayout
         android:id="@+id/tv_pause_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
