@@ -143,6 +143,10 @@ public class VodController extends BaseController {
 
     int videoPlayState = 0;
 
+    
+    
+    
+    //增加完结时间
     private Runnable myRunnable2 = new Runnable() {
         @Override
         public void run() {
@@ -168,25 +172,38 @@ public class VodController extends BaseController {
         }
     };
 
-       lockerRight.setOnClickListener(new OnClickListener() {
+       private Runnable myRunnable2 = new Runnable() {
             @Override
             public void onClick(View view) {
-                toggleLockController();
-            }
-        });
+             
         if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
             tvBack.setVisibility(GONE);
         } else {
-            tvBack.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    enableController(false);
-                    stopFullScreen();
+            tvBack.setVisibility(VISIBLE);
+              }
+           
+            }
+        };
+        
+    
+      // Button : Fast Forward (added by takagen99) 快进---------------------
+
+        mPlayerFFwd.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mSpeed == 3.0f) {
+                    mSpeed = 1.0f;
+
+                } else {
+                    mSpeed = 3.0f;
+
                 }
-            });
-        }
-
-
+                setPlaySpeed(mSpeed);
+            }
+        });
+        
+    
+    
     @Override
     protected void initView() {
         super.initView();
@@ -381,22 +398,7 @@ public class VodController extends BaseController {
             }
         });
         
-        // Button : Fast Forward (added by takagen99) 快进---------------------
-
-        mPlayerFFwd.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mSpeed == 3.0f) {
-                    mSpeed = 1.0f;
-
-                } else {
-                    mSpeed = 3.0f;
-
-                }
-                setPlaySpeed(mSpeed);
-            }
-        });
-        
+      
         
   
         
