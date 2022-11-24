@@ -55,7 +55,7 @@ public class VodController extends BaseController {
     
     public VodController(@NonNull @NotNull Context context) {
         super(context);
-         deviceType = Hawk.get(HawkConfig.TV_TYPE, 0);
+   
         
         mHandlerCallback = new HandlerCallback() {
             @Override
@@ -176,21 +176,7 @@ public class VodController extends BaseController {
         }
     };
 
-       private Runnable mRunnable = new Runnable() {
-            @Override
-            public void onClick(View view) {
-             
-        if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
-            tvBack.setVisibility(GONE);
-        } else {
-            tvBack.setVisibility(VISIBLE);
-              }
-           
-            }
-        };
-        
-    
-
+  
     
     @Override
     protected void initView() {
@@ -317,12 +303,7 @@ public class VodController extends BaseController {
             }
         });
         
-          tvDate.post(new Runnable() {
-            @Override
-            public void run() {
-                mHandler.post(mRunnable);
-            }
-        });
+    
         
         mNextBtn.setOnClickListener(new OnClickListener() {
             @Override
