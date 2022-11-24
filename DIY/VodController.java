@@ -51,9 +51,9 @@ import xyz.doikki.videoplayer.util.PlayerUtils;
 import static xyz.doikki.videoplayer.util.PlayerUtils.stringForTime;
 
 public class VodController extends BaseController {
-     private PlayerFragment playerFragment;
+    // private PlayerFragment playerFragment;
     private ParseAdapter parseAdapter;
-    private JsonObject progressData = new JsonObject();
+   // private JsonObject progressData = new JsonObject();
     private boolean isControllerLock = false;
     private boolean isShowingLocker = false;
     private int deviceType = 0;
