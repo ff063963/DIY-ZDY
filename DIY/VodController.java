@@ -61,9 +61,9 @@ public class VodController extends BaseController {
         
     public VodController(@NonNull @NotNull Context context) {
         super(context);
-      this.playerFragment = playerFragment;
-        deviceType = Hawk.get(HawkConfig.TV_TYPE, 0);
-        enabledWebRemote = Hawk.get(HawkConfig.REMOTE_CONTROL, true);
+      //this.playerFragment = playerFragment;
+       // deviceType = Hawk.get(HawkConfig.TV_TYPE, 0);
+       // enabledWebRemote = Hawk.get(HawkConfig.REMOTE_CONTROL, true);
         
         mHandlerCallback = new HandlerCallback() {
             @Override
