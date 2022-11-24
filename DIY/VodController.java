@@ -166,8 +166,15 @@ public class VodController extends BaseController {
 
             mHandler.postDelayed(this, 1000);
         }
-        
-           if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
+    };
+
+ private Runnable myRunnable2 = new Runnable() {
+        @Override
+        public void run() {
+        Date date = new Date();
+         @SuppressLint("SimpleDateFormat")
+
+    if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
             tvBack.setVisibility(GONE);
         } else {
             tvBack.setOnClickListener(new OnClickListener() {
@@ -178,12 +185,7 @@ public class VodController extends BaseController {
                 }
             });
         }
-        
-    };
-
-
-
-
+          };  
 
     @Override
     protected void initView() {
