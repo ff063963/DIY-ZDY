@@ -167,12 +167,31 @@ public class VodController extends BaseController {
             mHandler.postDelayed(this, 1000);
         }
     };
-
+/*
+       lockerRight.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toggleLockController();
+            }
+        });
+        if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
+            tvBack.setVisibility(GONE);
+        } else {
+            tvBack.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    enableController(false);
+                    stopFullScreen();
+                }
+            });
+        }
+    */
+    
  private Runnable myRunnable2 = new Runnable() {
-        @Override
-        public void run() {
-        Date date = new Date();
-         @SuppressLint("SimpleDateFormat")
+         public void onClick(View view) {
+                toggleLockController();
+            }
+        });
 
     if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
             tvBack.setVisibility(GONE);
