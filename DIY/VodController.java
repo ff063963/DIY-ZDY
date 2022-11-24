@@ -51,8 +51,12 @@ import xyz.doikki.videoplayer.util.PlayerUtils;
 import static xyz.doikki.videoplayer.util.PlayerUtils.stringForTime;
 
 public class VodController extends BaseController {
+        private int deviceType = 0;
+    
     public VodController(@NonNull @NotNull Context context) {
         super(context);
+         deviceType = Hawk.get(HawkConfig.TV_TYPE, 0);
+        
         mHandlerCallback = new HandlerCallback() {
             @Override
             public void callback(Message msg) {
@@ -172,7 +176,7 @@ public class VodController extends BaseController {
         }
     };
 
-       private Runnable myRunnable2 = new Runnable() {
+       private Runnable mRunnable = new Runnable() {
             @Override
             public void onClick(View view) {
              
@@ -312,6 +316,14 @@ public class VodController extends BaseController {
                 hideBottom();
             }
         });
+        
+          tvDate.post(new Runnable() {
+            @Override
+            public void run() {
+                mHandler.post(mRunnable);
+            }
+        });
+        
         mNextBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
