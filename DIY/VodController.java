@@ -167,7 +167,7 @@ public class VodController extends BaseController {
             mHandler.postDelayed(this, 1000);
         }
     };
-/*
+
        lockerRight.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -185,26 +185,7 @@ public class VodController extends BaseController {
                 }
             });
         }
-    */
-    
- private Runnable myRunnable2 = new Runnable() {
-         public void onClick(View view) {
-                toggleLockController();
-            }
-        });
 
-    if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
-            tvBack.setVisibility(GONE);
-        } else {
-            tvBack.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    enableController(false);
-                    stopFullScreen();
-                }
-            });
-        }
-          };  
 
     @Override
     protected void initView() {
@@ -400,26 +381,8 @@ public class VodController extends BaseController {
             }
         });
         
-     /*           // Button : Fast Forward (added by takagen99) 快进---------------------
-             mPlayerFFwd.setOnClickListener(new OnClickListener() {
-            @Override
-     public void onClick(View view) {
-          fromLongPress = true;
-            try {
-                speed_old = (float) mPlayerConfig.getDouble("sp");
-                float speed = 3.0f;
-                mPlayerConfig.put("sp", speed);
-                updatePlayerCfgView();
-                listener.updatePlayerCfg();
-                mControlWrapper.setSpeed(speed);
-            } catch (JSONException f) {
-                f.printStackTrace();
-            }
-        }
-         });
-        
-        */
-        // Button : Fast Forward (added by takagen99) ---------------------
+        // Button : Fast Forward (added by takagen99) 快进---------------------
+
         mPlayerFFwd.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
