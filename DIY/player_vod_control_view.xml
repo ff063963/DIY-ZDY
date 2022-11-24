@@ -518,6 +518,7 @@
         </LinearLayout>
 
   </LinearLayout>
+</LinearLayout>
 
 <FrameLayout
         android:id="@+id/tv_pause_container"
