@@ -136,13 +136,13 @@
             android:text="0Kb/s"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ts_24" />
-            </LinearLayout>
+      </LinearLayout>
 
-        </FrameLayout>
+      </FrameLayout>
 
-    </LinearLayout>
+   </LinearLayout>
 
-    <LinearLayout
+
     <com.github.tvbox.osc.subtitle.widget.SimpleSubtitleView
         android:id="@+id/subtitle_view"
         android:layout_width="match_parent"
