@@ -24,6 +24,12 @@
         
         
      
+              <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vs_20"
+            android:layout_marginBottom="@dimen/vs_20">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,53 +45,51 @@
                     android:layout_marginRight="@dimen/vs_10"
                     app:srcCompat="@drawable/icon_back" />
 
-            </LinearLayout>
-        
-        
-            <TextView
-                android:id="@+id/tv_info_name1"
-                       android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:width="680dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                android:paddingLeft="@dimen/vs_20"
-                android:text="http://"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/ts_24" />
+                    <TextView
+                        android:id="@+id/tv_info_name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxWidth="@dimen/vs_640"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/vs_20"
+                        android:paddingTop="@dimen/vs_10"
+                        android:paddingRight="@dimen/vs_20"
+                        android:singleLine="true"
+                        android:text="http://"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/ts_30" />
 
-            <TextView
-                android:id="@+id/tv_videosize"
-                   android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/tv_videosize"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:maxLines="1"
                         android:paddingLeft="@dimen/vs_20"
-
+                        android:paddingTop="@dimen/vs_5"
                         android:paddingRight="@dimen/vs_20"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_24"
                         tools:text="100" />
+                </LinearLayout>
 
-    </LinearLayout>
-                
+            </LinearLayout>
 
              
     <LinearLayout
         android:id="@+id/tv_top_r_container"
-                    android:layout_width="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|end"
-                   android:visibility="gone"
-            tools:visibility="visible"
-  
                 android:layout_marginTop="@dimen/vs_10"
-               android:layout_marginStart="@dimen/vs_20"
-            android:layout_marginLeft="@dimen/vs_20"
                 android:gravity="right|end"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/vs_20"
@@ -94,7 +98,7 @@
 
         <TextView
             android:id="@+id/tv_sys_time"
-              android:layout_width="wrap_content"
+                 android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:gravity="center_vertical"
@@ -102,8 +106,7 @@
                     android:paddingBottom="@dimen/vs_5"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/ts_24" />
-
-             <TextView
+               <TextView
                     android:id="@+id/tv_finish_at"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -127,12 +130,11 @@
             android:text="0Kb/s"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ts_24" />
-      </LinearLayout>
+    </LinearLayout>
 
+   </FrameLayout>
 
-
-   </LinearLayout>
-
+    </LinearLayout>
 
     <com.github.tvbox.osc.subtitle.widget.SimpleSubtitleView
         android:id="@+id/subtitle_view"
