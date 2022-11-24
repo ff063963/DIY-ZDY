@@ -389,7 +389,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_20"/>
 
-        </LinearLayout>
+
 
         
      <Space
@@ -464,7 +464,7 @@
                 android:thumbOffset="@dimen/vs_0" />
 
         </LinearLayout>
-    
+   </LinearLayout>
           <LinearLayout
             android:id="@+id/parse_root"
             android:layout_width="match_parent"
