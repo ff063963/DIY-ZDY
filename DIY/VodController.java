@@ -186,23 +186,7 @@ public class VodController extends BaseController {
         };
         
     
-      // Button : Fast Forward (added by takagen99) 快进---------------------
 
-        mPlayerFFwd.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mSpeed == 3.0f) {
-                    mSpeed = 1.0f;
-
-                } else {
-                    mSpeed = 3.0f;
-
-                }
-                setPlaySpeed(mSpeed);
-            }
-        });
-        
-    
     
     @Override
     protected void initView() {
@@ -399,7 +383,23 @@ public class VodController extends BaseController {
         });
         
       
+              // Button : Fast Forward (added by takagen99) 快进---------------------
+
+        mPlayerFFwd.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mSpeed == 3.0f) {
+                    mSpeed = 1.0f;
+
+                } else {
+                    mSpeed = 3.0f;
+
+                }
+                setPlaySpeed(mSpeed);
+            }
+        });
         
+    
   
         
         
