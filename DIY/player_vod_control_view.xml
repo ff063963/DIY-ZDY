@@ -497,11 +497,6 @@
                 app:tv_verticalSpacingWithMargins="@dimen/vs_5" />
         </LinearLayout>
 
-
- 
-
-    </LinearLayout>
-
     <FrameLayout
         android:id="@+id/tv_pause_container"
         android:layout_width="match_parent"
