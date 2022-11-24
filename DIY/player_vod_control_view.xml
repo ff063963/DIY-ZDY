@@ -407,6 +407,22 @@
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="@dimen/ts_20" />
 
+               
+               
+               
+            <TextView
+                android:id="@+id/total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/vs_10"
+                android:paddingLeft="@dimen/vs_10"
+                android:text="00:00"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20" />
+               
+               
+               
+               
             <SeekBar
                 android:id="@+id/seekBar"
                 android:layout_width="0dp"
@@ -426,15 +442,6 @@
                 android:thumb="@drawable/shape_player_control_vod_seek_thumb"
                 android:thumbOffset="@dimen/vs_0" />
 
-            <TextView
-                android:id="@+id/total_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="@dimen/vs_10"
-                android:paddingLeft="@dimen/vs_10"
-                android:text="00:00"
-                android:textColor="@color/color_FFFFFF"
-                android:textSize="@dimen/ts_20" />
         </LinearLayout>
 
 
