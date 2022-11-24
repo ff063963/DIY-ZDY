@@ -123,6 +123,7 @@ public class VodController extends BaseController {
      TextView finishAt;
   TextView mPlayerFFwd;
   float mSpeed;
+       ImageView tvBack;
     
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
@@ -165,6 +166,19 @@ public class VodController extends BaseController {
 
             mHandler.postDelayed(this, 1000);
         }
+        
+           if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
+            tvBack.setVisibility(GONE);
+        } else {
+            tvBack.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    enableController(false);
+                    stopFullScreen();
+                }
+            });
+        }
+        
     };
 
 
@@ -210,7 +224,7 @@ public class VodController extends BaseController {
         
   finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
-
+ tvBack = findViewById(R.id.tv_back);
         
         initSubtitleInfo();
 
