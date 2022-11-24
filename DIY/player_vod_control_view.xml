@@ -23,12 +23,7 @@
        
         
         
-         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/vs_20"
-            android:layout_marginBottom="@dimen/vs_20">
-
+     
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,11 +39,7 @@
                     android:layout_marginRight="@dimen/vs_10"
                     app:srcCompat="@drawable/icon_back" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-   
+            </LinearLayout>
         
         
             <TextView
@@ -82,7 +73,7 @@
 
     </LinearLayout>
                 
-  </LinearLayout>
+
              
     <LinearLayout
         android:id="@+id/tv_top_r_container"
@@ -138,7 +129,7 @@
             android:textSize="@dimen/ts_24" />
       </LinearLayout>
 
-      </FrameLayout>
+
 
    </LinearLayout>
 
