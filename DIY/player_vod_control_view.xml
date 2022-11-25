@@ -82,7 +82,7 @@
                     android:id="@+id/tv_finish_at"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                     android:paddingTop="@dimen/vs_10"
+                    android:paddingTop="@dimen/vs_1"
                     android:ellipsize="end"
                     android:gravity="right|center_vertical|end"
                     android:maxLines="1"
