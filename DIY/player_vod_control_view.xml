@@ -91,10 +91,10 @@
             android:layout_gravity="right"
             android:ellipsize="end"
             android:maxLines="1"
-            android:paddingTop="@dimen/vs_20"
+            android:paddingTop="@dimen/vs_10"
             android:paddingRight="@dimen/vs_30"
             android:tag="vod_control_pause_time"
-            android:text="00:00"
+            android:text="0:00"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ts_30" />
 
@@ -105,12 +105,12 @@
             android:layout_gravity="right"
             android:ellipsize="end"
             android:maxLines="1"
-            android:paddingTop="@dimen/vs_20"
+            android:paddingTop="@dimen/vs_5"
             android:paddingRight="@dimen/vs_20"
             android:tag="vod_control_pause_time"
-            android:text="00:00"
+            android:text="0:00"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_20" />
+            android:textSize="@dimen/ts_15" />
         
         
         <TextView
