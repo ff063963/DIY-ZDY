@@ -103,7 +103,7 @@
             android:paddingRight="@dimen/vs_40"
             android:tag="vod_control_pause_time"  
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_40" />
+            android:textSize="@dimen/ts_50" />
 
              <TextView
                     android:id="@+id/tv_finish_at"
@@ -113,7 +113,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:paddingTop="@dimen/vs_1"
-            android:paddingRight="@dimen/vs_20"
+            android:paddingRight="@dimen/vs_30"
             android:tag="vod_control_pause_time"
    
             android:textColor="@android:color/white"
@@ -131,7 +131,7 @@
             android:tag="vod_control_pause_time"
             android:text="0Kb/s"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_20" />
+            android:textSize="10sp" />
     </LinearLayout>
  </FrameLayout>
     
