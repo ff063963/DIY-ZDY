@@ -192,7 +192,11 @@ public class VodController extends BaseController {
         if(btnHint.getVisibility() == VISIBLE) {
             btnHint.clearAnimation();
             btnHint.animate().alpha(0).setDuration(300).start();
+        } else {
+        
         }
+    };
+
     
     @Override
     protected void initView() {
