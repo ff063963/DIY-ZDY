@@ -87,7 +87,7 @@ sed -i 's/片头片尾//' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_c
 cp $CURRENT_DIR/DIY/VodController.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
 
 #更改播放背景
-sed -i 's/color_6C3D3D3D/ color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_user_focus.xml
+sed -i 's/color_6C3D3D3D/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_user_focus.xml
 
 #增加听书嗅探
 sed -i 's/|mp4|/|mp4|mp3|m4a|p2p|/'g $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/DefaultConfig.java
