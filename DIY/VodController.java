@@ -237,7 +237,7 @@ public class VodController extends BaseController {
         
   finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
-     btnHint = findViewById(R.id.play_btn_hint);   
+     //btnHint = findViewById(R.id.play_btn_hint);   
         
  //tvBack = findViewById(R.id.tv_back);
         
