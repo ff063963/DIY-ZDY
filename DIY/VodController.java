@@ -133,6 +133,7 @@ public class VodController extends BaseController {
     TextView mPlayrefresh;
     
      TextView finishAt;
+     TextView btnHint;
   TextView mPlayerFFwd;
   float mSpeed;
        ImageView tvBack;
@@ -185,6 +186,13 @@ public class VodController extends BaseController {
     };
 
   
+  //增加背景
+     void showBtnHint(View focusedView) {
+        long postDelay = 300;
+        if(btnHint.getVisibility() == VISIBLE) {
+            btnHint.clearAnimation();
+            btnHint.animate().alpha(0).setDuration(300).start();
+        }
     
     @Override
     protected void initView() {
@@ -225,6 +233,8 @@ public class VodController extends BaseController {
         
   finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
+     btnHint = findViewById(R.id.play_btn_hint);   
+        
  //tvBack = findViewById(R.id.tv_back);
         
         initSubtitleInfo();
