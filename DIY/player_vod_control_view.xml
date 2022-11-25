@@ -110,7 +110,7 @@
             android:tag="vod_control_pause_time"
             android:text="0:00"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_15" />
+            android:textSize="18sp" />
         
         
         <TextView
