@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
   android:focusable="false">
 
     <TextView
@@ -165,16 +165,17 @@
         
         <TextView
             android:id="@+id/tv_play_load_net_speed_right_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:paddingRight="@dimen/vs_20"
-            android:tag="vod_control_pause_time"
-            android:text="0Kb/s"
-            android:textColor="@android:color/white"
-            android:textSize="10sp" />
+     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical|end"
+                    android:maxLines="1"
+                       android:tag="vod_control_pause_time"
+                    android:text="0Kb/s"
+                    android:paddingBottom="@dimen/vs_5"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/ts_24" />
+
     </LinearLayout>
  </FrameLayout>
     
