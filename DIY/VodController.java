@@ -166,8 +166,8 @@ public class VodController extends BaseController {
          @SuppressLint("SimpleDateFormat")
   
 
-            SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm aa");
-              SimpleDateFormat onlyTimeFormat = new SimpleDateFormat("HH:mm");
+            SimpleDateFormat timeFormat = new SimpleDateFormat(" aa hh:mm ");
+              SimpleDateFormat onlyTimeFormat = new SimpleDateFormat("aa HH:mm");
                 long remainTime = mControlWrapper.getDuration() - mControlWrapper.getCurrentPosition();
                 Date endTime = new Date(date.getTime() + remainTime);
             mPlayPauseTime.setText(timeFormat.format(date));
@@ -178,7 +178,7 @@ public class VodController extends BaseController {
             String height = Integer.toString(mControlWrapper.getVideoSize()[1]);
             
             mVideoSize.setText("[ " + width + " X " + height +" ]");
-            finishAt.setText("本集完结于 " + onlyTimeFormat.format(endTime));
+            finishAt.setText("完结时间" + onlyTimeFormat.format(endTime));
 
             mHandler.postDelayed(this, 1000);
         }
