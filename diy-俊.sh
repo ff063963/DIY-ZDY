@@ -90,7 +90,7 @@ cp $CURRENT_DIR/DIY/VodController.java $CURRENT_DIR/$DIR/app/src/main/java/com/g
 #进度条
 sed -i 's/color_353744/color_1890FF/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_player_control_vod_seek.xml
 
-sed -i 's/1890FF/FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_play_bottom.xml
+sed -i 's/66000000/FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/box_controller_top_bg.xml
 #圆点
 #sed -i 's/color_1890FF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_player_control_vod_seek_thumb_press.xml
 
