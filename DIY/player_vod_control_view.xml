@@ -108,8 +108,8 @@
                 android:paddingRight="@dimen/vs_20"
                 android:paddingBottom="@dimen/vs_10">
 
-                <TextView
-                    android:id="@+id/tv_sys_time"
+              <TextView
+                    android:id="@+id/tv_info_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
