@@ -225,7 +225,7 @@ public class VodController extends BaseController {
         
   finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
- tvBack = findViewById(R.id.tv_back);
+ //tvBack = findViewById(R.id.tv_back);
         
         initSubtitleInfo();
 
