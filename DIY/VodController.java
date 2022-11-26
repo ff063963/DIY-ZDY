@@ -79,7 +79,6 @@ public class VodController extends BaseController {
                     }
                     case 1002: { // 显示底部菜单
                         mBottomRoot.setVisibility(VISIBLE);
-                        mTopRoot.setVisibility(VISIBLE);
                         mTopRoot1.setVisibility(VISIBLE);
                         mTopRoot2.setVisibility(VISIBLE);
                         mPlayTitle.setVisibility(GONE);
@@ -87,7 +86,6 @@ public class VodController extends BaseController {
                         break;
                     }
                     case 1003: { // 隐藏底部菜单
-                        mTopRoot.setVisibility(VISIBLE);
                         mBottomRoot.setVisibility(GONE);
                         mTopRoot1.setVisibility(GONE);
                         mTopRoot2.setVisibility(GONE);
@@ -139,8 +137,6 @@ public class VodController extends BaseController {
   TextView mPlayerFFwd;
   float mSpeed;
        ImageView tvBack;
-     LinearLayout mTopbg;
-    
     
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
@@ -182,7 +178,7 @@ public class VodController extends BaseController {
             String width = Integer.toString(mControlWrapper.getVideoSize()[0]);
             String height = Integer.toString(mControlWrapper.getVideoSize()[1]);
             
-            mVideoSize.setText( " + width + " X " + height +" );
+            mVideoSize.setText("[ " + width + " X " + height +" ]");
             finishAt.setText("结束于：" + onlyTimeFormat.format(endTime));
 
             mHandler.postDelayed(this, 1000);
@@ -241,7 +237,6 @@ public class VodController extends BaseController {
         
   finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
-    mTopbg = findViewById(R.id.top_container);   
      //btnHint = findViewById(R.id.play_btn_hint);   
         
  //tvBack = findViewById(R.id.tv_back);
@@ -871,7 +866,6 @@ public class VodController extends BaseController {
             case VideoView.STATE_PAUSED:
                 mTopRoot1.setVisibility(GONE);
                 mTopRoot2.setVisibility(GONE);
-                mTopbg.setVisibility(GONE);
                 mPlayTitle.setVisibility(VISIBLE);
                 break;
             case VideoView.STATE_ERROR:
@@ -898,12 +892,6 @@ public class VodController extends BaseController {
         return mBottomRoot.getVisibility() == VISIBLE;
     }
 
-    //eeeee
-      //  boolean isBottomVisible() {
-     //   return mTopbg.getVisibility() == VISIBLE;
-   // }
-
-    
     void showBottom() {
         mHandler.removeMessages(1003);
         mHandler.sendEmptyMessage(1002);
