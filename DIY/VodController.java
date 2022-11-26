@@ -139,7 +139,7 @@ public class VodController extends BaseController {
   TextView mPlayerFFwd;
   float mSpeed;
        ImageView tvBack;
-     LinearLayout mTopRoot;
+     LinearLayout mTopbg;
     
     
     public TextView mPlayerTimeStartEndText;
@@ -241,7 +241,7 @@ public class VodController extends BaseController {
         
   finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
-    mTopRoot = findViewById(R.id.top_container);   
+    mTopbg = findViewById(R.id.top_container);   
      //btnHint = findViewById(R.id.play_btn_hint);   
         
  //tvBack = findViewById(R.id.tv_back);
@@ -871,6 +871,7 @@ public class VodController extends BaseController {
             case VideoView.STATE_PAUSED:
                 mTopRoot1.setVisibility(GONE);
                 mTopRoot2.setVisibility(GONE);
+                mTopbg.setVisibility(GONE);
                 mPlayTitle.setVisibility(VISIBLE);
                 break;
             case VideoView.STATE_ERROR:
@@ -898,9 +899,9 @@ public class VodController extends BaseController {
     }
 
     //eeeee
-        boolean isBottomVisible() {
-        return mTopRoot.getVisibility() == VISIBLE;
-    }
+      //  boolean isBottomVisible() {
+     //   return mTopbg.getVisibility() == VISIBLE;
+   // }
 
     
     void showBottom() {
