@@ -86,8 +86,6 @@
         android:id="@+id/tv_top_r_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="1"
         android:visibility="gone"
         tools:visibility="visible"
         android:layout_gravity="right"
@@ -99,8 +97,12 @@
             android:id="@+id/tv_sys_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"      
             android:layout_gravity="right"
-            android:paddingRight="@dimen/vs_40"
+            android:paddingTop="@dimen/vs_20"
+            android:paddingRight="@dimen/vs_20"
+            android:tag="vod_control_pause_time"      
             android:textColor="@android:color/white"
             android:textSize="40sp"/>
         
