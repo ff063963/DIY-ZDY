@@ -37,10 +37,10 @@
       <LinearLayout
         android:id="@+id/top_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/vs_120"
+        android:layout_height="@dimen/vs_200"
         android:layout_gravity="top"
         android:gravity="end"
-        android:background="@drawable/shape_dialog_filter_bg"            
+        android:background="@drawable/shape_dialog_top_bg"            
         android:orientation="horizontal"
         android:paddingTop="@dimen/vs_10"
         android:tag="top_container_hide"
@@ -55,7 +55,6 @@
             android:visibility="gone"
             tools:visibility="visible"
             android:layout_marginStart="@dimen/vs_20"
-            android:layout_marginLeft="@dimen/vs_20"
             android:layout_marginTop="@dimen/vs_10"
             android:orientation="vertical">
 
@@ -67,7 +66,6 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:width="680dp"
-                android:paddingTop="@dimen/vs_20"
                 android:paddingLeft="@dimen/vs_20"
                 android:text="http://"
                 android:textColor="@android:color/white"
@@ -95,7 +93,7 @@
         android:visibility="gone"
         tools:visibility="visible"
         android:layout_gravity="right"
-        android:layout_marginRight="@dimen/vs_20"
+        android:layout_marginRight="@dimen/vs_40"
         android:layout_marginTop="@dimen/vs_10"
         android:orientation="vertical">
 
@@ -106,11 +104,10 @@
             android:layout_gravity="right"
             android:ellipsize="end"
             android:maxLines="1"
-            android:paddingTop="@dimen/vs_20"
-            android:paddingRight="@dimen/vs_20"
+            android:paddingRight="@dimen/vs_60"
             android:tag="vod_control_pause_time"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_20" />
+            android:textSize="@dimen/ts_40" />
         
            <TextView
                     android:id="@+id/tv_finish_at"
@@ -120,8 +117,9 @@
                     android:gravity="right|center_vertical|end"
                     android:maxLines="1"
                     android:paddingBottom="@dimen/vs_5"
+                    android:paddingRight="@dimen/vs_50"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/ts_24" />
+                    android:textSize="@dimen/ts_20" />
         
         
         <TextView
