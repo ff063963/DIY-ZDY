@@ -54,7 +54,7 @@
             android:tag="tv_top_container"
             android:visibility="gone"
             tools:visibility="visible"
-            android:layout_marginleft="20dp"  
+            android:layout_marginRight="20dp"
             android:layout_marginTop="@dimen/vs_10"
             android:orientation="vertical">
 
