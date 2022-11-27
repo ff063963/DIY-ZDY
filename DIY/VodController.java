@@ -895,12 +895,9 @@ public class VodController extends BaseController {
 
     boolean isBottomVisible() {
         return mBottomRoot.getVisibility() == VISIBLE;
+          return mTopRoot.getVisibility() == VISIBLE;
     }
 
-    //eeeee
-        boolean isBottomVisible() {
-        return mTopRoot.getVisibility() == VISIBLE;
-    }
 
     
     void showBottom() {
