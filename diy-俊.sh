@@ -73,7 +73,9 @@ cp $CURRENT_DIR/DIY/dialog_about_关于.xml $CURRENT_DIR/$DIR/app/src/main/res/l
 #播放界面修改
 #mv $CURRENT_DIR/DIY/vod_ffwd.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_ffwd.xml
 #mv $CURRENT_DIR/DIY/vod_play.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/vod_play.xml
+
 mv $CURRENT_DIR/DIY/play_mobile_center_shape.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/play_mobile_center_shape.xml
+mv $CURRENT_DIR/DIY/shape_dialog_top_bg.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_dialog_top_bg.xml
 cp $CURRENT_DIR/DIY/misc.xml  $CURRENT_DIR/$DIR/.idea/misc.xml
 cp $CURRENT_DIR/DIY/player_vod_control_view.xml  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 cp $CURRENT_DIR/DIY/player_live_control_view.xml  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_live_control_view.xml
