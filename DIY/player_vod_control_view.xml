@@ -86,14 +86,14 @@
 
     <LinearLayout
         android:id="@+id/tv_top_r_container"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:tag="tv_top_container"
         android:visibility="gone"
         tools:visibility="visible"
         android:layout_gravity="right"
-        android:layout_marginRight="@dimen/vs_40"
-        android:layout_marginTop="@dimen/vs_10"
+        android:layout_marginRight="@dimen/vs_50"
+        android:paddingTop="@dimen/vs_10"  
         android:orientation="vertical">
 
         <TextView
