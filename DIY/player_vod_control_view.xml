@@ -64,7 +64,6 @@
                 android:layout_gravity="left"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:paddingLeft="@dimen/vs_10"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_20" />
 
