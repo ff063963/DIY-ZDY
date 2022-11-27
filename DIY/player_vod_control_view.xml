@@ -93,7 +93,8 @@
 
 
     
-    <LinearLayout                          
+    <LinearLayout  
+                android:id="@+id/tv_top_r_container" 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|end"
