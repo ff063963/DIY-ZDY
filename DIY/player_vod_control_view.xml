@@ -112,11 +112,12 @@
               android:id="@+id/tv_finish_at"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:layout_gravity="right"       
               android:ellipsize="end"
               android:focusable="false"
               android:focusableInTouchMode="false"
               android:maxLines="1"
-              android:layout_marginRight="@dimen/vs_40"
+              android:layout_marginRight="@dimen/vs_10"
               android:textColor="@android:color/white"
               android:textSize="15dp" />
         
@@ -128,7 +129,7 @@
             android:layout_gravity="right"
             android:ellipsize="end"
             android:maxLines="1"
-            android:layout_marginRight="@dimen/vs_40"
+            android:layout_marginRight="@dimen/vs_10"
             android:tag="vod_control_pause_time"
             android:text="0Kb/s"
             android:textColor="@android:color/white"
