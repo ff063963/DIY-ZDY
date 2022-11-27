@@ -61,7 +61,7 @@ sed -i 's/tvDrive"/ tvDrive" android:visibility="gone"/g' $CURRENT_DIR/$DIR/app/
 //增加版本 更新说明
 mv $CURRENT_DIR/DIY/VersionDialog.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/dialog/VersionDialog.java
 mv $CURRENT_DIR/DIY/dialog_version.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
-sed -i 's/6666/增加快进按键，手动3倍快进修改为5倍快进/g'   $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
+sed -i 's/6666/部分UI修改/g'   $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
 
 
 
@@ -107,9 +107,19 @@ sed -i 's/文字列表/文字/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/
 sed -i 's/缩略图/图片/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 sed -i 's/已开启/开启/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 sed -i 's/已关闭/关闭/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
-
+sed -i 's/系统自带/系统/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
+sed -i 's/硬解码/硬解/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/bean/LivePlayerManager.java
+sed -i 's/硬解码/软解/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/bean/LivePlayerManager.java
 //设置界面文字修改
 sed -i 's/IJK解码方式/解码方式/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/搜索附近TVBox/搜索附近/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/数据备份还原/备份还原/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/关于/软件说明/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/播放器/播放方式/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/版本/版本更新/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/嗅探Webview/嗅探方式/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/换张壁纸/更换壁纸/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/画中画/显画中画/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 //删除播放器
 sed -i 's/播放器//g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 
