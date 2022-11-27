@@ -38,10 +38,11 @@
         android:id="@+id/top_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/vs_150"
-        android:background="@drawable/shape_dialog_top_bg"            
-            android:visibility="gone"
-            tools:visibility="visible"
-            android:orientation="vertical">
+        android:background="@drawable/shape_dialog_top_bg"
+        android:paddingTop="@dimen/vs_10"           
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:orientation="vertical">
 
 <LinearLayout
             android:id="@+id/tv_top_l_container"
@@ -55,7 +56,7 @@
                 android:id="@+id/tv_info_name1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
- 
+                        android:paddingLeft="@dimen/vs_20"
                         android:maxWidth="@dimen/vs_640"
                         android:maxLines="1"
                         android:singleLine="true"
@@ -66,6 +67,7 @@
                         android:id="@+id/tv_videosize"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/vs_20"
                         android:ellipsize="end"
                         android:focusable="false"
                         android:focusableInTouchMode="false"
@@ -78,23 +80,17 @@
 
     <LinearLayout
         android:id="@+id/tv_top_r_container"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:tag="tv_top_container"
-        android:visibility="gone"
-        tools:visibility="visible"
-        android:layout_gravity="right"
-        android:layout_marginRight="@dimen/vs_40"
-        android:layout_marginTop="@dimen/vs_10"
-        android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_sys_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:ellipsize="end"
-            android:maxLines="1"
             android:paddingRight="@dimen/vs_50"
             android:tag="vod_control_pause_time"
             android:textColor="@android:color/white"
@@ -104,10 +100,7 @@
                     android:id="@+id/tv_finish_at"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ellipsize="end"
                     android:gravity="right|center_vertical|end"
-                    android:maxLines="1"
-                    android:paddingBottom="@dimen/vs_5"
                     android:paddingRight="@dimen/vs_60"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
