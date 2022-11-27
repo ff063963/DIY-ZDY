@@ -35,7 +35,7 @@
     </LinearLayout>
     
     
-      <LinearLayout
+  <LinearLayout
         android:id="@+id/top_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/vs_150"
@@ -48,6 +48,7 @@
         tools:visibility="visible"
         android:orientation="vertical">
 
+   </LinearLayout>     
 <LinearLayout
             android:id="@+id/tv_top_l_container"
             android:layout_width="wrap_content"
