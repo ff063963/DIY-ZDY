@@ -5,18 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
- 
-     <LinearLayout
-        android:id="@+id/top_container"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/vs_120"
-        android:layout_gravity="top"
-        android:background="@drawable/box_controller_top_bg"
-        android:gravity="end"
-        android:orientation="vertical"
 
-        android:tag="top_container">
-         
     
     <LinearLayout
              android:id="@+id/tv_top_l_container"
@@ -25,6 +14,7 @@
              android:visibility="gone"
                 tools:visibility="visible"
                 android:layout_marginTop="@dimen/vs_10"
+                android:background="@drawable/shape_dialog_filter_bg"  
                 android:orientation="vertical"
                 android:paddingRight="@dimen/vs_24"
                 android:paddingBottom="@dimen/vs_10">
@@ -65,7 +55,7 @@
                 android:layout_gravity="right|end"
                 android:visibility="gone"
                 tools:visibility="visible"
-  
+                android:background="@drawable/shape_dialog_filter_bg"
                 android:layout_marginTop="@dimen/vs_10"
                android:layout_marginStart="@dimen/vs_20"
             android:layout_marginLeft="@dimen/vs_20"
@@ -114,7 +104,8 @@
             android:textColor="@android:color/white"
             android:textSize="@dimen/ts_20" />
     </LinearLayout>
- </LinearLayout>
+
+
     <com.github.tvbox.osc.subtitle.widget.SimpleSubtitleView
         android:id="@+id/subtitle_view"
         android:layout_width="match_parent"
