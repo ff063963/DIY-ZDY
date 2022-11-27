@@ -30,7 +30,7 @@
             android:text="x1"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            android:textSize="20sp" />
     </LinearLayout>
     
     
@@ -56,8 +56,7 @@
              android:layout_height="wrap_content"
              android:visibility="gone"
                 tools:visibility="visible"
-                android:layout_marginTop="@dimen/vs_10"
-      
+                android:layout_marginTop="@dimen/vs_10"      
                 android:orientation="vertical"
                 android:paddingRight="@dimen/vs_24"
                 android:paddingBottom="@dimen/vs_10">
@@ -97,26 +96,22 @@
                 android:id="@+id/tv_top_r_container" 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right|end"
                 android:visibility="gone"
-                tools:visibility="visible"                
-                android:layout_marginRight="@dimen/vs_20"
-                android:layout_marginTop="@dimen/vs_10"
-                android:layout_marginLeft="@dimen/vs_20"
-                android:gravity="right|end"
+                tools:visibility="visible"
+                android:layout_marginTop="@dimen/vs_10"      
                 android:orientation="vertical"
-                android:paddingRight="@dimen/vs_30"
+                android:paddingRight="@dimen/vs_24"
                 android:paddingBottom="@dimen/vs_10">
 
         <TextView
             android:id="@+id/tv_sys_time"
-              android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:gravity="center_vertical"
-                    android:maxLines="1"
-                     android:paddingRight="@dimen/vs_30"
-                    android:paddingBottom="@dimen/vs_5"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/vs_10"  
+                   android:ellipsize="end"
+                   android:focusable="false"
+                   android:focusableInTouchMode="false"
+                   android:maxLines="1"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/ts_50" />
 
