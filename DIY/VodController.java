@@ -82,12 +82,15 @@ public class VodController extends BaseController {
                         mTopRoot.setVisibility(VISIBLE);
                         mTopRoot1.setVisibility(VISIBLE);
                         mTopRoot2.setVisibility(VISIBLE);
-                        mPlayTitle.setVisibility(GONE);
+                        mCenterContainer.setVisibility(VISIBLE);
+                     
                         mNextBtn.requestFocus();
                         break;
                     }
                     case 1003: { // 隐藏底部菜单
-                        mTopRoot.setVisibility(VISIBLE);
+                        mPlayTitle.setVisibility(GONE);
+                        mCenterContainer.setVisibility(GONE);
+                        mTopRoot.setVisibility(GONE);
                         mBottomRoot.setVisibility(GONE);
                         mTopRoot1.setVisibility(GONE);
                         mTopRoot2.setVisibility(GONE);
@@ -146,6 +149,9 @@ public class VodController extends BaseController {
     public TextView mPlayerTimeStartBtn;
     public TextView mPlayerTimeSkipBtn;
     public TextView mPlayerTimeResetBtn;
+    
+    private LinearLayout mCenterContainer;
+    
     TextView mPlayPauseTime;
     TextView mPlayLoadNetSpeed;
     TextView mVideoSize;
@@ -238,10 +244,11 @@ public class VodController extends BaseController {
         mZimuBtn = findViewById(R.id.zimu_select);
         mAudioTrackBtn = findViewById(R.id.audio_track_select);
         mLandscapePortraitBtn = findViewById(R.id.landscape_portrait);
-        
+   
+   mCenterContainer = findViewById(R.id.center_container);     
   finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
-    //mTopRoot = findViewById(R.id.top_container);   
+    mTopRoot = findViewById(R.id.top_container);   
      //btnHint = findViewById(R.id.play_btn_hint);   
         
  //tvBack = findViewById(R.id.tv_back);
