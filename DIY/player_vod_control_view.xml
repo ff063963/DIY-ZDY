@@ -33,7 +33,7 @@
     
     
       <LinearLayout
-        android:id="@+id/top_container_hide"
+        android:id="@+id/top_container"
        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"           
