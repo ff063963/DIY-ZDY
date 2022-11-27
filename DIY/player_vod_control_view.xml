@@ -92,7 +92,7 @@
         android:visibility="gone"
         tools:visibility="visible"
         android:layout_gravity="right"
-        android:layout_marginRight="@dimen/vs_50"
+        android:layout_marginRight="@dimen/vs_30"
         android:paddingTop="@dimen/vs_10"  
         android:orientation="vertical">
 
@@ -104,10 +104,10 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:paddingTop="@dimen/vs_10"
-            android:paddingRight="@dimen/vs_60"
+            android:paddingRight="@dimen/vs_50"
             android:tag="vod_control_pause_time"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_40" />
+            android:textSize="@dimen/ts_50" />
         
            <TextView
               android:id="@+id/tv_finish_at"
@@ -120,7 +120,7 @@
               android:paddingLeft="@dimen/vs_20"
               android:paddingRight="@dimen/vs_60"
               android:textColor="@android:color/white"
-              android:textSize="@dimen/ts_20"
+              android:textSize="15dp"
               tools:text="100" />
         
         
@@ -135,7 +135,7 @@
             android:tag="vod_control_pause_time"
             android:text="0Kb/s"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_20" />
+            android:textSize="15dp" />
     </LinearLayout>
           
 
