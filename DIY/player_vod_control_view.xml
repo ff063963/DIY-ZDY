@@ -53,8 +53,7 @@
             android:layout_height="wrap_content"
             android:tag="tv_top_container"
             android:visibility="gone"
-            tools:visibility="visible"
-            android:layout_marginStart="@dimen/vs_20"
+            tools:visibility="visible" 
             android:layout_marginTop="@dimen/vs_10"
             android:orientation="vertical">
 
@@ -65,9 +64,8 @@
                 android:layout_gravity="left"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:width="680dp"
-                android:paddingLeft="@dimen/vs_20"
-                android:text="http://"
+                android:width="50dp"
+                android:paddingLeft="@dimen/vs_10"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_20" />
 
@@ -87,7 +85,7 @@
 
     <LinearLayout
         android:id="@+id/tv_top_r_container"
-        android:layout_width="120dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:tag="tv_top_container"
         android:visibility="gone"
