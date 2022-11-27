@@ -37,7 +37,7 @@
       <LinearLayout
         android:id="@+id/top_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/vs_120"
+        android:layout_height="@dimen/vs_130"
         android:layout_gravity="top"
         android:gravity="end"
         android:background="@drawable/shape_dialog_top_bg"            
