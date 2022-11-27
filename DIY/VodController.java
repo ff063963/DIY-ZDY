@@ -381,7 +381,7 @@ public class VodController extends BaseController {
                     float speed = (float) mPlayerConfig.getDouble("sp");
                     speed += 0.25f;
                      if (speed > 3)
-                         speed += 0.5f;
+                         speed += 0.25f;
                     if (speed > 5)
                         speed = 0.5f;
                     mPlayerConfig.put("sp", speed);
