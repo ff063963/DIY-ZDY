@@ -53,7 +53,7 @@
                 android:orientation="horizontal">
 <LinearLayout
             android:id="@+id/tv_top_l_container"
-            android:layout_width="500dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:tag="tv_top_container"
             android:visibility="gone"
