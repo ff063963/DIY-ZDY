@@ -46,6 +46,7 @@ sed -i 's/com.github.tvbox.osc/com.tvbox.q/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #ijk修改
 cp $CURRENT_DIR/DIY/AndroidMediaPlayer.java $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/AndroidMediaPlayer.java
+cp $CURRENT_DIR/DIY/IjkMediaPlayer.java $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/IjkMediaPlayer.java
 
 #名称修改
 sed -i 's/TVBox/影视Box/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
@@ -208,10 +209,10 @@ sed -i '/public Object\[\] proxyLoca/a\    try {\n        if(param.containsKey(\
 
 #替换影魔版IJK库
 
-cp $CURRENT_DIR/JMK/libijkffmpeg.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijkffmpeg.so
-cp $CURRENT_DIR/JMK/libijksdl.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijksdl.so
-cp $CURRENT_DIR/JMK/libplayer.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libplayer.so
-sed -i '/libLoader.loadLibrary(\"player\"); /i\try {\n libLoader.loadLibrary(\"ijkffmpeg\");\n libLoader.loadLibrary(\"ijksdl\");\n } catch (Throwable throwable) {\n\n }' $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/IjkMediaPlayer.java
+#cp $CURRENT_DIR/JMK/libijkffmpeg.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijkffmpeg.so
+#cp $CURRENT_DIR/JMK/libijksdl.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijksdl.so
+#cp $CURRENT_DIR/JMK/libplayer.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libplayer.so
+#sed -i '/libLoader.loadLibrary(\"player\"); /i\try {\n libLoader.loadLibrary(\"ijkffmpeg\");\n libLoader.loadLibrary(\"ijksdl\");\n } catch (Throwable throwable) {\n\n }' $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/IjkMediaPlayer.java
 
 
 echo 'DIY end'
