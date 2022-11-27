@@ -103,7 +103,6 @@
             android:layout_gravity="right"
             android:ellipsize="end"
             android:maxLines="1"
-            android:paddingTop="@dimen/vs_10"
             android:paddingRight="@dimen/vs_50"
             android:tag="vod_control_pause_time"
             android:textColor="@android:color/white"
@@ -118,7 +117,7 @@
               android:focusableInTouchMode="false"
               android:maxLines="1"
               android:paddingLeft="@dimen/vs_20"
-              android:paddingRight="@dimen/vs_60"
+              android:paddingRight="@dimen/vs_40"
               android:textColor="@android:color/white"
               android:textSize="15dp"
               tools:text="100" />
@@ -131,11 +130,11 @@
             android:layout_gravity="right"
             android:ellipsize="end"
             android:maxLines="1"
-            android:paddingRight="@dimen/vs_60"
+            android:paddingRight="@dimen/vs_40"
             android:tag="vod_control_pause_time"
             android:text="0Kb/s"
             android:textColor="@android:color/white"
-            android:textSize="15dp" />
+            android:textSize="20dp" />
     </LinearLayout>
           
 
