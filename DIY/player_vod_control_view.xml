@@ -55,7 +55,7 @@
 
             <TextView
                 android:id="@+id/tv_info_name1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="600dp"
                         android:layout_height="wrap_content"
                         android:paddingLeft="@dimen/vs_24"
                         android:maxWidth="@dimen/vs_640"
@@ -81,13 +81,12 @@
 
     <LinearLayout
         android:id="@+id/tv_top_r_container"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:tag="tv_top_container"
+
         android:visibility="gone"
         tools:visibility="visible"
         android:layout_gravity="right"
-        android:layout_marginTop="@dimen/vs_10"
         android:orientation="vertical">
 
         <TextView
