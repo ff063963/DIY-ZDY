@@ -145,7 +145,7 @@ public class VodController extends BaseController {
   float mSpeed;
        ImageView tvBack;
      LinearLayout mTopRoot;
-    
+     LinearLayout mTopRoot3;
     
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
