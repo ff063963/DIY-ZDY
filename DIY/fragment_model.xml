@@ -70,6 +70,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/vs_60"
                     android:layout_marginBottom="@dimen/vs_10"
+                    android:layout_marginRight="@dimen/vs_10"
+                    android:layout_marginLeft="@dimen/vs_10"    
                     android:focusable="false"
                     android:orientation="horizontal"> 
 
