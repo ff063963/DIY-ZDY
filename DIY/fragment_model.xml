@@ -70,8 +70,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/vs_60"
                     android:layout_marginBottom="@dimen/vs_10"
-                    android:layout_marginRight="@dimen/vs_10"
-                    android:layout_marginLeft="@dimen/vs_10"    
                     android:focusable="false"
                     android:orientation="horizontal"> 
 
@@ -1151,13 +1149,24 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
+                           
+                           
+                 
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/vs_10"
+                        android:layout_marginLeft="@dimen/vs_10"
+                        android:text="1.0.0"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/ts_24" />          
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/vs_10"
                         android:layout_marginLeft="@dimen/vs_10"
-                        android:text="1.0.0  >"
+                        android:text=">"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_30" />
             </LinearLayout>         
