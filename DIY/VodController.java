@@ -891,13 +891,14 @@ public class VodController extends BaseController {
             case VideoView.STATE_IDLE:
                 break;
             case VideoView.STATE_PLAYING:
-                initLandscapePortraitBtnInfo();
+               //mTopRoot2.setVisibility(View.VISIBLE);//播放视频默认屏显开               
+                initLandscapePortraitBtnInfo();             
                 startProgress();
                 break;
             case VideoView.STATE_PAUSED:
                 mTopRoot1.setVisibility(GONE);
-                //mTopRoot2.setVisibility(GONE);
 
+                //mTopRoot2.setVisibility(GONE);
                 mPlayTitle.setVisibility(VISIBLE);
                 break;
             case VideoView.STATE_ERROR:
