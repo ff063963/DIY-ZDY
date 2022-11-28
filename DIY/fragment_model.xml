@@ -853,7 +853,7 @@
                     android:orientation="horizontal">
 
                 <LinearLayout
-                        android:id="@+id/llRender"
+                        android:id="@+id/llParseWebVew"
                         android:layout_width="@dimen/vs_0"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="@dimen/vs_5"
@@ -869,7 +869,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="渲染方式"
+                            android:text="嗅探Webview"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -879,9 +879,10 @@
                             android:layout_weight="1" />
 
                     <TextView
-                            android:id="@+id/tvRenderType"
+                            android:id="@+id/tvParseWebView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:text="系统自带"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -894,6 +895,7 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_30" />
                 </LinearLayout>
+          
 
                 <LinearLayout
                         android:id="@+id/llDns"
@@ -948,8 +950,8 @@
                     android:focusable="false"
                     android:orientation="horizontal">
 
-                <LinearLayout
-                        android:id="@+id/llParseWebVew"
+                    <LinearLayout
+                        android:id="@+id/llRender"
                         android:layout_width="@dimen/vs_0"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="@dimen/vs_5"
@@ -965,7 +967,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="嗅探Webview"
+                            android:text="渲染方式"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -975,10 +977,9 @@
                             android:layout_weight="1" />
 
                     <TextView
-                            android:id="@+id/tvParseWebView"
+                            android:id="@+id/tvRenderType"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="系统自带"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -990,7 +991,8 @@
                             android:text=">"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_30" />
-                </LinearLayout>
+                </LinearLayout>  
+                    
             <LinearLayout
                         android:id="@+id/llSearchTv"
                         android:layout_width="@dimen/vs_0"
