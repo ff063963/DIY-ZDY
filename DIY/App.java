@@ -48,8 +48,8 @@ public class App extends MultiDexApplication {
                 .setSupportDP(false)
                 .setSupportSP(false)
                 .setSupportSubunits(Subunits.MM);
-        PlayerHelper.init();
-        JSEngine.getInstance().create();
+        //PlayerHelper.init();
+        //JSEngine.getInstance().create();
     }
 
     private void initParams() {
@@ -72,10 +72,10 @@ public class App extends MultiDexApplication {
     }
 
     @Override
-    public void onTerminate() {
-        super.onTerminate();
-        JSEngine.getInstance().destroy();
-    }
+    //public void onTerminate() {
+//super.onTerminate();
+//JSEngine.getInstance().destroy();
+  //  }
 
 
     private VodInfo vodInfo;
