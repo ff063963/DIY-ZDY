@@ -82,6 +82,7 @@ public class VodController extends BaseController {
                         mTopRoot.setVisibility(VISIBLE);
                         mTopRoot1.setVisibility(VISIBLE);
                         mTopRoot2.setVisibility(VISIBLE);
+                        mTopRoot3.setVisibility(VISIBLE);
                         mCenterContainer.setVisibility(VISIBLE);
                      
                         mNextBtn.requestFocus();
@@ -94,6 +95,7 @@ public class VodController extends BaseController {
                         mBottomRoot.setVisibility(GONE);
                         mTopRoot1.setVisibility(GONE);
                         mTopRoot2.setVisibility(GONE);
+                        mTopRoot3.setVisibility(GONE);
                         break;
                     }
                     case 1004: { // 设置速度
@@ -155,6 +157,7 @@ public class VodController extends BaseController {
     TextView mPlayPauseTime;
     TextView mPlayLoadNetSpeed;
     TextView mVideoSize;
+    TextView mScreendisplay;//增加屏显开关
     public SimpleSubtitleView mSubtitleView;
     TextView mZimuBtn;
     TextView mAudioTrackBtn;
@@ -429,7 +432,16 @@ public class VodController extends BaseController {
         });
         
     
-  
+  //屏显开关
+        mScreendisplay.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTopRoot3.setVisibility(mTopRoot3.getVisibility() == VISIBLE?GONE:VISIBLE);
+                hideBottom();
+                //Toast.makeText(getContext(), "点击显示网速 播放进度 时间", Toast.LENGTH_SHORT).show();
+            }
+        });
+    
         
         
         
