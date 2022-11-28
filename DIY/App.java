@@ -7,13 +7,13 @@ import com.github.tvbox.osc.bean.VodInfo;
 import com.github.tvbox.osc.callback.EmptyCallback;
 import com.github.tvbox.osc.callback.LoadingCallback;
 import com.github.tvbox.osc.data.AppDataManager;
+import com.github.tvbox.osc.js.JSEngine;
 import com.github.tvbox.osc.server.ControlManager;
 import com.github.tvbox.osc.util.AppManager;
 import com.github.tvbox.osc.util.EpgUtil;
 import com.github.tvbox.osc.util.HawkConfig;
 import com.github.tvbox.osc.util.OkGoHelper;
 import com.github.tvbox.osc.util.PlayerHelper;
-//import com.github.tvbox.osc.util.js.JSEngine;
 import com.kingja.loadsir.core.LoadSir;
 import com.orhanobut.hawk.Hawk;
 
@@ -48,8 +48,7 @@ public class App extends MultiDexApplication {
                 .setSupportDP(false)
                 .setSupportSP(false)
                 .setSupportSubunits(Subunits.MM);
-        //PlayerHelper.init();
-        //JSEngine.getInstance().create();
+        PlayerHelper.init();
     }
 
     private void initParams() {
@@ -57,7 +56,7 @@ public class App extends MultiDexApplication {
         Hawk.init(this).build();
         Hawk.put(HawkConfig.DEBUG_OPEN, false);
         if (!Hawk.contains(HawkConfig.PLAY_TYPE)) {
-           
+            Hawk.put(HawkConfig.PLAY_TYPE, 1);
         Hawk.put(HawkConfig.HOME_REC, 0);       // Home Rec 0=豆瓣, 1=推荐, 2=历史
         Hawk.put(HawkConfig.PLAY_TYPE, 1);      // Player   0=系统, 1=IJK, 2=Exo
         Hawk.put(HawkConfig.IJK_CODEC, "硬解码");// IJK Render 软解码, 硬解码
@@ -72,10 +71,10 @@ public class App extends MultiDexApplication {
     }
 
     @Override
-    //public void onTerminate() {
-//super.onTerminate();
-//JSEngine.getInstance().destroy();
-  //  }
+    public void onTerminate() {
+        super.onTerminate();
+        JSEngine.getInstance().stopAll();
+    }
 
 
     private VodInfo vodInfo;
