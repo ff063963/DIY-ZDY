@@ -82,7 +82,7 @@ public class VodController extends BaseController {
                         mTopRoot.setVisibility(VISIBLE);
                         mTopRoot1.setVisibility(VISIBLE);
                        // mTopRoot2.setVisibility(VISIBLE);
-                        mTopRoot3.setVisibility(VISIBLE);
+               
                         mCenterContainer.setVisibility(VISIBLE);
                      
                         mNextBtn.requestFocus();
@@ -95,7 +95,7 @@ public class VodController extends BaseController {
                         mBottomRoot.setVisibility(GONE);
                         mTopRoot1.setVisibility(GONE);
                         //mTopRoot2.setVisibility(GONE);
-                        mTopRoot3.setVisibility(GONE);
+
                         break;
                     }
                     case 1004: { // 设置速度
@@ -124,7 +124,7 @@ public class VodController extends BaseController {
     ImageView mProgressIcon;
     LinearLayout mBottomRoot;
     LinearLayout mTopRoot1;
-    //LinearLayout mTopRoot2;
+    LinearLayout mTopRoot2;
     LinearLayout mParseRoot;
     TvRecyclerView mGridView;
     TextView mPlayTitle;
@@ -145,7 +145,7 @@ public class VodController extends BaseController {
   float mSpeed;
        ImageView tvBack;
      LinearLayout mTopRoot;
-     LinearLayout mTopRoot3;
+
     
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
@@ -225,8 +225,8 @@ public class VodController extends BaseController {
         mProgressText = findViewById(R.id.tv_progress_text);
         mBottomRoot = findViewById(R.id.bottom_container);
         mTopRoot1 = findViewById(R.id.tv_top_l_container);
-       // mTopRoot2 = findViewById(R.id.tv_top_r_container);
-        mTopRoot3 = findViewById(R.id.tv_top_r_container);
+        mTopRoot2 = findViewById(R.id.tv_top_r_container);
+
         mParseRoot = findViewById(R.id.parse_root);
         mGridView = findViewById(R.id.mGridView);
         mPlayerRetry = findViewById(R.id.play_retry);
@@ -437,7 +437,7 @@ public class VodController extends BaseController {
         mScreendisplay.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                mTopRoot3.setVisibility(mTopRoot3.getVisibility() == VISIBLE?GONE:VISIBLE);
+                mTopRoot2.setVisibility(mTopRoot2.getVisibility() == VISIBLE?GONE:VISIBLE);
                 hideBottom();
                 //Toast.makeText(getContext(), "点击显示网速 播放进度 时间", Toast.LENGTH_SHORT).show();
             }
@@ -893,7 +893,7 @@ public class VodController extends BaseController {
             case VideoView.STATE_PAUSED:
                 mTopRoot1.setVisibility(GONE);
                 //mTopRoot2.setVisibility(GONE);
-                mTopRoot3.setVisibility(GONE);
+
                 mPlayTitle.setVisibility(VISIBLE);
                 break;
             case VideoView.STATE_ERROR:
