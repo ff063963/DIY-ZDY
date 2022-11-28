@@ -81,7 +81,7 @@ public class VodController extends BaseController {
                         mBottomRoot.setVisibility(VISIBLE);
                         mTopRoot.setVisibility(VISIBLE);
                         mTopRoot1.setVisibility(VISIBLE);
-                       // mTopRoot2.setVisibility(VISIBLE);
+                       //mTopRoot2.setVisibility(VISIBLE);
                
                         mCenterContainer.setVisibility(VISIBLE);
                      
@@ -432,17 +432,7 @@ public class VodController extends BaseController {
             }
         });
         
-    
-  //屏显开关
-        mScreendisplay.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mTopRoot2.setVisibility(mTopRoot2.getVisibility() == VISIBLE?GONE:VISIBLE);
-                hideBottom();
-                //Toast.makeText(getContext(), "点击显示网速 播放进度 时间", Toast.LENGTH_SHORT).show();
-            }
-        });
-    
+
         
         
         
@@ -683,7 +673,21 @@ public class VodController extends BaseController {
                 hideBottom();
             }
         });
+
+    
+    
+            //屏显开关
+        mScreendisplay.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTopRoot2.setVisibility(mTopRoot2.getVisibility() == VISIBLE?GONE:VISIBLE);
+                hideBottom();
+                //Toast.makeText(getContext(), "点击显示网速 播放进度 时间", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+    
 
     public void initLandscapePortraitBtnInfo() {
         if(mControlWrapper!=null && mActivity!=null){
