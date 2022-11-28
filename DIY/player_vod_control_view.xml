@@ -68,7 +68,7 @@
                         android:paddingLeft="@dimen/vs_40"
                         android:maxWidth="@dimen/vs_640"
                         android:maxLines="1"
-                        android:singleLine="true"
+                        android:singleLine="false"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_30" />
 
@@ -621,7 +621,7 @@
         android:tag="vod_control_loading"
         android:visibility="gone" />
 
-    <TextView
+   <TextView
         android:id="@+id/tv_play_load_net_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
