@@ -397,6 +397,7 @@
                 android:text="横竖屏"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_20"/>
+         <!--   
                <TextView
                 android:id="@+id/screen_display"
                 android:layout_width="wrap_content"
@@ -410,7 +411,8 @@
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_20"
                 android:visibility="visible" />
-
+        -->
+            
         </LinearLayout>
 
 
