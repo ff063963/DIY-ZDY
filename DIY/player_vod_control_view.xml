@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|end"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="@dimen/vs_20"
+        android:layout_marginRight="@dimen/vs_20"
     
         android:orientation="vertical"
         android:visibility="gone"
@@ -23,15 +23,15 @@
             android:id="@+id/play_speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/vs_10"
             android:background="@drawable/play_mobile_center_shape"
             android:gravity="center"
-            android:minWidth="80dp"
-            android:padding="10dp"
+            android:minWidth="@dimen/vs_60"
+            android:padding="@dimen/vs_10"
             android:text="x1"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="@dimen/vs_20" />
     </LinearLayout>
     
     
@@ -53,7 +53,10 @@
             android:id="@+id/tv_top_l_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/vs_10"  
+            android:layout_gravity="left"
+            android:layout_marginStart="@dimen/vs_30"
+            android:layout_marginLeft="@dimen/vs_30"
+            android:layout_marginTop="@dimen/vs_10" 
             android:visibility="gone"
             tools:visibility="visible"
             android:orientation="vertical">
@@ -62,7 +65,7 @@
                 android:id="@+id/tv_info_name1"
                         android:layout_width="600dp"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="@dimen/vs_24"
+                        android:paddingLeft="@dimen/vs_40"
                         android:maxWidth="@dimen/vs_640"
                         android:maxLines="1"
                         android:singleLine="true"
@@ -73,7 +76,7 @@
                         android:id="@+id/tv_videosize"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="@dimen/vs_30"
+                        android:paddingLeft="@dimen/vs_40"
                         android:ellipsize="end"
                         android:focusable="false"
                         android:focusableInTouchMode="false"
@@ -106,7 +109,7 @@
             android:layout_marginRight="@dimen/vs_30"
             android:tag="vod_control_pause_time"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/ts_50" />
+            android:textSize="@dimen/ts_40" />
         
            <TextView
               android:id="@+id/tv_finish_at"
@@ -119,7 +122,7 @@
               android:maxLines="1"
               android:layout_marginRight="@dimen/vs_24"
               android:textColor="@android:color/white"
-              android:textSize="15dp" />
+              android:textSize="@dimen/ts_20" />
         
         
         <TextView
@@ -134,7 +137,7 @@
             android:tag="vod_control_pause_time"
             android:text="0Kb/s"
             android:textColor="@android:color/white"
-            android:textSize="20dp" />
+            android:textSize="@dimen/ts_20" />
     </LinearLayout>
           
 
