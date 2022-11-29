@@ -35,10 +35,6 @@ import xyz.doikki.videoplayer.render.RenderViewFactory;
 import xyz.doikki.videoplayer.util.L;
 import xyz.doikki.videoplayer.util.PlayerUtils;
 
-import tv.danmaku.ijk.media.player.IMediaPlayer;
-import tv.danmaku.ijk.media.player.IjkMediaPlayer;
-import tv.danmaku.ijk.media.player.IjkTimedText;
-
 /**
  * 播放器
  * Created by Doikki on 2017/4/7.
@@ -88,8 +84,8 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     public static final int STATE_PLAYING = 3;
     public static final int STATE_PAUSED = 4;
     public static final int STATE_PLAYBACK_COMPLETED = 5;
-    //public static final int STATE_BUFFERING = 6;
-    //public static final int STATE_BUFFERED = 7;
+    public static final int STATE_BUFFERING = 6;
+    public static final int STATE_BUFFERED = 7;
     public static final int STATE_START_ABORT = 8;//开始播放中止
     protected int mCurrentPlayState = STATE_IDLE;//当前播放器的状态
 
@@ -102,56 +98,6 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
 
     protected boolean mIsTinyScreen;//是否处于小屏状态
     protected int[] mTinyScreenSize = {0, 0};
-
-
-
-    private IjkMediaPlayer mIjkPlayer = null;
-    private Uri mUri;
-
-
-
-
-    private static final int codec = IjkMediaPlayer.OPT_CATEGORY_CODEC;
-    private static final int format = IjkMediaPlayer.OPT_CATEGORY_FORMAT;
-    private static final int player = IjkMediaPlayer.OPT_CATEGORY_PLAYER;
-
-
-
-
-    public static final int RENDER_SURFACE_VIEW = 0;
-    public static final int RENDER_TEXTURE_VIEW = 1;
-
-    private float mCurrentSpeed = 1;
-    private int mCurrentAspectRatio;
-    private int mCurrentRender;
-    private int mCurrentDecode;
-    private int mStartPosition;
-
-    private int mCurrentState = STATE_IDLE;
-    private int mTargetState = STATE_IDLE;
-
-    private int mCurrentBufferPercentage;
-    private long mCurrentBufferPosition;
-
-    // All the stuff we need for playing and showing a video
-    //private IRenderView.ISurfaceHolder mSurfaceHolder = null;
-    //private IjkMediaPlayer mIjkPlayer = null;
-    private int mVideoWidth;
-    private int mVideoHeight;
-    private int mSurfaceWidth;
-    private int mSurfaceHeight;
-    private int mVideoRotationDegree;
-    private IMediaPlayer.OnCompletionListener mOnCompletionListener;
-    private IMediaPlayer.OnPreparedListener mOnPreparedListener;
-    private IMediaPlayer.OnErrorListener mOnErrorListener;
-    private IMediaPlayer.OnInfoListener mOnInfoListener;
-
-    private Context mAppContext;
-    //private IRenderView mRenderView;
-    private int mVideoSarNum;
-    private int mVideoSarDen;
-
-
 
     /**
      * 监听系统中音频焦点改变，见{@link #setEnableAudioFocus(boolean)}
@@ -500,14 +446,6 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
         addDisplay();
         startPrepare(true);
     }
-/*
-    @Override
-    public int getBufferPercentage() {
-        if (mMediaPlayer != null) return mMediaPlayer.getBufferedPercentage() ;
-        return 0;
-    }
-
-*/
 
     /**
      * 获取视频总时长
@@ -553,7 +491,6 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     /**
      * 获取当前缓冲百分比
      */
-
     @Override
     public int getBufferedPercentage() {
         return mMediaPlayer != null ? mMediaPlayer.getBufferedPercentage() : 0;
@@ -599,12 +536,12 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     @Override
     public void onInfo(int what, int extra) {
         switch (what) {
-           // case AbstractPlayer.MEDIA_INFO_BUFFERING_START:
-              //  setPlayState(STATE_BUFFERING);
-              //  break;
-          //  case AbstractPlayer.MEDIA_INFO_BUFFERING_END:
-               // setPlayState(STATE_BUFFERED);
-              //  break;
+            case AbstractPlayer.MEDIA_INFO_BUFFERING_START:
+                setPlayState(STATE_BUFFERING);
+                break;
+            case AbstractPlayer.MEDIA_INFO_BUFFERING_END:
+                setPlayState(STATE_BUFFERED);
+                break;
             case AbstractPlayer.MEDIA_INFO_RENDERING_START: // 视频/音频开始渲染
                 setPlayState(STATE_PLAYING);
                 mPlayerContainer.setKeepScreenOn(true);
@@ -1143,39 +1080,5 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
         //activity切到后台后可能被系统回收，故在此处进行进度保存
         saveProgress();
         return super.onSaveInstanceState();
-    }
-  private void createPlayer() {
-        mIjkPlayer = new IjkMediaPlayer();
-        IjkMediaPlayer.native_setLogLevel(IjkMediaPlayer.IJK_LOG_SILENT);
-        //mIjkPlayer.setOnPreparedListener(mPreparedListener);
-       // mIjkPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
-       // mIjkPlayer.setOnCompletionListener(mCompletionListener);
-       // mIjkPlayer.setOnErrorListener(mErrorListener);
-       // mIjkPlayer.setOnInfoListener(mInfoListener);
-       // mIjkPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
-       // mIjkPlayer.setOnTimedTextListener(mOnTimedTextListener);
-       // mIjkPlayer.setOption(codec, "skip_loop_filter", 48);
-       // mIjkPlayer.setOption(format, "dns_cache_clear", 1);
-        //mIjkPlayer.setOption(format, "dns_cache_timeout", -1);
-        //mIjkPlayer.setOption(format, "fflags", "fastseek");
-        //mIjkPlayer.setOption(format, "http-detect-range-support", 0);
-        //mIjkPlayer.setOption(player, "enable-accurate-seek", 0);
-        mIjkPlayer.setOption(player, "framedrop", 1);
-        mIjkPlayer.setOption(player, "max-buffer-size", 5242880);
-        mIjkPlayer.setOption(player, "mediacodec", mCurrentDecode);
-        mIjkPlayer.setOption(player, "mediacodec-auto-rotate", mCurrentDecode);
-        mIjkPlayer.setOption(player, "mediacodec-handle-resolution-change", mCurrentDecode);
-        mIjkPlayer.setOption(player, "mediacodec-hevc", mCurrentDecode);
-        mIjkPlayer.setOption(player, "opensles", 0);
-        mIjkPlayer.setOption(player, "overlay-format", IjkMediaPlayer.SDL_FCC_RV32);
-        mIjkPlayer.setOption(player, "reconnect", 1);
-        mIjkPlayer.setOption(player, "soundtouch", 1);
-        mIjkPlayer.setOption(player, "start-on-prepared", 1);
-        mIjkPlayer.setOption(player, "subtitle", 1);
-        if (mUri.getScheme() != null && mUri.getScheme().startsWith("rtsp")) {
-            mIjkPlayer.setOption(format, "infbuf", 1);
-            mIjkPlayer.setOption(format, "rtsp_transport", "tcp");
-            mIjkPlayer.setOption(format, "rtsp_flags", "prefer_tcp");
-        }
     }
 }
