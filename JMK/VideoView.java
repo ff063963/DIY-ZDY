@@ -491,13 +491,13 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     /**
      * 获取当前缓冲百分比
      */
-     /*
+
     @Override
     public int getBufferedPercentage() {
         if ( mMediaPlayer != null)  return  mMediaPlayer.getBufferedPercentage() ;
         return 0;
     }
-    */
+
     /**
      * 设置静音
      */
