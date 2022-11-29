@@ -493,7 +493,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     @Override
     public int getBufferedPercentage() {
-        if ( mMediaPlayer != null)  return  mMediaPlayer.getBufferedPercentage;
+        if ( mMediaPlayer != null)  return  mMediaPlayer.getBufferedPercentage() ;
         return 0;
     }
     /**
@@ -594,7 +594,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     @Override
     public long getTcpSpeed() {
-           if ( mMediaPlayer != null ) return mMediaPlayer.getTcpSpeed;
+           if ( mMediaPlayer != null ) return mMediaPlayer.getTcpSpeed() ;
               return 0;
     }
 
