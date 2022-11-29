@@ -35,6 +35,10 @@ import xyz.doikki.videoplayer.render.RenderViewFactory;
 import xyz.doikki.videoplayer.util.L;
 import xyz.doikki.videoplayer.util.PlayerUtils;
 
+import tv.danmaku.ijk.media.player.IMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkTimedText;
+
 /**
  * 播放器
  * Created by Doikki on 2017/4/7.
@@ -84,8 +88,8 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     public static final int STATE_PLAYING = 3;
     public static final int STATE_PAUSED = 4;
     public static final int STATE_PLAYBACK_COMPLETED = 5;
-    public static final int STATE_BUFFERING = 6;
-    public static final int STATE_BUFFERED = 7;
+    //public static final int STATE_BUFFERING = 6;
+    //public static final int STATE_BUFFERED = 7;
     public static final int STATE_START_ABORT = 8;//开始播放中止
     protected int mCurrentPlayState = STATE_IDLE;//当前播放器的状态
 
@@ -446,6 +450,13 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
         addDisplay();
         startPrepare(true);
     }
+
+    @Override
+    public int getBufferPercentage() {
+        if (mIjkPlayer != null) return mCurrentBufferPercentage;
+        return 0;
+    }
+
 
     /**
      * 获取视频总时长
@@ -1080,5 +1091,39 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
         //activity切到后台后可能被系统回收，故在此处进行进度保存
         saveProgress();
         return super.onSaveInstanceState();
+    }
+  private void createPlayer() {
+        mIjkPlayer = new IjkMediaPlayer();
+        IjkMediaPlayer.native_setLogLevel(IjkMediaPlayer.IJK_LOG_SILENT);
+        mIjkPlayer.setOnPreparedListener(mPreparedListener);
+        mIjkPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
+        mIjkPlayer.setOnCompletionListener(mCompletionListener);
+        mIjkPlayer.setOnErrorListener(mErrorListener);
+        mIjkPlayer.setOnInfoListener(mInfoListener);
+        mIjkPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
+        mIjkPlayer.setOnTimedTextListener(mOnTimedTextListener);
+        mIjkPlayer.setOption(codec, "skip_loop_filter", 48);
+        mIjkPlayer.setOption(format, "dns_cache_clear", 1);
+        mIjkPlayer.setOption(format, "dns_cache_timeout", -1);
+        mIjkPlayer.setOption(format, "fflags", "fastseek");
+        mIjkPlayer.setOption(format, "http-detect-range-support", 0);
+        mIjkPlayer.setOption(player, "enable-accurate-seek", 0);
+        mIjkPlayer.setOption(player, "framedrop", 1);
+        mIjkPlayer.setOption(player, "max-buffer-size", 5242880);
+        mIjkPlayer.setOption(player, "mediacodec", mCurrentDecode);
+        mIjkPlayer.setOption(player, "mediacodec-auto-rotate", mCurrentDecode);
+        mIjkPlayer.setOption(player, "mediacodec-handle-resolution-change", mCurrentDecode);
+        mIjkPlayer.setOption(player, "mediacodec-hevc", mCurrentDecode);
+        mIjkPlayer.setOption(player, "opensles", 0);
+        mIjkPlayer.setOption(player, "overlay-format", IjkMediaPlayer.SDL_FCC_RV32);
+        mIjkPlayer.setOption(player, "reconnect", 1);
+        mIjkPlayer.setOption(player, "soundtouch", 1);
+        mIjkPlayer.setOption(player, "start-on-prepared", 1);
+        mIjkPlayer.setOption(player, "subtitle", 1);
+        if (mUri.getScheme() != null && mUri.getScheme().startsWith("rtsp")) {
+            mIjkPlayer.setOption(format, "infbuf", 1);
+            mIjkPlayer.setOption(format, "rtsp_transport", "tcp");
+            mIjkPlayer.setOption(format, "rtsp_flags", "prefer_tcp");
+        }
     }
 }
