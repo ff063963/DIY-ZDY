@@ -103,6 +103,10 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     protected boolean mIsTinyScreen;//是否处于小屏状态
     protected int[] mTinyScreenSize = {0, 0};
 
+
+
+    private IjkMediaPlayer mIjkPlayer = null;
+
     /**
      * 监听系统中音频焦点改变，见{@link #setEnableAudioFocus(boolean)}
      */
@@ -453,7 +457,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
 
     @Override
     public int getBufferPercentage() {
-        if (mIjkPlayer != null) return mCurrentBufferPercentage;
+        if (mMediaPlayer != null) return mMediaPlayer.getBufferedPercentage;
         return 0;
     }
 
@@ -502,11 +506,12 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     /**
      * 获取当前缓冲百分比
      */
+     /*
     @Override
     public int getBufferedPercentage() {
         return mMediaPlayer != null ? mMediaPlayer.getBufferedPercentage() : 0;
     }
-
+*/
     /**
      * 设置静音
      */
@@ -547,12 +552,12 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     @Override
     public void onInfo(int what, int extra) {
         switch (what) {
-            case AbstractPlayer.MEDIA_INFO_BUFFERING_START:
-                setPlayState(STATE_BUFFERING);
-                break;
-            case AbstractPlayer.MEDIA_INFO_BUFFERING_END:
-                setPlayState(STATE_BUFFERED);
-                break;
+           // case AbstractPlayer.MEDIA_INFO_BUFFERING_START:
+              //  setPlayState(STATE_BUFFERING);
+              //  break;
+          //  case AbstractPlayer.MEDIA_INFO_BUFFERING_END:
+               // setPlayState(STATE_BUFFERED);
+              //  break;
             case AbstractPlayer.MEDIA_INFO_RENDERING_START: // 视频/音频开始渲染
                 setPlayState(STATE_PLAYING);
                 mPlayerContainer.setKeepScreenOn(true);
