@@ -35,12 +35,12 @@ cp $CURRENT_DIR/DIY/ModelSettingFragment自定义.java $CURRENT_DIR/$DIR/app/src
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #sed -i 's/关于/关于\\n1.3.0/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i 's/1.0.0/1.3.4/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/1.0.0/1.3.5/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/版本/版本\\n1.3.1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/vs_5/vs_10/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #版本号
-sed -i 's/1.0.0/1.3.4/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/1.0.0/1.3.5/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #共存
 sed -i 's/com.github.tvbox.osc/com.tvbox.q/g' $CURRENT_DIR/$DIR/app/build.gradle
@@ -215,9 +215,9 @@ sed -i '/public Object\[\] proxyLoca/a\    try {\n        if(param.containsKey(\
 
 #替换影魔版IJK库
 
-cp $CURRENT_DIR/JMK/libijkffmpeg.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijkffmpeg.so
-cp $CURRENT_DIR/JMK/libijksdl.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijksdl.so
-cp $CURRENT_DIR/JMK/libplayer.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libplayer.so
+#cp $CURRENT_DIR/JMK/libijkffmpeg.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijkffmpeg.so
+#cp $CURRENT_DIR/JMK/libijksdl.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libijksdl.so
+#cp $CURRENT_DIR/JMK/libplayer.so $CURRENT_DIR/$DIR/player/src/main/jniLibs/armeabi-v7a/libplayer.so
 #sed -i '/libLoader.loadLibrary(\"player\"); /i\try {\n libLoader.loadLibrary(\"ijkffmpeg\");\n libLoader.loadLibrary(\"ijksdl\");\n } catch (Throwable throwable) {\n\n }' $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/IjkMediaPlayer.java
 
 
