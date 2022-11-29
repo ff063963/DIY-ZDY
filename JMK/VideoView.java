@@ -493,9 +493,9 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     @Override
     public int getBufferedPercentage() {
-        return mMediaPlayer != null ? mMediaPlayer.getBufferedPercentage() : 0;
+        if ( mMediaPlayer != null)  return  mMediaPlayer.getBufferedPercentage;
+        return 0;
     }
-
     /**
      * 设置静音
      */
@@ -594,8 +594,11 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
      */
     @Override
     public long getTcpSpeed() {
-        return mMediaPlayer != null ? mMediaPlayer.getTcpSpeed() : 0;
+           if ( mMediaPlayer != null ) return mMediaPlayer.getTcpSpeed;
+              return 0;
     }
+
+
 
     /**
      * 设置播放速度
