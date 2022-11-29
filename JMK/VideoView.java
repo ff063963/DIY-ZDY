@@ -500,14 +500,14 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
         addDisplay();
         startPrepare(true);
     }
-
+/*
     @Override
     public int getBufferPercentage() {
         if (mMediaPlayer != null) return mMediaPlayer.getBufferedPercentage() ;
         return 0;
     }
 
-
+*/
 
     /**
      * 获取视频总时长
@@ -553,12 +553,12 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     /**
      * 获取当前缓冲百分比
      */
-     /*
+
     @Override
     public int getBufferedPercentage() {
         return mMediaPlayer != null ? mMediaPlayer.getBufferedPercentage() : 0;
     }
-*/
+
     /**
      * 设置静音
      */
@@ -1148,12 +1148,12 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
         mIjkPlayer = new IjkMediaPlayer();
         IjkMediaPlayer.native_setLogLevel(IjkMediaPlayer.IJK_LOG_SILENT);
         mIjkPlayer.setOnPreparedListener(mPreparedListener);
-        mIjkPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
-        mIjkPlayer.setOnCompletionListener(mCompletionListener);
-        mIjkPlayer.setOnErrorListener(mErrorListener);
-        mIjkPlayer.setOnInfoListener(mInfoListener);
-        mIjkPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
-        mIjkPlayer.setOnTimedTextListener(mOnTimedTextListener);
+       // mIjkPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
+       // mIjkPlayer.setOnCompletionListener(mCompletionListener);
+       // mIjkPlayer.setOnErrorListener(mErrorListener);
+       // mIjkPlayer.setOnInfoListener(mInfoListener);
+       // mIjkPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
+       // mIjkPlayer.setOnTimedTextListener(mOnTimedTextListener);
        // mIjkPlayer.setOption(codec, "skip_loop_filter", 48);
        // mIjkPlayer.setOption(format, "dns_cache_clear", 1);
         //mIjkPlayer.setOption(format, "dns_cache_timeout", -1);
