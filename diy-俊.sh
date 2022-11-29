@@ -47,6 +47,7 @@ sed -i 's/com.github.tvbox.osc/com.tvbox.q/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #ijk修改
 cp $CURRENT_DIR/JMK/AndroidMediaPlayer.java $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/AndroidMediaPlayer.java
+cp $CURRENT_DIR/JMK/VideoView.java $CURRENT_DIR/$DIR/player/src/main/java/xyz/doikki/videoplayer/player/VideoView.java
 #cp $CURRENT_DIR/JMK/IjkMediaPlayer.java $CURRENT_DIR/$DIR/player/src/main/java/tv/danmaku/ijk/media/player/IjkMediaPlayer.java
 
 #名称修改
