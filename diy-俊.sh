@@ -35,12 +35,12 @@ cp $CURRENT_DIR/DIY/ModelSettingFragment自定义.java $CURRENT_DIR/$DIR/app/src
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #sed -i 's/关于/关于\\n1.3.0/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i 's/1.0.0/1.3.6/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/1.0.0/1.3.7/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/版本/版本\\n1.3.1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/vs_5/vs_10/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #版本号
-sed -i 's/1.0.0/1.3.6/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/1.0.0/1.3.7/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #共存
 sed -i 's/com.github.tvbox.osc/com.tvbox.q/g' $CURRENT_DIR/$DIR/app/build.gradle
