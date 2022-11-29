@@ -1147,7 +1147,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
   private void createPlayer() {
         mIjkPlayer = new IjkMediaPlayer();
         IjkMediaPlayer.native_setLogLevel(IjkMediaPlayer.IJK_LOG_SILENT);
-        mIjkPlayer.setOnPreparedListener(mPreparedListener);
+        //mIjkPlayer.setOnPreparedListener(mPreparedListener);
        // mIjkPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
        // mIjkPlayer.setOnCompletionListener(mCompletionListener);
        // mIjkPlayer.setOnErrorListener(mErrorListener);
