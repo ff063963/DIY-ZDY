@@ -39,9 +39,9 @@ import xyz.doikki.videoplayer.util.PlayerUtils;
  * 播放器
  * Created by Doikki on 2017/4/7.
  */
-
-public class VideoView<P extends AbstractPlayer> extends FrameLayout
-        implements MediaPlayerControl, AbstractPlayer.PlayerEventListener {
+public class VideoView extends FrameLayout implements MediaController.MediaPlayerControl {
+//public class VideoView<P extends AbstractPlayer> extends FrameLayout
+        //implements MediaPlayerControl, AbstractPlayer.PlayerEventListener {
 
     protected P mMediaPlayer;//播放器
     protected PlayerFactory<P> mPlayerFactory;//工厂类，用于实例化播放核心
