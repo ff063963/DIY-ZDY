@@ -491,11 +491,13 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     /**
      * 获取当前缓冲百分比
      */
+     /*
     @Override
     public int getBufferedPercentage() {
         if ( mMediaPlayer != null)  return  mMediaPlayer.getBufferedPercentage() ;
         return 0;
     }
+    */
     /**
      * 设置静音
      */
@@ -540,9 +542,9 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
             case AbstractPlayer.MEDIA_INFO_BUFFERING_START:
                 setPlayState(STATE_BUFFERING);
                 break;
-            //case AbstractPlayer.MEDIA_INFO_BUFFERING_END:
-               // setPlayState(STATE_BUFFERED);
-               // break;
+            case AbstractPlayer.MEDIA_INFO_BUFFERING_END:
+                setPlayState(STATE_BUFFERED);
+                break;
             case AbstractPlayer.MEDIA_INFO_RENDERING_START: // 视频/音频开始渲染
                 setPlayState(STATE_PLAYING);
                 mPlayerContainer.setKeepScreenOn(true);
