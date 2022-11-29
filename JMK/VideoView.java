@@ -107,15 +107,9 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
 
     private IjkMediaPlayer mIjkPlayer = null;
     private Uri mUri;
-    private Map<String, String> mHeaders;
 
-    private static final int STATE_ERROR = -1;
-    private static final int STATE_IDLE = 0;
-    private static final int STATE_PREPARING = 1;
-    private static final int STATE_PREPARED = 2;
-    private static final int STATE_PLAYING = 3;
-    private static final int STATE_PAUSED = 4;
-    private static final int STATE_PLAYBACK_COMPLETED = 5;
+
+
 
     private static final int codec = IjkMediaPlayer.OPT_CATEGORY_CODEC;
     private static final int format = IjkMediaPlayer.OPT_CATEGORY_FORMAT;
@@ -140,8 +134,8 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     private long mCurrentBufferPosition;
 
     // All the stuff we need for playing and showing a video
-    private IRenderView.ISurfaceHolder mSurfaceHolder = null;
-    private IjkMediaPlayer mIjkPlayer = null;
+    //private IRenderView.ISurfaceHolder mSurfaceHolder = null;
+    //private IjkMediaPlayer mIjkPlayer = null;
     private int mVideoWidth;
     private int mVideoHeight;
     private int mSurfaceWidth;
@@ -153,11 +147,11 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     private IMediaPlayer.OnInfoListener mOnInfoListener;
 
     private Context mAppContext;
-    private IRenderView mRenderView;
+    //private IRenderView mRenderView;
     private int mVideoSarNum;
     private int mVideoSarDen;
 
-    private TextView subtitleDisplay;
+
 
     /**
      * 监听系统中音频焦点改变，见{@link #setEnableAudioFocus(boolean)}
@@ -1160,12 +1154,12 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
         mIjkPlayer.setOnInfoListener(mInfoListener);
         mIjkPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
         mIjkPlayer.setOnTimedTextListener(mOnTimedTextListener);
-        mIjkPlayer.setOption(codec, "skip_loop_filter", 48);
-        mIjkPlayer.setOption(format, "dns_cache_clear", 1);
-        mIjkPlayer.setOption(format, "dns_cache_timeout", -1);
-        mIjkPlayer.setOption(format, "fflags", "fastseek");
-        mIjkPlayer.setOption(format, "http-detect-range-support", 0);
-        mIjkPlayer.setOption(player, "enable-accurate-seek", 0);
+       // mIjkPlayer.setOption(codec, "skip_loop_filter", 48);
+       // mIjkPlayer.setOption(format, "dns_cache_clear", 1);
+        //mIjkPlayer.setOption(format, "dns_cache_timeout", -1);
+        //mIjkPlayer.setOption(format, "fflags", "fastseek");
+        //mIjkPlayer.setOption(format, "http-detect-range-support", 0);
+        //mIjkPlayer.setOption(player, "enable-accurate-seek", 0);
         mIjkPlayer.setOption(player, "framedrop", 1);
         mIjkPlayer.setOption(player, "max-buffer-size", 5242880);
         mIjkPlayer.setOption(player, "mediacodec", mCurrentDecode);
