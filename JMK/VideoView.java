@@ -106,6 +106,58 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
 
 
     private IjkMediaPlayer mIjkPlayer = null;
+    private Uri mUri;
+    private Map<String, String> mHeaders;
+
+    private static final int STATE_ERROR = -1;
+    private static final int STATE_IDLE = 0;
+    private static final int STATE_PREPARING = 1;
+    private static final int STATE_PREPARED = 2;
+    private static final int STATE_PLAYING = 3;
+    private static final int STATE_PAUSED = 4;
+    private static final int STATE_PLAYBACK_COMPLETED = 5;
+
+    private static final int codec = IjkMediaPlayer.OPT_CATEGORY_CODEC;
+    private static final int format = IjkMediaPlayer.OPT_CATEGORY_FORMAT;
+    private static final int player = IjkMediaPlayer.OPT_CATEGORY_PLAYER;
+
+
+
+
+    public static final int RENDER_SURFACE_VIEW = 0;
+    public static final int RENDER_TEXTURE_VIEW = 1;
+
+    private float mCurrentSpeed = 1;
+    private int mCurrentAspectRatio;
+    private int mCurrentRender;
+    private int mCurrentDecode;
+    private int mStartPosition;
+
+    private int mCurrentState = STATE_IDLE;
+    private int mTargetState = STATE_IDLE;
+
+    private int mCurrentBufferPercentage;
+    private long mCurrentBufferPosition;
+
+    // All the stuff we need for playing and showing a video
+    private IRenderView.ISurfaceHolder mSurfaceHolder = null;
+    private IjkMediaPlayer mIjkPlayer = null;
+    private int mVideoWidth;
+    private int mVideoHeight;
+    private int mSurfaceWidth;
+    private int mSurfaceHeight;
+    private int mVideoRotationDegree;
+    private IMediaPlayer.OnCompletionListener mOnCompletionListener;
+    private IMediaPlayer.OnPreparedListener mOnPreparedListener;
+    private IMediaPlayer.OnErrorListener mOnErrorListener;
+    private IMediaPlayer.OnInfoListener mOnInfoListener;
+
+    private Context mAppContext;
+    private IRenderView mRenderView;
+    private int mVideoSarNum;
+    private int mVideoSarDen;
+
+    private TextView subtitleDisplay;
 
     /**
      * 监听系统中音频焦点改变，见{@link #setEnableAudioFocus(boolean)}
@@ -457,9 +509,10 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
 
     @Override
     public int getBufferPercentage() {
-        if (mMediaPlayer != null) return mMediaPlayer.getBufferedPercentage;
+        if (mMediaPlayer != null) return mMediaPlayer.getBufferedPercentage() ;
         return 0;
     }
+
 
 
     /**
