@@ -85,7 +85,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     public static final int STATE_PAUSED = 4;
     public static final int STATE_PLAYBACK_COMPLETED = 5;
     public static final int STATE_BUFFERING = 6;
-    //public static final int STATE_BUFFERED = 7;
+    public static final int STATE_BUFFERED = 7;
     public static final int STATE_START_ABORT = 8;//开始播放中止
     protected int mCurrentPlayState = STATE_IDLE;//当前播放器的状态
 
@@ -519,6 +519,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     /**
      * 视频缓冲完毕，准备开始播放时回调
      */
+     /*
     @Override
     public void onPrepared() {
         setPlayState(STATE_PREPARED);
@@ -529,7 +530,7 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
             seekTo(mCurrentPosition);
         }
     }
-
+*/
     /**
      * 播放信息回调，播放中的缓冲开始与结束，开始渲染视频第一帧，视频旋转信息
      */
