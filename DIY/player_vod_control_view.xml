@@ -504,7 +504,7 @@
         android:tag="vod_control_pause"
         android:visibility="gone"
         tools:visibility="visible">
-
+<!---
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -527,7 +527,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_20" />
         </LinearLayout>
-
+-->
         <LinearLayout
             android:layout_width="@dimen/vs_280"
             android:layout_height="@dimen/vs_200"
