@@ -106,7 +106,7 @@ import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkTimedText;
 import xyz.doikki.videoplayer.player.AbstractPlayer;
 import xyz.doikki.videoplayer.player.ProgressManager;
-
+import android.app.PictureInPictureParams;
 public class PlayActivity extends BaseActivity {
     private MyVideoView mVideoView;
     private TextView mPlayLoadTip;
@@ -116,7 +116,7 @@ public class PlayActivity extends BaseActivity {
     private SourceViewModel sourceViewModel;
     private Handler mHandler;
 
-  import android.app.PictureInPictureParams;
+
   
     private long videoDuration = -1;
 
