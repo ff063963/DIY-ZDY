@@ -27,6 +27,8 @@ cp $CURRENT_DIR/DIY/strings.xml $CURRENT_DIR/$DIR/app/src/main/res/values/string
 #画中画
 cp $CURRENT_DIR/DIY/AndroidManifest.xml $CURRENT_DIR/$DIR/app/src/main/AndroidManifest.xml
 cp $CURRENT_DIR/DIY/HawkConfig.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/HawkConfig.java
+cp $CURRENT_DIR/DIY/PlayActivity.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/PlayActivity.java
+
 #设置界面
 mv $CURRENT_DIR/DIY/HomeActivity自定义.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 cp $CURRENT_DIR/DIY/ModelSettingFragment自定义.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
@@ -35,12 +37,12 @@ cp $CURRENT_DIR/DIY/ModelSettingFragment自定义.java $CURRENT_DIR/$DIR/app/src
 cp $CURRENT_DIR/DIY/fragment_model.xml $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #sed -i 's/关于/关于\\n1.3.0/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
-sed -i 's/1.0.0/1.3.8/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
+sed -i 's/1.0.0/1.3.9/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #sed -i 's/版本/版本\\n1.3.1/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/vs_5/vs_10/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 
 #版本号
-sed -i 's/1.0.0/1.3.8/g' $CURRENT_DIR/$DIR/app/build.gradle
+sed -i 's/1.0.0/1.3.9/g' $CURRENT_DIR/$DIR/app/build.gradle
 
 #共存
 sed -i 's/com.github.tvbox.osc/com.tvbox.q/g' $CURRENT_DIR/$DIR/app/build.gradle
@@ -113,8 +115,8 @@ sed -i 's/缩略图/图片/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvb
 sed -i 's/已开启/开启/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 sed -i 's/已关闭/关闭/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
 sed -i 's/系统自带/系统/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
-sed -i 's/硬解码/硬解/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/bean/LivePlayerManager.java
-sed -i 's/硬解码/软解/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/bean/LivePlayerManager.java
+#sed -i 's/硬解码/硬解/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/bean/LivePlayerManager.java
+#sed -i 's/硬解码/软解/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/bean/LivePlayerManager.java
 //设置界面文字修改
 sed -i 's/IJK解码方式/解码方式/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/搜索附近TVBox/搜索附近/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
@@ -126,8 +128,9 @@ sed -i 's/嗅探Webview/嗅探方式/g' $CURRENT_DIR/$DIR/app/src/main/res/layou
 sed -i 's/换张壁纸/更换壁纸/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 sed -i 's/画中画/显画中画/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 //播放文字修改
+cp $CURRENT_DIR/DIY/PlayerHelper.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 sed -i 's/播放器//g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
-sed -i 's/软解码/软码/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
+#sed -i 's/软解码/软码/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 sed -i 's/TextureView/Texture/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 sed -i 's/SurfaceView/Surface/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
 
