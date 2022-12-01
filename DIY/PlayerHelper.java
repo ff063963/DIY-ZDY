@@ -87,7 +87,7 @@ public class PlayerHelper {
     public static void updateCfg(VideoView videoView) {
         int playType = Hawk.get(HawkConfig.PLAY_TYPE, 0);
         PlayerFactory playerFactory;
-        if (playType == 1) {
+        if (playType == 2) {
             playerFactory = new PlayerFactory<IjkMediaPlayer>() {
                 @Override
                 public IjkMediaPlayer createPlayer(Context context) {
@@ -108,7 +108,7 @@ public class PlayerHelper {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-        } else if (playType == 2) {
+        } else if (playType == 1) {
             playerFactory = ExoMediaPlayerFactory.create();
         } else {
             playerFactory = AndroidMediaPlayerFactory.create();
@@ -160,8 +160,8 @@ public class PlayerHelper {
         if (mPlayersInfo == null) {
             HashMap<Integer, String> playersInfo = new HashMap<>();
             playersInfo.put(0, "系统播放器");
-            playersInfo.put(2, "Exo播放器");
-            playersInfo.put(1, "IJK播放器");
+            playersInfo.put(1, "Exo播放器");
+            playersInfo.put(2, "IJK播放器");
 
             playersInfo.put(10, "MX播放器");
             playersInfo.put(11, "Reex播放器");
@@ -177,8 +177,8 @@ public class PlayerHelper {
         if (mPlayersExistInfo == null) {
             HashMap<Integer, Boolean> playersExist = new HashMap<>();
             playersExist.put(0, true);
-            playersExist.put(2, true);
             playersExist.put(1, true);
+            playersExist.put(2, true);
             playersExist.put(10, MXPlayer.getPackageInfo() != null);
             playersExist.put(11, ReexPlayer.getPackageInfo() != null);
             playersExist.put(12, Kodi.getPackageInfo() != null);
