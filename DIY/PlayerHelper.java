@@ -238,7 +238,20 @@ public class PlayerHelper {
             return "TextureView";
         }
     }
-
+//外部播放器
+       public static Integer[] getAvailable3rdPlayerTypes() {
+        Integer[] types = new Integer[AVAILABLE_3RD_PLAYERS.keySet().size()];
+        AVAILABLE_3RD_PLAYERS.keySet().toArray(types);
+        return types;
+    }
+    
+        public static Integer[] getAvailableDefaultPlayerTypes() {
+        Integer[] types = new Integer[AVAILABLE_DEFAULT_PLAYERS.keySet().size()];
+        AVAILABLE_DEFAULT_PLAYERS.keySet().toArray(types);
+        return types;
+    }
+    
+    
     public static String getScaleName(int screenScaleType) {
         String scaleText = "默认";
         switch (screenScaleType) {
