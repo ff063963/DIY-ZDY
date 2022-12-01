@@ -255,7 +255,7 @@ public class PlayActivity extends BaseActivity {
             mController.mPlayerTimeResetBtn.setVisibility(View.VISIBLE);
         }
     }
-
+/*
     // takagen99 : Add check for external players not enter PIP
     private boolean extPlay = false;
     boolean PIP = Hawk.get(HawkConfig.PIC_IN_PIC, false);
@@ -311,7 +311,7 @@ public class PlayActivity extends BaseActivity {
             pipActionReceiver = null;
         }
     }
-
+*/
   
     //设置字幕
     void setSubtitle(String path) {
