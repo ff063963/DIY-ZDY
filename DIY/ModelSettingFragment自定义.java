@@ -54,6 +54,13 @@ import com.github.tvbox.osc.ui.dialog.ApiHistoryDialog;
 
 import com.github.tvbox.osc.ui.dialog.VersionDialog;
 
+import com.owen.tvrecyclerview.widget.TvRecyclerView;
+import com.owen.tvrecyclerview.widget.V7GridLayoutManager;
+import com.owen.tvrecyclerview.widget.V7LinearLayoutManager;
+
+import me.jessyan.autosize.utils.AutoSizeUtils;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import android.view.ViewGroup;
 /**
  * @author pj567
  * @date :2020/12/23
