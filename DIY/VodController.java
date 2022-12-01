@@ -83,14 +83,14 @@ public class VodController extends BaseController {
                         mTopRoot1.setVisibility(VISIBLE);
                         mTopRoot2.setVisibility(VISIBLE);
                         mCenterContainer.setVisibility(VISIBLE);
-                      //mPlayTitle.setVisibility(VISIBLE);
+                        mPlayTitle.setVisibility(VISIBLE);
                         mPlayTitle1.setVisibility(VISIBLE);
                         mNextBtn.requestFocus();
                         break;
                     }
                     case 1003: { // 隐藏底部菜单
-                        //mPlayTitle.setVisibility(GONE);
-                         mPlayTitle1.setVisibility(GONE);
+                        mPlayTitle.setVisibility(GONE);
+                        mPlayTitle1.setVisibility(GONE);
                         mCenterContainer.setVisibility(GONE);
                         mTopRoot.setVisibility(GONE);
                         mBottomRoot.setVisibility(GONE);
@@ -127,7 +127,7 @@ public class VodController extends BaseController {
     LinearLayout mTopRoot2;
     LinearLayout mParseRoot;
     TvRecyclerView mGridView;
-    //TextView mPlayTitle;
+    TextView mPlayTitle;
     TextView mPlayTitle1;
     TextView mPlayLoadNetSpeedRightTop;
     TextView mNextBtn;
@@ -215,7 +215,7 @@ public class VodController extends BaseController {
         super.initView();
         mCurrentTime = findViewById(R.id.curr_time);
         mTotalTime = findViewById(R.id.total_time);
-        //mPlayTitle = findViewById(R.id.tv_info_name);
+        mPlayTitle = findViewById(R.id.tv_info_name);
         mPlayTitle1 = findViewById(R.id.tv_info_name1);
         mPlayLoadNetSpeedRightTop = findViewById(R.id.tv_play_load_net_speed_right_top);
         mSeekBar = findViewById(R.id.seekBar);
@@ -744,12 +744,12 @@ public class VodController extends BaseController {
     }
 
     public void setTitle(String playTitleInfo) {
-       // mPlayTitle.setText(playTitleInfo);
+        mPlayTitle.setText(playTitleInfo);
         mPlayTitle1.setText(playTitleInfo);
     }
 
     public void setUrlTitle(String playTitleInfo) {
-        //mPlayTitle.setText(playTitleInfo);
+        mPlayTitle.setText(playTitleInfo);
                 mPlayTitle1.setText(playTitleInfo);
     }
 
@@ -883,7 +883,7 @@ public class VodController extends BaseController {
             case VideoView.STATE_PAUSED:
                 mTopRoot1.setVisibility(GONE);
                 mTopRoot2.setVisibility(GONE);
-               // mPlayTitle.setVisibility(VISIBLE);
+                mPlayTitle.setVisibility(VISIBLE);
                 mPlayTitle1.setVisibility(VISIBLE);
                 break;
             case VideoView.STATE_ERROR:
