@@ -506,11 +506,12 @@
         tools:visibility="visible">
 
         <LinearLayout
+                      
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginStart="@dimen/vs_20"
-            android:layout_marginLeft="@dimen/vs_20"
+            android:layout_marginStart="@dimen/vs_30"
+            android:layout_marginLeft="@dimen/vs_30"
             android:layout_marginTop="@dimen/vs_10"
             android:orientation="vertical">
 
