@@ -85,6 +85,8 @@ public class ModelSettingFragment extends BaseLazyFragment {
     
     private TextView tvHomeShow;
     private TextView tvPIP;
+    private TextView thirdPartyPlayer;
+    private LinearLayout thirdPartyPlayLayout;
     
     public static ModelSettingFragment newInstance() {
         return new ModelSettingFragment().setArguments();
@@ -105,7 +107,8 @@ public class ModelSettingFragment extends BaseLazyFragment {
        tvHomeShow.setText(Hawk.get(HawkConfig.HOME_SHOW_SOURCE, false) ? "开启" : "关闭");
          tvPIP = findViewById(R.id.tvPIP);
         tvPIP.setText(Hawk.get(HawkConfig.PIC_IN_PIC, false) ? "开启" : "关闭");
-
+        thirdPartyPlayer = findViewById(R.id.tv3rdPlay);
+        thirdPartyPlayLayout = findViewById(R.id.thirdPartyPlay);
 
         
         tvFastSearchText = findViewById(R.id.showFastSearchText);
@@ -242,6 +245,49 @@ public class ModelSettingFragment extends BaseLazyFragment {
                 dialog.show();
             }
         });
+        
+        
+              thirdPartyPlayLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!thirdPartyPlayLayout.isFocusable())
+                    return;
+                FastClickCheckUtil.check(view);
+                Integer[] types = PlayerHelper.getAvailable3rdPlayerTypes();
+                Integer currentVal = Hawk.get(HawkConfig.THIRD_PARTY_PLAYER, types[0]);
+                int defaultPos = Arrays.binarySearch(types, currentVal);
+                if(defaultPos < 0)
+                    defaultPos = 0;
+                SelectDialog<Integer> dialog = new SelectDialog<>(mActivity);
+                dialog.setTip("请选择外部播放器");
+                dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<Integer>() {
+                    @Override
+                    public void click(Integer value, int pos) {
+                        Hawk.put(HawkConfig.THIRD_PARTY_PLAYER, value);
+                        thirdPartyPlayer.setText(get3rdPlayerName(value));
+                    }
+
+                    @Override
+                    public String getDisplay(Integer val) {
+                        return get3rdPlayerName(val);
+                    }
+                }, new DiffUtil.ItemCallback<Integer>() {
+                    @Override
+                    public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
+                        return oldItem.intValue() == newItem.intValue();
+                    }
+
+                    @Override
+                    public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
+                        return oldItem.intValue() == newItem.intValue();
+                    }
+                }, Arrays.asList(types), defaultPos);
+                dialog.show();
+            }
+        });
+        
+        
+        
         
         findViewById(R.id.llWp).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -755,6 +801,30 @@ public class ModelSettingFragment extends BaseLazyFragment {
         });
     }
 
+    //外部播放器
+   @Override
+    public void onResume() {
+        super.onResume();
+        PlayerHelper.reload3rdPlayers();
+        if(!thirdPartyPlayLayout.isFocusable()) {
+            String thirdPartyPlayerName = PlayerHelper.get3rdPlayerName(Hawk.get(HawkConfig.THIRD_PARTY_PLAYER, 0));
+            if(thirdPartyPlayerName != null) {
+                thirdPartyPlayLayout.setFocusable(true);
+                thirdPartyPlayer.setTextColor(getResources().getColor(R.color.color_FFFFFF));
+                thirdPartyPlayer.setText(thirdPartyPlayerName);
+            }
+        } else {
+            Integer[] thirdPartyPlayerTypes = PlayerHelper.getAvailable3rdPlayerTypes();
+            String thirdPartyPlayerName = PlayerHelper.get3rdPlayerName(Hawk.get(HawkConfig.THIRD_PARTY_PLAYER, 0));
+            if (thirdPartyPlayerTypes.length <= 0) {
+                thirdPartyPlayer.setTextColor(getResources().getColor(R.color.color_6CFFFFFF));
+                thirdPartyPlayer.setText("没有找到可用播放器");
+                thirdPartyPlayLayout.setFocusable(false);
+            } else {
+                thirdPartyPlayer.setText(thirdPartyPlayerName);
+            }
+        }
+    }
 
     public static SearchRemoteTvDialog loadingSearchRemoteTvDialog;
     public static List<String> remoteTvHostList;
