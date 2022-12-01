@@ -89,6 +89,7 @@ public class VodController extends BaseController {
                     }
                     case 1003: { // 隐藏底部菜单
                         //mPlayTitle.setVisibility(GONE);
+                         mPlayTitle1.setVisibility(GONE);
                         mCenterContainer.setVisibility(GONE);
                         mTopRoot.setVisibility(GONE);
                         mBottomRoot.setVisibility(GONE);
@@ -882,6 +883,7 @@ public class VodController extends BaseController {
                 mTopRoot1.setVisibility(GONE);
                 mTopRoot2.setVisibility(GONE);
                // mPlayTitle.setVisibility(VISIBLE);
+                  mPlayTitle1.setVisibility(VISIBLE);
                 break;
             case VideoView.STATE_ERROR:
                 listener.errReplay();
